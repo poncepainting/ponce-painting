@@ -10,6 +10,8 @@ import { generateOrganizationSchema, generateWebsiteSchema } from '@/config/sche
 import SchemaMarkup from '@/components/SchemaMarkup';
 import PageTransition from '@/components/ui/PageTransition';
 import { createCssColorVariables } from '@/utils/themeUtils';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // Load Plus Jakarta Sans font with defined subsetting for optimization
 const jakartaSans = Plus_Jakarta_Sans({
@@ -108,6 +110,8 @@ export default function RootLayout({
         <Footer />
         <BottomFloatingMenu />
         <div className="h-12 md:h-0" aria-hidden="true"></div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

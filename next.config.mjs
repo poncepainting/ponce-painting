@@ -21,6 +21,10 @@ const nextConfig = {
     // Warning instead of error
     ignoreDuringBuilds: true,
   },
+  // Enable Vercel Analytics and Speed Insights
+  experimental: {
+    webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'INP', 'TTFB'],
+  },
 };
 
 export default nextConfig;
