@@ -81,7 +81,7 @@ export default function AboutPage() {
                 useSubheading={true}
                 subheadingText="OUR JOURNEY"
                 accentColor="primary.600"
-                titleClass="text-left lg:text-left"
+                titleClass="text-center lg:text-left"
                 subtitleClass="text-center lg:text-left"
                 className="mx-auto lg:mx-0"
               />
