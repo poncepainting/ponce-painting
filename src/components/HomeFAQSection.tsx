@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { getFaqByCategory, faqCategories, faqItems, FAQItem } from '@/config/faq';
+import { faqItems, FAQItem } from '@/config/faq';
 import FAQAccordion from './FAQAccordion';
 import { cn } from '@/utils';
 import Button from '@/components/ui/Button';
