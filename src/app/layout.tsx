@@ -104,7 +104,7 @@ export default function RootLayout({
       </head>
       <body className={`${jakartaSans.variable} antialiased bg-white font-sans`}>
         <Header />
-        <div className="pt-16 md:pt-20">
+        <div className="pt-16 md:pt-20 bg-white min-h-screen">
           <PageTransition>{children}</PageTransition>
         </div>
         <Footer />

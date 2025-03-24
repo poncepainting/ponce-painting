@@ -29,7 +29,7 @@ const PageTransition = ({ children, className = '' }: PageTransitionProps) => {
         ease: 'easeInOut',
         duration: 0.3,
       }}
-      className={className}
+      className={`bg-white ${className}`}
     >
       {children}
     </motion.div>
