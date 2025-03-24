@@ -1,17 +1,18 @@
-const { siteConfig } = require('./src/config/site');
-const { getSiteUrl } = require('./src/utils/themeUtils');
-const path = require('path');
-const fs = require('fs');
+import { siteConfig } from './src/config/site.js';
+import { getSiteUrl } from './src/utils/themeUtils.js';
+import path from 'path';
+import fs from 'fs';
 
 const siteUrl = getSiteUrl();
 
 // Function to load the paths that should be excluded from indexing
-const getNonIndexedPaths = () => {
+const getNonIndexedPaths = async () => {
   try {
     const seoConfigPath = path.resolve(process.cwd(), '.next/server/chunks/config/seo.js');
     
     if (fs.existsSync(seoConfigPath)) {
-      const seoConfig = require(seoConfigPath);
+      // Use dynamic import for ESM compatibility
+      const seoConfig = await import(seoConfigPath);
       return seoConfig.nonIndexedPaths || [];
     }
   } catch (error) {
@@ -35,7 +36,7 @@ const getNonIndexedPaths = () => {
 };
 
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
+export default {
   siteUrl,
   generateRobotsTxt: true,
   robotsTxtOptions: {
