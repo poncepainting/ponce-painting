@@ -1,5 +1,5 @@
 import { QuoteFormData } from '@/types/forms';
-import { formConfig, FormHandlerType } from '@/config/forms';
+import { formConfig, FormHandlerType, FormType } from '@/config/forms';
 import emailjs from '@emailjs/browser';
 
 export type FormSubmissionResult = {
@@ -11,18 +11,18 @@ export type FormSubmissionResult = {
 /**
  * Submit form data using the configured handler method
  */
-export const submitForm = async (formData: QuoteFormData): Promise<FormSubmissionResult> => {
+export const submitForm = async (formData: QuoteFormData, formType: FormType = 'lead'): Promise<FormSubmissionResult> => {
   const handler = formConfig.handler || 'formspree';
 
   switch (handler) {
     case 'api':
       return submitFormData(formData);
     case 'formspree':
-      return submitToFormspree(formData);
+      return submitToFormspree(formData, formType);
     case 'emailjs':
       return submitToEmailJS(formData);
     default:
-      return submitToFormspree(formData); // Default fallback
+      return submitToFormspree(formData, formType); // Default fallback
   }
 };
 
@@ -68,13 +68,20 @@ export const submitFormData = async (formData: QuoteFormData): Promise<FormSubmi
  * Submit form data to Formspree
  * Works anywhere without server configuration
  */
-export const submitToFormspree = async (formData: QuoteFormData): Promise<FormSubmissionResult> => {
+export const submitToFormspree = async (formData: QuoteFormData, formType: FormType = 'lead'): Promise<FormSubmissionResult> => {
   try {
-    const formId = formConfig.formspree.formId;
+    // Select the appropriate form ID based on the form type
+    let formId: string;
+    
+    if (formType === 'contact') {
+      formId = formConfig.formspree.contactFormId;
+    } else {
+      formId = formConfig.formspree.leadFormId;
+    }
 
     if (!formId || formId === 'YOUR_FORMSPREE_FORM_ID') {
       console.warn(
-        'Formspree form ID not configured. Please set NEXT_PUBLIC_FORMSPREE_ID env variable or update the form config.'
+        `Formspree form ID not configured for ${formType} form. Please set the appropriate env variable or update the form config.`
       );
       return {
         success: false,

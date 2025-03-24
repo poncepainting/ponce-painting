@@ -87,8 +87,8 @@ const SEO: React.FC<SEOProps> = ({
 
   // This injects metadata into the document head via React Hooks
   React.useEffect(() => {
-    // Update the document title
-    document.title = formattedTitle;
+    // Do not update document title - Next.js handles this through metadata
+    // document.title = formattedTitle;
 
     // Helper function to set or update a meta tag
     const setMetaTag = (name: string, content: string, property = false) => {

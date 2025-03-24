@@ -43,7 +43,7 @@ const Header = () => {
       }`}
     >
       <Container className="px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[4.4rem] md:h-[5.5rem]">
+        <div className="flex items-center justify-between h-[4.4rem] md:h-[5rem]">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
@@ -73,8 +73,8 @@ const Header = () => {
                   px-3 py-2 text-base font-medium rounded-md transition-colors duration-200
                   ${
                     link.href === pathname
-                      ? 'text-primary-700 border-b-2 border-primary-600'
-                      : 'text-gray-600 hover:text-primary-700 hover:border-b-2 hover:border-primary-400'
+                      ? 'text-primary-700'
+                      : 'text-gray-600 hover:text-primary-700'
                   }
                 `}
               >

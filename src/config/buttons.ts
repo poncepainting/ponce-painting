@@ -42,20 +42,6 @@ const createThemeStyles = () => {
       } as VariantStyle,
     },
 
-    // Button sizes
-    sizes: {
-      sm: 'px-4 py-2 text-sm',
-      md: 'px-6 py-3 text-base',
-      lg: 'px-8 py-4 text-base',
-    },
-
-    // Icon-only button sizes
-    iconSizes: {
-      sm: 'p-2',
-      md: 'p-3',
-      lg: 'p-4',
-    },
-
     // Default button properties
     defaults: {
       rounded: designSystem.borderRadius.button,

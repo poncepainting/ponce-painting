@@ -49,7 +49,7 @@ export const generateCarouselStyles = (swipeCursor = 'grab') => `
   }
   
   .carousel-container {
-    padding-bottom: 20px;
+    padding-bottom: 22px;
   }
   
   .carousel-container .slick-list {

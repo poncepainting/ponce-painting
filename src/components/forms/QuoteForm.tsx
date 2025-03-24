@@ -90,7 +90,7 @@ const QuoteForm = () => {
 
       try {
         // Submit the form data using our utility
-        const result = await submitForm(formData);
+        const result = await submitForm(formData, 'lead');
 
         if (result.success) {
           setCurrentStep('success');

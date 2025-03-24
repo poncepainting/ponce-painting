@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://yourbusiness.com
+Host: https://ponce-painting.com
 
 # Sitemaps
-Sitemap: https://yourbusiness.com/sitemap.xml
-Sitemap: https://yourbusiness.com/api/sitemap
+Sitemap: https://ponce-painting.com/sitemap.xml
+Sitemap: https://ponce-painting.com/api/sitemap

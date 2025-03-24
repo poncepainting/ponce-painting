@@ -49,9 +49,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   // Text alignment classes
   const alignmentClasses = {
-    left: 'text-left',
+    left: 'text-center md:text-left',
     center: 'text-center',
-    right: 'text-right',
+    right: 'text-center md:text-right',
   };
 
   // Animation variants
@@ -82,7 +82,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
-      className={`relative flex items-center justify-center bg-dark-primary ${heightClasses[height]}`}
+      className={`relative flex items-center justify-center bg-dark-primary pt-12 md:pt-16 lg:pt-24 ${
+        showQuoteForm ? 'min-h-screen py-20' : heightClasses[height]
+      }`}
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
         <OptimizedImage
@@ -100,7 +102,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
       <div className={`absolute inset-0 bg-black/[0.${overlayOpacity}] z-10`}></div>
       <Container className={`z-20 ${alignmentClasses[textAlignment]}`}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -148,7 +150,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="mt-8 lg:mt-0"
+              className="mt-4 sm:mt-6 lg:mt-0 mb-5 sm:mb-6 lg:mb-0"
             >
               <QuoteForm />
             </motion.div>

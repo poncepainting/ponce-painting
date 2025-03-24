@@ -20,7 +20,7 @@ export const metadata = {
 export default function ServicesPage() {
   // Generate schema for all services
   const servicesSchemas = generateServicesSchema();
-
+  
   return (
     <main>
       {/* SEO Component */}
@@ -30,10 +30,10 @@ export default function ServicesPage() {
         canonical="/services"
         schemaType="services"
       />
-
+      
       {/* Schema markup specific to services page */}
       <SchemaMarkup schemas={servicesSchemas} />
-
+      
       {/* Services Hero Section */}
       <Section className="bg-primary-50 py-20">
         <AnimationWrapper type="fade">
@@ -47,21 +47,33 @@ export default function ServicesPage() {
           />
         </AnimationWrapper>
       </Section>
-
+      
       {/* Services Grid */}
       <Section name="services-list" bgColor="light.white">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {siteConfig.services.map((service, index) => (
-            <AnimationWrapper key={service.title} type="scale" delay={index * 0.1}>
+            <AnimationWrapper 
+              key={service.id} 
+              type="scale" 
+              delay={index * 0.1}
+            >
               <HoverCard className="h-full">
-                <div className="h-48 overflow-hidden relative rounded-t-xl bg-primary-50 flex items-center justify-center">
-                  <Icon name={service.icon} size={48} className="text-primary-600" />
+                <div className="h-48 overflow-hidden relative rounded-t-xl">
+                  <OptimizedImage
+                    src={service.imageUrl}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    useFill={true}
+                    className="transition-transform duration-500 hover:scale-105"
+                    fallbackText={`Image for ${service.title}`}
+                  />
                 </div>
                 <div className="p-6">
                   <h2 className="text-xl font-bold mb-3 text-primary-800">{service.title}</h2>
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <Button
-                    href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={`/services/${service.id}`}
                     variant="text"
                     rightIcon="chevron-right"
                     className="text-primary-600 font-medium"
@@ -74,7 +86,7 @@ export default function ServicesPage() {
           ))}
         </div>
       </Section>
-
+      
       {/* Custom Services CTA */}
       <Section className="bg-gray-50">
         <AnimationWrapper type="fade">
@@ -86,16 +98,20 @@ export default function ServicesPage() {
               subheadingText="CUSTOM SERVICES"
               accentColor="primary.600"
             />
-
+            
             <AnimationWrapper type="slide-up" delay={0.2} className="mt-8">
-              <Button href="/contact" variant="primary" size="lg">
+              <Button
+                href="/contact"
+                variant="primary"
+                size="lg"
+              >
                 Get in Touch
               </Button>
             </AnimationWrapper>
           </div>
         </AnimationWrapper>
       </Section>
-
+      
       {/* Service Process */}
       <Section bgColor="light.white">
         <AnimationWrapper type="fade">
@@ -107,9 +123,9 @@ export default function ServicesPage() {
             accentColor="primary.600"
           />
         </AnimationWrapper>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-          <AnimationWrapper type="slide-up" delay={0.1} key="consultation">
+          <AnimationWrapper type="slide-up" delay={0.1}>
             <div className="bg-white p-6 rounded-xl border border-gray-200 text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-primary-600 text-xl font-bold">1</span>
@@ -120,21 +136,20 @@ export default function ServicesPage() {
               </p>
             </div>
           </AnimationWrapper>
-
-          <AnimationWrapper type="slide-up" delay={0.2} key="implementation">
+          
+          <AnimationWrapper type="slide-up" delay={0.2}>
             <div className="bg-white p-6 rounded-xl border border-gray-200 text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-primary-600 text-xl font-bold">2</span>
               </div>
               <h3 className="text-xl font-bold mb-3 text-primary-800">Implementation</h3>
               <p className="text-gray-600">
-                Our experts implement the solution, ensuring quality and attention to detail at
-                every step.
+                Our experts implement the solution, ensuring quality and attention to detail at every step.
               </p>
             </div>
           </AnimationWrapper>
-
-          <AnimationWrapper type="slide-up" delay={0.3} key="support">
+          
+          <AnimationWrapper type="slide-up" delay={0.3}>
             <div className="bg-white p-6 rounded-xl border border-gray-200 text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-primary-600 text-xl font-bold">3</span>

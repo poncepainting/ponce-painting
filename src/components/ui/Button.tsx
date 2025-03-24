@@ -34,33 +34,76 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const iconToShow = icon || leftIcon;
     const isTextVariant = variant === 'text';
 
-    // Base styles
-    const baseStyles = [
-      !isTextVariant &&
-        (iconOnly ? buttonConfig.defaults.roundedIcon : buttonConfig.defaults.rounded),
-      buttonConfig.defaults.fontWeight,
-      buttonConfig.defaults.transition,
-      !isTextVariant && buttonConfig.defaults.display,
-    ]
-      .filter(Boolean)
-      .join(' ');
+    // Get the padding CSS directly based on size and icon status
+    const getPaddingClasses = () => {
+      if (isTextVariant) return 'p-0';
+      if (iconOnly) {
+        if (size === 'sm') return 'p-2';
+        if (size === 'md') return 'p-3';
+        return 'p-4'; // lg
+      }
+      if (size === 'sm') return 'px-4 py-2';
+      if (size === 'md') return 'px-6 py-3';
+      return 'px-8 py-4'; // lg
+    };
+    
+    // Apply padding directly as inline style to ensure it can't be overridden
+    const paddingStyle = {
+      padding: iconOnly 
+        ? (size === 'sm' ? '0.5rem' : size === 'md' ? '0.75rem' : '1rem')  // p-2, p-3, p-4
+        : undefined,
+      paddingLeft: !iconOnly && !isTextVariant 
+        ? (size === 'sm' ? '1rem' : size === 'md' ? '1.5rem' : '2rem')  // px-4, px-6, px-8
+        : undefined,
+      paddingRight: !iconOnly && !isTextVariant
+        ? (size === 'sm' ? '1rem' : size === 'md' ? '1.5rem' : '2rem')  // px-4, px-6, px-8
+        : undefined,
+      paddingTop: !iconOnly && !isTextVariant
+        ? (size === 'sm' ? '0.5rem' : size === 'md' ? '0.75rem' : '1rem')  // py-2, py-3, py-4
+        : undefined,
+      paddingBottom: !iconOnly && !isTextVariant
+        ? (size === 'sm' ? '0.5rem' : size === 'md' ? '0.75rem' : '1rem')  // py-2, py-3, py-4
+        : undefined,
+    };
 
-    // Variant styles
+    // Font size based on button size
+    const fontSizeClass = size === 'sm' ? 'text-sm' : 'text-base';
+    
+    // Layout styles
+    const layoutStyles = 'inline-flex items-center justify-center';
+    
+    // Typography styles 
+    const typographyStyles = `font-medium ${fontSizeClass}`;
+    
+    // Visual styles
+    const cornerStyles = iconOnly 
+      ? buttonConfig.defaults.roundedIcon 
+      : buttonConfig.defaults.rounded;
+      
+    const transitionStyles = 'transition-colors duration-200';
+    
+    // Variant styles (colors, etc.)
     const variantStyles = isDisabled
       ? buttonConfig.variants[variant].disabled
       : buttonConfig.variants[variant].base;
-
-    // Size styles
-    const sizeStyles = isTextVariant
-      ? ''
-      : iconOnly
-        ? buttonConfig.iconSizes[size]
-        : buttonConfig.sizes[size];
-
-    // Combined styles
-    const buttonStyles = `${baseStyles} ${variantStyles} ${sizeStyles} ${
-      fullWidth ? 'w-full' : ''
-    } ${isTextVariant ? 'inline-flex items-center' : ''} ${className}`;
+    
+    // Width styles
+    const widthStyles = fullWidth ? 'w-full' : '';
+    
+    // Join all styles together
+    const buttonStyles = [
+      layoutStyles,
+      typographyStyles,
+      cornerStyles,
+      transitionStyles,
+      getPaddingClasses(), // Apply padding classes for Tailwind
+      variantStyles,
+      widthStyles,
+      className,
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .trim();
 
     // Content generation
     const generateContent = () => {
@@ -127,6 +170,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <Link
           href={href}
           className={buttonStyles}
+          style={paddingStyle}
           tabIndex={0}
           onKeyDown={handleKeyDown}
           {...(iconOnly ? accessibilityProps : {})}
@@ -141,6 +185,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={buttonStyles}
+        style={paddingStyle}
         disabled={isDisabled}
         {...(iconOnly ? accessibilityProps : {})}
         {...props}

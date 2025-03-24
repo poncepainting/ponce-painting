@@ -22,23 +22,23 @@ const FAQSection = ({
   className,
 }: FAQSectionProps) => {
   // Get unique categories if not provided
-  const uniqueCategories =
-    categories.length > 0
-      ? categories
-      : [...new Set(items.map(item => item.category))].map(category => ({
-          id: category.toLowerCase().replace(/\s+/g, '-'),
-          name: category,
-          description: `Questions about ${category.toLowerCase()}`,
-        }));
-
+  const uniqueCategories = categories.length > 0 
+    ? categories 
+    : [...new Set(items.map(item => item.category))].map(category => ({
+        id: category.toLowerCase().replace(/\s+/g, '-'),
+        name: category,
+        description: `Questions about ${category.toLowerCase()}`
+      }));
+    
   const [activeCategory, setActiveCategory] = useState('All');
-
+  
   // Simplified filtering logic
-  const filteredItems =
-    activeCategory === 'All' ? items : items.filter(item => item.categoryId === activeCategory);
+  const filteredItems = activeCategory === 'All' 
+    ? items 
+    : items.filter(item => item.categoryId === activeCategory);
 
   return (
-    <div className={cn('w-full max-w-4xl mx-auto', className)}>
+    <div className={cn('w-full', className)}>
       {/* Header */}
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">{title}</h2>
@@ -55,8 +55,8 @@ const FAQSection = ({
           >
             All
           </TabButton>
-
-          {uniqueCategories.map(category => (
+          
+          {uniqueCategories.map((category) => (
             <TabButton
               key={category.id}
               isActive={activeCategory === category.id}
@@ -69,7 +69,7 @@ const FAQSection = ({
       )}
 
       {/* FAQ items */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 divide-y divide-gray-200">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 divide-y divide-gray-200 max-w-7xl mx-auto">
         {filteredItems.length > 0 ? (
           filteredItems.map((item, index) => (
             <FAQAccordion key={item.id} item={item} index={index} />
@@ -84,4 +84,4 @@ const FAQSection = ({
   );
 };
 
-export default FAQSection;
+export default FAQSection; 

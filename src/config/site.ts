@@ -11,14 +11,13 @@ export type SocialPlatform = 'facebook' | 'twitter' | 'instagram' | 'linkedin';
 export const siteConfig = {
   // Basic site info
   name: 'Ponce Painting',
-  description:
-    'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+  description: 'Transform your space with Lake Charles\' top-rated painting service. Delivering flawless finishes, exceptional craftsmanship, and 5-star customer satisfaction since 2010.',
   url: 'https://ponce-painting.com',
   ogImage: 'https://ponce-painting.com/og.jpg',
 
   // Contact information
   contact: {
-    email: 'info@poncepainting.com',
+    email: 'info@ponce-painting.com',
     phone: '337-304-7936',
     address: '123 Pine Street, Lake Charles, LA 70601',
   },
@@ -45,24 +44,46 @@ export const siteConfig = {
   // Main services offered
   services: [
     {
+      id: 'residential',
       title: 'Residential Painting',
-      description:
-        'Transform your home with personalized color consultations and flawless finishes.',
-      icon: 'check-circle',
-      features: ['Interior Painting', 'Exterior Painting', 'Specialty Finishes'],
+      description: 'Revitalize your Lake Charles home with premium interior and exterior painting services tailored to your unique style and preferences.',
+      icon: 'home',
+      imageUrl: '/images/services/residential-painting.jpg',
+      features: [
+        'Interior Wall & Ceiling Painting',
+        'Exterior Siding & Trim Painting',
+        'Cabinet Refinishing & Painting',
+        'Deck & Fence Staining',
+        'Color Consultation Services'
+      ],
     },
     {
+      id: 'commercial',
       title: 'Commercial Painting',
-      description: 'Revitalize your business space with professional painting services.',
-      icon: 'users',
-      features: ['Office Painting', 'Retail Painting', 'Industrial Painting'],
+      description: 'Enhance your business image with professional commercial painting services that minimize disruption while maximizing visual impact.',
+      icon: 'building',
+      imageUrl: '/images/services/commercial-painting.jpg',
+      features: [
+        'Office & Retail Space Painting',
+        'Restaurant & Hospitality Painting',
+        'Industrial Facility Services',
+        'Exterior Commercial Painting',
+        'Low-VOC Commercial Solutions'
+      ],
     },
     {
+      id: 'specialty',
       title: 'Specialty Finishes',
-      description:
-        'Add unique character to your space with custom textures and decorative finishes.',
-      icon: 'plus',
-      features: ['Custom Textures', 'Decorative Finishes', 'Faux Finishes'],
+      description: 'Elevate your space with custom decorative finishes that add character, texture, and unmatched visual interest to any room.',
+      icon: 'palette',
+      imageUrl: '/images/services/specialty-finishes.jpg',
+      features: [
+        'Venetian Plaster & Textured Finishes',
+        'Faux Finishing Techniques',
+        'Accent Wall Designs',
+        'Metallic & Pearlescent Finishes',
+        'Custom Stenciling & Patterns'
+      ],
     },
   ],
 
@@ -70,81 +91,79 @@ export const siteConfig = {
   testimonials: [
     {
       name: 'Sarah Johnson',
-      role: 'Homeowner',
-      content:
-        'Ponce Painting transformed our home with their exceptional attention to detail and professional service.',
-      image: '/testimonials/sarah.jpg',
+      role: 'Lake Charles Homeowner',
+      content: 'Ponce Painting transformed our outdated living room into a stunning space we love showing off to family and friends. Their attention to detail and clean work process made the experience stress-free.',
+      image: '/testimonials/sarah-johnson.jpg',
     },
     {
       name: 'Michael Chen',
-      role: 'Business Owner',
-      content:
-        'Their commercial painting services helped us create a welcoming environment for our customers.',
-      image: '/testimonials/michael.jpg',
+      role: 'Restaurant Owner',
+      content: 'As a restaurant owner, I needed painters who could work around our schedule with minimal disruption. Ponce Painting delivered on time, on budget, and the fresh look has our customers raving.',
+      image: '/testimonials/michael-chen.jpg',
     },
     {
       name: 'Emily Rodriguez',
       role: 'Property Manager',
-      content: "The team's reliability and quality workmanship exceeded our expectations.",
-      image: '/testimonials/emily.jpg',
+      content: 'Managing multiple properties requires reliable contractors. Ponce Painting has become our go-to for all painting needs. Their consistent quality, fair pricing, and professionalism are unmatched in Lake Charles.',
+      image: '/testimonials/emma-wilson.jpg',
     },
   ],
 
   // Site features section
   features: [
     {
-      title: 'Quality Craftsmanship',
-      description:
-        'We use top-quality, eco-friendly paints and techniques that stand the test of time.',
+      title: 'Premium Quality Results',
+      description: 'We use industry-leading, eco-friendly paints and professional techniques that ensure stunning, long-lasting finishes for your home or business.',
       icon: 'check-circle',
     },
     {
-      title: 'Meticulous Attention',
-      description:
-        'Every detail—from proper prep to thorough cleanup—is managed to deliver a flawless finish.',
+      title: 'Detail-Oriented Approach',
+      description: 'From thorough preparation to meticulous application and complete cleanup, we ensure every project detail exceeds your expectations.',
       icon: 'eye',
     },
     {
-      title: 'Clear Communication',
-      description:
-        'We keep you informed throughout the project, so you always know how and when things will get done.',
+      title: 'Transparent Communication',
+      description: 'Experience stress-free project management with clear timelines, detailed estimates, and regular updates throughout your painting project.',
       icon: 'message-square',
-    },
-    {
-      title: 'Community Focus',
-      description:
-        "As your neighbors, we're dedicated to enhancing the look and value of our local community.",
-      icon: 'users',
-    },
+    }
   ],
 
   // Default metadata
   defaultMetadata: {
-    title: {
-      default: 'Ponce Painting - Professional Painting Services in Lake Charles',
-      template: '%s | Ponce Painting',
-    },
-    description:
-      'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+    title: 'Ponce Painting | Professional Painting Services in Lake Charles, LA',
+    description: 'Transform your space with Lake Charles\' top-rated painting service. Delivering flawless finishes, exceptional craftsmanship, and 5-star customer satisfaction since 2010.',
     keywords: [
-      'painting services in Lake Charles',
-      'professional painters',
-      'residential painting services',
-      'exterior painting',
-      'interior painting services',
-      'skilled painters',
-      'quality craftsmanship',
+      'Lake Charles painting contractor',
+      'professional painters Lake Charles',
+      'residential painting Lake Charles',
+      'commercial painting services Louisiana',
+      'exterior painting specialists',
+      'interior house painting',
+      'specialty paint finishes',
+      'painting company near me',
+      'best painters in Lake Charles',
+      'affordable painting services',
+      'Southwest Louisiana painters',
+      'cabinet refinishing Lake Charles',
+      'eco-friendly painting services',
+      'local painting company Lake Charles',
+      'house painters Lake Charles LA',
+      'commercial painting contractors',
+      'faux finishing Lake Charles',
+      'decorative paint techniques',
+      'office painting services',
+      'free painting estimates Lake Charles'
     ],
     authors: [{ name: 'Ponce Painting' }],
     creator: 'Ponce Painting',
+    ogImage: 'https://ponce-painting.com/og.jpg',
     openGraph: {
       type: 'website',
       locale: 'en_US',
       url: 'https://ponce-painting.com',
       siteName: 'Ponce Painting',
-      title: 'Ponce Painting - Professional Painting Services in Lake Charles',
-      description:
-        'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+      title: 'Ponce Painting | Professional Painting Services in Lake Charles, LA',
+      description: 'Transform your space with Lake Charles\' top-rated painting service. Delivering flawless finishes, exceptional craftsmanship, and 5-star customer satisfaction since 2010.',
       images: [
         {
           url: 'https://ponce-painting.com/og.jpg',
@@ -156,9 +175,8 @@ export const siteConfig = {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Ponce Painting - Professional Painting Services in Lake Charles',
-      description:
-        'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+      title: 'Ponce Painting | Professional Painting Services in Lake Charles, LA',
+      description: 'Transform your space with Lake Charles\' top-rated painting service. Delivering flawless finishes, exceptional craftsmanship, and 5-star customer satisfaction since 2010.',
       images: ['https://ponce-painting.com/og.jpg'],
       creator: '@poncepainting',
     },
@@ -171,7 +189,14 @@ export const siteConfig = {
   },
 
   // Additional site-specific properties
-  serviceAreas: ['Lake Charles', 'Sulphur', 'Iowa', 'Moss Bluff', 'Vinton', 'Westlake'],
+  serviceAreas: [
+    'Lake Charles',
+    'Sulphur',
+    'Iowa',
+    'Moss Bluff',
+    'Vinton',
+    'Westlake',
+  ],
 };
 
 // Navigation configuration
@@ -217,15 +242,15 @@ export const navigationConfig = {
 // Call to action sections
 export const ctaConfig = {
   primary: {
-    title: 'Ready to work with us?',
-    description: 'Contact us today for a free consultation and quote.',
-    buttonText: 'Get in Touch',
+    title: 'Ready to transform your space?',
+    description: 'Contact us today for a free, no-obligation consultation and detailed quote.',
+    buttonText: 'Get Your Free Quote',
     buttonLink: '/contact',
   },
   secondary: {
-    title: 'Want to see our work?',
-    description: 'Check out our portfolio of completed projects.',
-    buttonText: 'View Portfolio',
+    title: 'See our exceptional results',
+    description: 'Browse our portfolio of stunning transformations and completed projects.',
+    buttonText: 'View Our Gallery',
     buttonLink: '/gallery',
   },
 };

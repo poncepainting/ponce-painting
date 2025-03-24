@@ -40,7 +40,7 @@ const Footer = () => {
               <div className="mb-8">
                 <h2 className="text-lg font-semibold mb-4 text-white">{section.title}</h2>
                 <ul className="space-y-2">
-                  {section.links.map(link => (
+                  {section.links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
@@ -99,9 +99,6 @@ const Footer = () => {
             <p className="text-sm text-gray-400">
               &copy; {currentYear} {siteConfig.name}. All rights reserved.
             </p>
-            <Button href="/contact" variant="primary" size="lg" className="w-full md:w-auto">
-              Get in Touch
-            </Button>
           </div>
         </div>
       </Container>

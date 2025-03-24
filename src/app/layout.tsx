@@ -36,7 +36,9 @@ const themeCssVariables = createCssColorVariables();
 export const metadata: Metadata = {
   title: {
     template: `%s | ${siteConfig.name}`,
-    default: siteConfig.defaultMetadata.title,
+    default: typeof siteConfig.defaultMetadata.title === 'string' 
+      ? siteConfig.defaultMetadata.title 
+      : `${siteConfig.name} - Professional Painting Services`,
   },
   description: siteConfig.defaultMetadata.description,
   keywords: siteConfig.defaultMetadata.keywords,
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     description: siteConfig.defaultMetadata.description,
     images: [
       {
-        url: siteConfig.defaultMetadata.ogImage,
+        url: siteConfig.defaultMetadata.openGraph.images[0].url,
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -63,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.defaultMetadata.description,
-    images: [siteConfig.defaultMetadata.ogImage],
+    images: [siteConfig.defaultMetadata.openGraph.images[0].url],
   },
   icons: {
     icon: [
