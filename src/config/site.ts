@@ -6,114 +6,180 @@
 import { IconName } from './icons';
 
 // Type for social media platforms that matches available icon names
-export type SocialPlatform = 'facebook' | 'twitter' | 'instagram' | 'linkedin';
+export type SocialPlatform = 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'houzz';
 
 export const siteConfig = {
   // Basic site info
-  name: 'Your Business Name',
-  description: 'Providing exceptional services to your community since 2010',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yourbusiness.com',
+  name: 'Ponce Painting',
+  description: 'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+  url: 'https://ponce-painting.com',
+  ogImage: 'https://ponce-painting.com/og.jpg',
 
   // Contact information
   contact: {
-    email: 'contact@yourbusiness.com',
-    phone: '+1 (555) 123-4567',
-    address: '123 Business Street, City, State 12345',
+    email: 'info@poncepainting.com',
+    phone: '337-304-7936',
+    address: '123 Pine Street, Lake Charles, LA 70601',
   },
 
   // Social media
-  social: {
-    facebook: 'https://facebook.com/yourbusiness',
-    twitter: 'https://twitter.com/yourbusiness',
-    instagram: 'https://instagram.com/yourbusiness',
-    linkedin: 'https://linkedin.com/company/yourbusiness',
-  } as Record<SocialPlatform, string>,
+  links: {
+    facebook: 'https://facebook.com/poncepainting',
+    instagram: 'https://instagram.com/poncepainting',
+    linkedin: 'https://linkedin.com/company/poncepainting',
+    twitter: 'https://twitter.com/poncepainting',
+    houzz: 'https://houzz.com/pro/poncepainting',
+  },
 
   // Business hours
-  businessHours: [
-    { day: 'Monday', hours: '9:00 AM - 5:00 PM' },
-    { day: 'Tuesday', hours: '9:00 AM - 5:00 PM' },
-    { day: 'Wednesday', hours: '9:00 AM - 5:00 PM' },
-    { day: 'Thursday', hours: '9:00 AM - 5:00 PM' },
-    { day: 'Friday', hours: '9:00 AM - 5:00 PM' },
-    { day: 'Saturday', hours: '10:00 AM - 2:00 PM' },
-    { day: 'Sunday', hours: 'Closed' },
-  ],
+  businessHours: {
+    monday: '8:00 AM - 5:00 PM',
+    tuesday: '8:00 AM - 5:00 PM',
+    wednesday: '8:00 AM - 5:00 PM',
+    thursday: '8:00 AM - 5:00 PM',
+    friday: '8:00 AM - 5:00 PM',
+    saturday: 'Closed',
+    sunday: 'Closed',
+  },
 
   // Main services offered
   services: [
     {
-      id: 'service1',
-      title: 'Service One',
-      description: 'Detailed description of the first service you offer.',
-      icon: 'check-circle' as IconName,
-      imageUrl: '/images/services/service1.jpg',
+      title: 'Residential Painting',
+      description: 'Transform your home with personalized color consultations and flawless finishes.',
+      icon: 'home',
+      features: [
+        'Interior Painting',
+        'Exterior Painting',
+        'Specialty Finishes',
+      ],
     },
     {
-      id: 'service2',
-      title: 'Service Two',
-      description: 'Detailed description of the second service you offer.',
-      icon: 'clock' as IconName,
-      imageUrl: '/images/services/service2.jpg',
+      title: 'Commercial Painting',
+      description: 'Revitalize your business space with professional painting services.',
+      icon: 'building',
+      features: [
+        'Office Painting',
+        'Retail Painting',
+        'Industrial Painting',
+      ],
     },
     {
-      id: 'service3',
-      title: 'Service Three',
-      description: 'Detailed description of the third service you offer.',
-      icon: 'users' as IconName,
-      imageUrl: '/images/services/service3.jpg',
+      title: 'Specialty Finishes',
+      description: 'Add unique character to your space with custom textures and decorative finishes.',
+      icon: 'palette',
+      features: [
+        'Custom Textures',
+        'Decorative Finishes',
+        'Faux Finishes',
+      ],
     },
   ],
 
   // Testimonials
   testimonials: [
     {
-      id: 'testimonial1',
-      quote: "This business provided exceptional service. I couldn't be happier with the results!",
-      author: 'Jane Smith',
-      title: 'Happy Customer',
-      imageUrl: '/images/testimonials/jane.jpg',
+      name: 'Sarah Johnson',
+      role: 'Homeowner',
+      content: 'Ponce Painting transformed our home with their exceptional attention to detail and professional service.',
+      image: '/testimonials/sarah.jpg',
     },
     {
-      id: 'testimonial2',
-      quote: 'Professional, timely, and high-quality work. Highly recommended!',
-      author: 'John Doe',
-      title: 'Repeat Client',
-      imageUrl: '/images/testimonials/john.jpg',
+      name: 'Michael Chen',
+      role: 'Business Owner',
+      content: 'Their commercial painting services helped us create a welcoming environment for our customers.',
+      image: '/testimonials/michael.jpg',
+    },
+    {
+      name: 'Emily Rodriguez',
+      role: 'Property Manager',
+      content: 'The team\'s reliability and quality workmanship exceeded our expectations.',
+      image: '/testimonials/emily.jpg',
     },
   ],
 
   // Site features section
   features: [
     {
-      title: 'Quality Service',
-      description:
-        'We pride ourselves on delivering the highest quality service to all our customers.',
-      icon: 'check-circle' as IconName,
+      title: 'Quality Craftsmanship',
+      description: 'We use top-quality, eco-friendly paints and techniques that stand the test of time.',
+      icon: 'check-circle',
     },
     {
-      title: 'Fast Turnaround',
-      description: 'We understand the value of your time and deliver our services promptly.',
-      icon: 'clock' as IconName,
+      title: 'Meticulous Attention',
+      description: 'Every detail—from proper prep to thorough cleanup—is managed to deliver a flawless finish.',
+      icon: 'eye',
     },
     {
-      title: 'Customer Focused',
-      description:
-        'Our customers are at the heart of everything we do. Your satisfaction is our priority.',
-      icon: 'users' as IconName,
+      title: 'Clear Communication',
+      description: 'We keep you informed throughout the project, so you always know how and when things will get done.',
+      icon: 'message-square',
+    },
+    {
+      title: 'Community Focus',
+      description: 'As your neighbors, we\'re dedicated to enhancing the look and value of our local community.',
+      icon: 'users',
     },
   ],
 
   // Default metadata
   defaultMetadata: {
-    title: 'Your Business Name | Professional Services',
-    description: 'Professional services provider serving your community since 2010. We offer reliable, high-quality services with excellent customer support.',
-    keywords: 'professional services, local business, quality service, customer service, business solutions, service provider',
-    ogImage: '/images/og-image.jpg',
-    canonical: 'https://yourbusiness.com',
-    ogType: 'website',
-    twitterCard: 'summary_large_image',
+    title: {
+      default: 'Ponce Painting - Professional Painting Services in Lake Charles',
+      template: '%s | Ponce Painting',
+    },
+    description: 'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+    keywords: [
+      'painting services in Lake Charles',
+      'professional painters',
+      'residential painting services',
+      'exterior painting',
+      'interior painting services',
+      'skilled painters',
+      'quality craftsmanship',
+    ],
+    authors: [{ name: 'Ponce Painting' }],
+    creator: 'Ponce Painting',
+    openGraph: {
+      type: 'website',
+      locale: 'en_US',
+      url: 'https://ponce-painting.com',
+      siteName: 'Ponce Painting',
+      title: 'Ponce Painting - Professional Painting Services in Lake Charles',
+      description: 'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+      images: [
+        {
+          url: 'https://ponce-painting.com/og.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Ponce Painting - Professional Painting Services',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Ponce Painting - Professional Painting Services in Lake Charles',
+      description: 'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+      images: ['https://ponce-painting.com/og.jpg'],
+      creator: '@poncepainting',
+    },
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon-16x16.png',
+      apple: '/apple-touch-icon.png',
+    },
+    manifest: '/site.webmanifest',
   },
+
+  // Additional site-specific properties
+  serviceAreas: [
+    'Lake Charles',
+    'Sulphur',
+    'Iowa',
+    'Moss Bluff',
+    'Vinton',
+    'Westlake',
+  ],
 };
 
 // Navigation configuration

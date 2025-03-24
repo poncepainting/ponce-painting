@@ -10,11 +10,11 @@ import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import PageSEO from '@/components/PageSEO';
 
 export const metadata: Metadata = {
-  title: 'FAQ | Your Business Name',
-  description: 'Frequently asked questions about our services, process, and pricing.',
+  title: 'FAQ | Ponce Painting',
+  description: 'Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana.',
   openGraph: {
-    title: 'FAQ | Your Business Name',
-    description: 'Frequently asked questions about our services, process, and pricing.',
+    title: 'FAQ | Ponce Painting',
+    description: 'Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana.',
     type: 'website',
   },
 };
@@ -24,8 +24,8 @@ export default function FAQPage() {
     <main>
       {/* SEO Component */}
       <PageSEO 
-        title="FAQ | Your Business Name"
-        description="Frequently asked questions about our services, process, and pricing."
+        title="FAQ | Ponce Painting"
+        description="Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana."
         canonical="/faq"
         schemaType="other"
       />
@@ -35,7 +35,7 @@ export default function FAQPage() {
         <AnimationWrapper type="fade">
           <SectionHeading
             title="Frequently Asked Questions"
-            subtitle="Find answers to common questions about our services, process, and more."
+            subtitle="Get answers to common questions about our painting services, process, and more."
             useSubheading={true}
             subheadingText="YOUR QUESTIONS ANSWERED"
             accentColor="primary.600"
@@ -53,7 +53,7 @@ export default function FAQPage() {
               items={faqItems}
               categories={faqCategories}
               title="How can we help you?"
-              description="Browse through these topics to find the information you need. If you still have questions, feel free to contact us directly."
+              description="Browse through these topics to find the information you need about our painting services. If you still have questions, feel free to contact us directly."
               className="mb-16"
             />
           </AnimationWrapper>
@@ -62,10 +62,10 @@ export default function FAQPage() {
           <AnimationWrapper type="slide-up" delay={0.2}>
             <div className="text-center mt-12 p-8 bg-gray-50 rounded-xl border border-gray-200">
               <h3 className="text-2xl font-bold text-primary-800 mb-4">
-                Still have questions?
+                Ready to transform your space?
               </h3>
               <p className="text-lg text-primary-600 max-w-2xl mx-auto mb-8">
-                We are here to help. Contact our team for more information about our services or to schedule a consultation.
+                Contact us today for a free estimate and let us bring color to your life with our professional painting services.
               </p>
               <Button 
                 href="/contact" 
@@ -73,7 +73,7 @@ export default function FAQPage() {
                 size="lg"
                 className="!px-8"
               >
-                Contact Us
+                Get Free Estimate
               </Button>
             </div>
           </AnimationWrapper>

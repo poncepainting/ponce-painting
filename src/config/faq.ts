@@ -9,7 +9,28 @@ export interface FAQItem {
   category: string;
 }
 
-export const faqCategories = ['General', 'Services', 'Pricing', 'Process'];
+export const faqCategories = [
+  {
+    id: 'residential',
+    name: 'Residential Painting',
+    description: 'Common questions about our residential painting services.',
+  },
+  {
+    id: 'commercial',
+    name: 'Commercial Painting',
+    description: 'Information about our commercial painting services.',
+  },
+  {
+    id: 'process',
+    name: 'Our Process',
+    description: 'Learn about our painting process and what to expect.',
+  },
+  {
+    id: 'pricing',
+    name: 'Pricing & Estimates',
+    description: 'Questions about our pricing and estimate process.',
+  },
+];
 
 export const faqItems: FAQItem[] = [
   // General FAQs
@@ -98,6 +119,86 @@ export const faqItems: FAQItem[] = [
     question: 'Do you provide ongoing support after project completion?',
     answer: 'We are always available for ongoing support after project completion. We offer various maintenance packages and can provide training for your team if needed.',
     category: 'Process',
+  },
+
+  // Residential Painting FAQs
+  {
+    id: 'residential-interior',
+    categoryId: 'residential',
+    question: 'What residential interior painting services do you offer?',
+    answer: 'We offer comprehensive interior painting services including wall painting, trim work, ceilings, doors, and cabinets. Our services include color consultation, surface preparation, and thorough cleanup. We use high-quality paints and techniques to ensure a lasting finish.',
+    category: 'residential',
+  },
+  {
+    id: 'residential-exterior',
+    categoryId: 'residential',
+    question: 'Do you provide exterior residential painting services?',
+    answer: 'Yes, we specialize in exterior residential painting including siding, trim, decks, and fences. We properly prepare surfaces, use weather-resistant paints, and ensure all work is done safely and efficiently.',
+    category: 'residential',
+  },
+
+  // Commercial Painting FAQs
+  {
+    id: 'commercial-interior',
+    categoryId: 'commercial',
+    question: 'What commercial interior painting services do you provide?',
+    answer: 'Our commercial interior painting services include office spaces, retail locations, and industrial facilities. We work around your business hours to minimize disruption and use commercial-grade paints for durability.',
+    category: 'commercial',
+  },
+  {
+    id: 'commercial-exterior',
+    categoryId: 'commercial',
+    question: 'Can you handle large commercial exterior projects?',
+    answer: 'Yes, we have experience with commercial exterior projects of all sizes. We use industrial-grade equipment and materials, follow safety protocols, and can work around your business schedule.',
+    category: 'commercial',
+  },
+
+  // Painting Process FAQs
+  {
+    id: 'process-timeline',
+    categoryId: 'process',
+    question: 'How long does a typical painting project take?',
+    answer: 'Project timelines vary based on size and complexity. A typical interior room might take 1-2 days, while a complete house exterior could take 3-5 days. We provide detailed timelines during our free estimate.',
+    category: 'process',
+  },
+  {
+    id: 'process-prep',
+    categoryId: 'process',
+    question: 'What preparation work do you do before painting?',
+    answer: 'Our preparation process includes cleaning surfaces, repairing damage, sanding, priming, and protecting surrounding areas. We also move furniture and cover floors when needed. Proper preparation ensures a lasting finish.',
+    category: 'process',
+  },
+
+  // Pricing FAQs
+  {
+    id: 'pricing-estimate',
+    categoryId: 'pricing',
+    question: 'How do you determine painting project costs?',
+    answer: 'We provide free, detailed estimates based on square footage, surface condition, paint quality, and project complexity. Our estimates include all materials, labor, and preparation work.',
+    category: 'pricing',
+  },
+  {
+    id: 'pricing-payment',
+    categoryId: 'pricing',
+    question: 'What payment options do you accept?',
+    answer: 'We accept all major credit cards, checks, and cash. For larger projects, we offer payment plans and can work with your insurance company if needed.',
+    category: 'pricing',
+  },
+
+  // Process FAQs
+  {
+    id: 'process-warranty',
+    categoryId: 'process',
+    question: 'Do you offer any warranties on your work?',
+    answer: 'Yes, we offer a 2-year warranty on all our painting work. This covers peeling, cracking, and other paint failures due to our application. We also provide manufacturer warranties on the paint products we use.',
+    category: 'process',
+  },
+  {
+    id: 'process-schedule',
+    categoryId: 'process',
+    question: 'How do I schedule a painting project?',
+    answer: 'You can schedule a free estimate by calling us at 337-304-7936 or filling out our contact form. We\'ll visit your property, assess the work needed, and provide a detailed estimate within 24 hours.',
+    category: 'process',
   },
 ];
 

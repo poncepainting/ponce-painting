@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { FAQItem } from '@/config/faq';
+import { FAQItem, FAQCategory } from '@/types/faq';
 import FAQAccordion from './FAQAccordion';
 import { cn } from '@/utils';
 import TabButton from './ui/TabButton';
 
 interface FAQSectionProps {
   items: FAQItem[];
-  categories?: string[];
+  categories?: FAQCategory[];
   title?: string;
   description?: string;
   className?: string;
@@ -24,14 +24,18 @@ const FAQSection = ({
   // Get unique categories if not provided
   const uniqueCategories = categories.length > 0 
     ? categories 
-    : [...new Set(items.map(item => item.category))];
+    : [...new Set(items.map(item => item.category))].map(category => ({
+        id: category.toLowerCase().replace(/\s+/g, '-'),
+        name: category,
+        description: `Questions about ${category.toLowerCase()}`
+      }));
     
   const [activeCategory, setActiveCategory] = useState('All');
   
   // Simplified filtering logic
   const filteredItems = activeCategory === 'All' 
     ? items 
-    : items.filter(item => item.category === activeCategory);
+    : items.filter(item => item.categoryId === activeCategory);
 
   return (
     <div className={cn('w-full max-w-4xl mx-auto', className)}>
@@ -54,11 +58,11 @@ const FAQSection = ({
           
           {uniqueCategories.map((category) => (
             <TabButton
-              key={category}
-              isActive={activeCategory === category}
-              onClick={() => setActiveCategory(category)}
+              key={category.id}
+              isActive={activeCategory === category.id}
+              onClick={() => setActiveCategory(category.id)}
             >
-              {category}
+              {category.name}
             </TabButton>
           ))}
         </div>
@@ -68,7 +72,7 @@ const FAQSection = ({
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 divide-y divide-gray-200">
         {filteredItems.length > 0 ? (
           filteredItems.map((item, index) => (
-            <FAQAccordion key={index} item={item} index={index} />
+            <FAQAccordion key={item.id} item={item} index={index} />
           ))
         ) : (
           <div className="py-10 px-4 text-center text-gray-500">
