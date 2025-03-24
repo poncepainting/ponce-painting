@@ -6,20 +6,20 @@
 export const themeConfig = {
   // Colors - simplified color scheme
   colors: {
-    // Primary brand color - blue spectrum based on #7BAAF4
+    // Primary brand color - blue spectrum based on #006aae
     primary: {
-      DEFAULT: '#7BAAF4', // Base color
-      50: '#ECF2FD', // Lightest pastel - almost white
-      100: '#D9E6FC', // Lighter pastel
-      200: '#C5DAFC', // Light pastel (calculated)
-      300: '#B1CEF9', // Light (calculated)
-      400: '#9DC1F7', // Medium-light (calculated)
-      500: '#7BAAF4', // Base color
-      600: '#356BC0', // Dark mid-tone
-      700: '#2A5699', // Darker (calculated)
-      800: '#1A3560', // Darker deep
-      900: '#142848', // Darkest deep
-      950: '#0E1C31', // Even darker (calculated)
+      DEFAULT: '#006aae', // Base color
+      50: '#e6f2f9', // Lightest pastel - almost white
+      100: '#cce5f3', // Lighter pastel
+      200: '#99cbe7', // Light pastel 
+      300: '#66b0db', // Light
+      400: '#3396cf', // Medium-light
+      500: '#006aae', // Base color
+      600: '#00558c', // Darker mid-tone
+      700: '#00406a', // Darker
+      800: '#002b47', // Darker deep
+      900: '#001525', // Darkest deep
+      950: '#000a12', // Even darker
     },
     // Neutral colors - white, black, gray
     white: '#ffffff',
@@ -42,7 +42,7 @@ export const themeConfig = {
     success: '#16a34a',
     warning: '#ca8a04',
     error: '#dc2626',
-    info: '#7BAAF4', // Updated to match our base color
+    info: '#006aae', // Updated to match our base color
   },
 
   // Restricted background color options (per client request)
@@ -54,7 +54,7 @@ export const themeConfig = {
     },
     // 2 dark options
     dark: {
-      primary: '#1A3560', // Dark primary (primary.800)
+      primary: '#002b47', // Dark primary (primary.800)
       gray: '#1f2937', // Dark gray (gray.800)
     },
   },
