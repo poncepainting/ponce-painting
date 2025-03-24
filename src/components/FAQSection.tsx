@@ -72,7 +72,7 @@ const FAQSection = ({
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 divide-y divide-gray-200 max-w-7xl mx-auto">
         {filteredItems.length > 0 ? (
           filteredItems.map((item, index) => (
-            <FAQAccordion key={item.id} item={item} index={index} />
+            <FAQAccordion key={item.id} item={item} _index={index} />
           ))
         ) : (
           <div className="py-10 px-4 text-center text-gray-500">
