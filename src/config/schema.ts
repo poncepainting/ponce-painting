@@ -132,7 +132,7 @@ export const generateServicesSchema = () => {
  */
 export const generatePageSchema = (
   type: 'home' | 'about' | 'services' | 'contact' | 'service' | 'gallery',
-  additionalData?: any
+  additionalData?: Record<string, unknown>
 ) => {
   const baseSchemas = [generateWebsiteSchema(), generateOrganizationSchema()];
 

@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import Container from '@/components/ui/Container';
-import OptimizedImage from '@/components/ui/OptimizedImage';
 import { siteConfig } from '@/config/site';
 import Section from '@/components/ui/Section';
 import { generateServicesSchema } from '@/config/schema';
@@ -10,7 +7,7 @@ import SectionHeading from '@/components/SectionHeading';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import Button from '@/components/ui/Button';
 import HoverCard from '@/components/ui/HoverCard';
-import { Icon } from '@/config/icons';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 export const metadata = {
   title: `Services | ${siteConfig.name}`,

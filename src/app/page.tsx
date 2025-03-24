@@ -1,9 +1,6 @@
-import Link from 'next/link';
-import OptimizedImage from '@/components/ui/OptimizedImage';
 import { Icon } from '@/config/icons';
 import { imageSizes, imageQuality, placeholderImages } from '@/config/images';
 import { siteConfig, ctaConfig } from '@/config/site';
-import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
 import InteractiveButton from '@/components/ui/InteractiveButton';
@@ -16,6 +13,7 @@ import HomeFAQSection from '@/components/HomeFAQSection';
 import HeroSection from '@/components/HeroSection';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import HoverCard from '@/components/ui/HoverCard';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 
 export default function Home() {
   return (

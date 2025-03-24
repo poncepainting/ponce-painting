@@ -1,9 +1,9 @@
 'use client';
 
-import { useMemo } from 'react';
+import React from 'react';
 
 interface SchemaMarkupProps {
-  schemas: any[];
+  schemas: Record<string, unknown>[];
 }
 
 /**
@@ -12,11 +12,6 @@ interface SchemaMarkupProps {
  * @param schemas Array of schema.org structured data objects
  */
 const SchemaMarkup = ({ schemas }: SchemaMarkupProps) => {
-  // Memoize to prevent unnecessary re-renders
-  const jsonLdString = useMemo(() => {
-    return schemas.map(schema => JSON.stringify(schema)).join('');
-  }, [schemas]);
-
   if (!schemas.length) return null;
 
   return (

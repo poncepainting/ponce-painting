@@ -1,11 +1,11 @@
 import { QuoteFormData } from '@/types/forms';
-import { formConfig, FormHandlerType, FormType } from '@/config/forms';
+import { formConfig, FormType } from '@/config/forms';
 import emailjs from '@emailjs/browser';
 
 export type FormSubmissionResult = {
   success: boolean;
   message: string;
-  data?: any;
+  data?: unknown;
 };
 
 /**

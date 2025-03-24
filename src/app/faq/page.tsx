@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { siteConfig } from '@/config/site';
 import { faqItems, faqCategories } from '@/config/faq';
 import FAQSection from '@/components/FAQSection';
-import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
-import Button from '@/components/ui/Button';
 import SectionHeading from '@/components/SectionHeading';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import PageSEO from '@/components/PageSEO';
+import Container from '@/components/ui/Container';
+import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'FAQ | Ponce Painting',

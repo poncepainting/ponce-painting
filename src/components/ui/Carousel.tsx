@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Slider from 'react-slick';
 import { themeConfig } from '@/config/theme';
 import { generateCarouselStyles, CustomPaging } from '@/utils';
@@ -63,10 +63,10 @@ const Carousel: React.FC<CarouselProps> = ({
   const [isDesktop, setIsDesktop] = useState(true);
 
   // Get the numerical breakpoint value
-  const getBreakpointValue = () => {
+  const getBreakpointValue = useCallback(() => {
     const breakpointMap: { [key: string]: string } = themeConfig.breakpoints;
     return parseInt(breakpointMap[breakpoint] || breakpointMap.md);
-  };
+  }, [breakpoint]);
 
   // Check if we're on desktop or mobile based on the breakpoint
   useEffect(() => {
@@ -82,7 +82,7 @@ const Carousel: React.FC<CarouselProps> = ({
     return () => {
       window.removeEventListener('resize', checkIfDesktop);
     };
-  }, [breakpoint]);
+  }, [breakpoint, getBreakpointValue]);
 
   // Configure carousel settings
   const settings = {
