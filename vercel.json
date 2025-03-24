@@ -1,7 +1,7 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "next build && next-sitemap",
+  "buildCommand": "next build && next-sitemap --config next-sitemap.config.mjs",
   "outputDirectory": ".next",
   "env": {
     "VERCEL": "1"

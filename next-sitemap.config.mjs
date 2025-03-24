@@ -1,39 +1,25 @@
-import { siteConfig } from './src/config/site.js';
-import { getSiteUrl } from './src/utils/themeUtils.js';
+import { siteConfig } from './src/config/site';
+import { getSiteUrl } from './src/utils/themeUtils';
 import path from 'path';
 import fs from 'fs';
 
 const siteUrl = getSiteUrl();
 
-// Function to load the paths that should be excluded from indexing
-const getNonIndexedPaths = async () => {
-  try {
-    const seoConfigPath = path.resolve(process.cwd(), '.next/server/chunks/config/seo.js');
-    
-    if (fs.existsSync(seoConfigPath)) {
-      // Use dynamic import for ESM compatibility
-      const seoConfig = await import(seoConfigPath);
-      return seoConfig.nonIndexedPaths || [];
-    }
-  } catch (error) {
-    console.warn('Could not load the nonIndexedPaths, falling back to default exclusions');
-  }
-  
-  return [
-    '/login',
-    '/signup',
-    '/register',
-    '/thank-you',
-    '/confirmation',
-    '/admin',
-    '/admin/*',
-    '/preview',
-    '/preview/*',
-    '/api/*',
-    '/404',
-    '/500',
-  ];
-};
+// Simplified non-indexed paths that don't rely on dynamic imports
+const nonIndexedPaths = [
+  '/login',
+  '/signup',
+  '/register',
+  '/thank-you',
+  '/confirmation',
+  '/admin',
+  '/admin/*',
+  '/preview',
+  '/preview/*',
+  '/api/*',
+  '/404',
+  '/500',
+];
 
 /** @type {import('next-sitemap').IConfig} */
 export default {
@@ -51,7 +37,7 @@ export default {
     ],
   },
   exclude: [
-    ...getNonIndexedPaths(),
+    ...nonIndexedPaths,
     '/admin/*',
     '/private/*',
     '/api/*',
