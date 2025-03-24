@@ -28,7 +28,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: themeConfig.colors.primary[600],
+  themeColor: '#ffffff',
 };
 
 // Generate theme CSS variables
