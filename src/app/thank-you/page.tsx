@@ -11,12 +11,16 @@ export const metadata = {
 };
 
 export default function ThankYouPage() {
+  // Use string literals for SEO props to ensure they're the correct type
+  const seoTitle = typeof metadata.title === 'string' ? metadata.title : `Thank You | ${siteConfig.name}`;
+  const seoDescription = typeof metadata.description === 'string' ? metadata.description : 'Thank you for contacting us. We appreciate your message.';
+
   return (
     <main>
       {/* SEO Component with noindex, nofollow */}
       <SEO
-        title={metadata.title}
-        description={metadata.description}
+        title={seoTitle}
+        description={seoDescription}
         canonical="/thank-you"
         noIndex={true}
         noFollow={true}

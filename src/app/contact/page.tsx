@@ -21,12 +21,16 @@ export default function ContactPage() {
   // Generate contact page schema
   const contactSchemas = generatePageSchema('contact');
   
+  // Use string literals for SEO props to ensure they're the correct type
+  const seoTitle = typeof metadata.title === 'string' ? metadata.title : `Contact Us | ${siteConfig.name}`;
+  const seoDescription = typeof metadata.description === 'string' ? metadata.description : 'Get in touch with our team for quotes, questions, or support.';
+
   return (
     <main>
       {/* SEO Component */}
       <PageSEO
-        title={metadata.title}
-        description={metadata.description}
+        title={seoTitle}
+        description={seoDescription}
         canonical="/contact"
         schemaType="contact"
       />

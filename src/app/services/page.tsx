@@ -18,12 +18,16 @@ export default function ServicesPage() {
   // Generate schema for all services
   const servicesSchemas = generateServicesSchema();
   
+  // Use string literals for SEO props to ensure they're the correct type
+  const seoTitle = typeof metadata.title === 'string' ? metadata.title : `Services | ${siteConfig.name}`;
+  const seoDescription = typeof metadata.description === 'string' ? metadata.description : 'Explore our range of professional services tailored to your needs.';
+  
   return (
     <main>
       {/* SEO Component */}
       <PageSEO
-        title={metadata.title}
-        description={metadata.description}
+        title={seoTitle}
+        description={seoDescription}
         canonical="/services"
         schemaType="services"
       />

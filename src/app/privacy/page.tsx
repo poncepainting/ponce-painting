@@ -13,13 +13,17 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   const lastUpdated = 'January 1, 2023'; // Update this with your actual date
+  
+  // Use string literals for SEO props to ensure they're the correct type
+  const seoTitle = `Privacy Policy | ${siteConfig.name}`;
+  const seoDescription = 'Learn how we collect, use, and protect your personal information.';
 
   return (
     <main>
       {/* SEO Component */}
       <PageSEO
-        title={metadata.title}
-        description={metadata.description}
+        title={seoTitle}
+        description={seoDescription}
         canonical="/privacy"
         schemaType="other"
       />

@@ -38,12 +38,16 @@ export default function AboutPage() {
     }
   ];
   
+  // Use string literals for SEO props to ensure they're the correct type
+  const seoTitle = typeof metadata.title === 'string' ? metadata.title : `About Us | ${siteConfig.name}`;
+  const seoDescription = typeof metadata.description === 'string' ? metadata.description : 'Learn about our company, our mission, and our team.';
+
   return (
     <main>
       {/* SEO Component */}
       <PageSEO
-        title={metadata.title}
-        description={metadata.description}
+        title={seoTitle}
+        description={seoDescription}
         canonical="/about"
         schemaType="about"
       />
