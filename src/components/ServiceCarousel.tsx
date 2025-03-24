@@ -30,34 +30,37 @@ const ServiceCarousel: FC<ServiceCarouselProps> = ({
         autoplay={autoplay}
         className="pb-2"
       >
-        {siteConfig.services.map(service => (
-          <div 
-            className="bg-white rounded-xl overflow-hidden border border-gray-200 h-full transition-all duration-300 hover:shadow-md hover:border-gray-300"
-            key={service.id}
-          >
-            <div className="relative h-48">
-              <OptimizedImage
-                src={service.imageUrl}
-                alt={service.title}
-                width={600}
-                height={400}
-                className="object-cover"
-                fallbackText="Service image"
-                useFill={true}
-              />
+        {siteConfig.services.map(service => {
+          const serviceSlug = service.title.toLowerCase().replace(/\s+/g, '-');
+          return (
+            <div 
+              className="bg-white rounded-xl overflow-hidden border border-gray-200 h-full transition-all duration-300 hover:shadow-md hover:border-gray-300"
+              key={service.title}
+            >
+              <div className="relative h-48">
+                <OptimizedImage
+                  src={`/images/services/${serviceSlug}.jpg`}
+                  alt={service.title}
+                  width={600}
+                  height={400}
+                  className="object-cover"
+                  fallbackText="Service image"
+                  useFill={true}
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-primary-800">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <Link
+                  href={`/services/${serviceSlug}`}
+                  className="text-primary-600 hover:text-primary-700"
+                >
+                  Learn more →
+                </Link>
+              </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-primary-800">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
-              <Link
-                href={`/services/${service.id}`}
-                className="text-primary-600 hover:text-primary-700"
-              >
-                Learn more →
-              </Link>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </Carousel>
     </div>
   );
