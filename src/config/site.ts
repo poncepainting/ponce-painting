@@ -6,12 +6,13 @@
 import { IconName } from './icons';
 
 // Type for social media platforms that matches available icon names
-export type SocialPlatform = 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'houzz';
+export type SocialPlatform = 'facebook' | 'twitter' | 'instagram' | 'linkedin';
 
 export const siteConfig = {
   // Basic site info
   name: 'Ponce Painting',
-  description: 'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+  description:
+    'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
   url: 'https://ponce-painting.com',
   ogImage: 'https://ponce-painting.com/og.jpg',
 
@@ -28,7 +29,6 @@ export const siteConfig = {
     instagram: 'https://instagram.com/poncepainting',
     linkedin: 'https://linkedin.com/company/poncepainting',
     twitter: 'https://twitter.com/poncepainting',
-    houzz: 'https://houzz.com/pro/poncepainting',
   },
 
   // Business hours
@@ -46,33 +46,23 @@ export const siteConfig = {
   services: [
     {
       title: 'Residential Painting',
-      description: 'Transform your home with personalized color consultations and flawless finishes.',
-      icon: 'home',
-      features: [
-        'Interior Painting',
-        'Exterior Painting',
-        'Specialty Finishes',
-      ],
+      description:
+        'Transform your home with personalized color consultations and flawless finishes.',
+      icon: 'check-circle',
+      features: ['Interior Painting', 'Exterior Painting', 'Specialty Finishes'],
     },
     {
       title: 'Commercial Painting',
       description: 'Revitalize your business space with professional painting services.',
-      icon: 'building',
-      features: [
-        'Office Painting',
-        'Retail Painting',
-        'Industrial Painting',
-      ],
+      icon: 'users',
+      features: ['Office Painting', 'Retail Painting', 'Industrial Painting'],
     },
     {
       title: 'Specialty Finishes',
-      description: 'Add unique character to your space with custom textures and decorative finishes.',
-      icon: 'palette',
-      features: [
-        'Custom Textures',
-        'Decorative Finishes',
-        'Faux Finishes',
-      ],
+      description:
+        'Add unique character to your space with custom textures and decorative finishes.',
+      icon: 'plus',
+      features: ['Custom Textures', 'Decorative Finishes', 'Faux Finishes'],
     },
   ],
 
@@ -81,19 +71,21 @@ export const siteConfig = {
     {
       name: 'Sarah Johnson',
       role: 'Homeowner',
-      content: 'Ponce Painting transformed our home with their exceptional attention to detail and professional service.',
+      content:
+        'Ponce Painting transformed our home with their exceptional attention to detail and professional service.',
       image: '/testimonials/sarah.jpg',
     },
     {
       name: 'Michael Chen',
       role: 'Business Owner',
-      content: 'Their commercial painting services helped us create a welcoming environment for our customers.',
+      content:
+        'Their commercial painting services helped us create a welcoming environment for our customers.',
       image: '/testimonials/michael.jpg',
     },
     {
       name: 'Emily Rodriguez',
       role: 'Property Manager',
-      content: 'The team\'s reliability and quality workmanship exceeded our expectations.',
+      content: "The team's reliability and quality workmanship exceeded our expectations.",
       image: '/testimonials/emily.jpg',
     },
   ],
@@ -102,22 +94,26 @@ export const siteConfig = {
   features: [
     {
       title: 'Quality Craftsmanship',
-      description: 'We use top-quality, eco-friendly paints and techniques that stand the test of time.',
+      description:
+        'We use top-quality, eco-friendly paints and techniques that stand the test of time.',
       icon: 'check-circle',
     },
     {
       title: 'Meticulous Attention',
-      description: 'Every detail—from proper prep to thorough cleanup—is managed to deliver a flawless finish.',
+      description:
+        'Every detail—from proper prep to thorough cleanup—is managed to deliver a flawless finish.',
       icon: 'eye',
     },
     {
       title: 'Clear Communication',
-      description: 'We keep you informed throughout the project, so you always know how and when things will get done.',
+      description:
+        'We keep you informed throughout the project, so you always know how and when things will get done.',
       icon: 'message-square',
     },
     {
       title: 'Community Focus',
-      description: 'As your neighbors, we\'re dedicated to enhancing the look and value of our local community.',
+      description:
+        "As your neighbors, we're dedicated to enhancing the look and value of our local community.",
       icon: 'users',
     },
   ],
@@ -128,7 +124,8 @@ export const siteConfig = {
       default: 'Ponce Painting - Professional Painting Services in Lake Charles',
       template: '%s | Ponce Painting',
     },
-    description: 'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+    description:
+      'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
     keywords: [
       'painting services in Lake Charles',
       'professional painters',
@@ -146,7 +143,8 @@ export const siteConfig = {
       url: 'https://ponce-painting.com',
       siteName: 'Ponce Painting',
       title: 'Ponce Painting - Professional Painting Services in Lake Charles',
-      description: 'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+      description:
+        'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
       images: [
         {
           url: 'https://ponce-painting.com/og.jpg',
@@ -159,7 +157,8 @@ export const siteConfig = {
     twitter: {
       card: 'summary_large_image',
       title: 'Ponce Painting - Professional Painting Services in Lake Charles',
-      description: 'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
+      description:
+        'Professional painting services in Lake Charles and Southwest Louisiana since 2010. Bringing color to your life with quality craftsmanship and meticulous attention to detail.',
       images: ['https://ponce-painting.com/og.jpg'],
       creator: '@poncepainting',
     },
@@ -172,14 +171,7 @@ export const siteConfig = {
   },
 
   // Additional site-specific properties
-  serviceAreas: [
-    'Lake Charles',
-    'Sulphur',
-    'Iowa',
-    'Moss Bluff',
-    'Vinton',
-    'Westlake',
-  ],
+  serviceAreas: ['Lake Charles', 'Sulphur', 'Iowa', 'Moss Bluff', 'Vinton', 'Westlake'],
 };
 
 // Navigation configuration
@@ -205,9 +197,9 @@ export const navigationConfig = {
     {
       title: 'Services',
       links: [
-        { label: 'Service One', href: '/services/service1' },
-        { label: 'Service Two', href: '/services/service2' },
-        { label: 'Service Three', href: '/services/service3' },
+        { label: 'Residential Painting', href: '/services#residential' },
+        { label: 'Commercial Painting', href: '/services#commercial' },
+        { label: 'Specialty Finishes', href: '/services#specialty' },
         { label: 'All Services', href: '/services' },
       ],
     },
@@ -216,8 +208,7 @@ export const navigationConfig = {
       links: [
         { label: 'Terms of Service', href: '/terms' },
         { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Cookie Policy', href: '/cookies' },
-        { label: 'Accessibility', href: '/accessibility' },
+        { label: 'Sitemap', href: '/sitemap.xml' },
       ],
     },
   ],

@@ -19,7 +19,7 @@ export const metadata = {
 export default function ContactPage() {
   // Generate contact page schema
   const contactSchemas = generatePageSchema('contact');
-  
+
   return (
     <main>
       {/* SEO Component */}
@@ -29,10 +29,10 @@ export default function ContactPage() {
         canonical="/contact"
         schemaType="contact"
       />
-      
+
       {/* Schema markup specific to contact page */}
       <SchemaMarkup schemas={contactSchemas} />
-      
+
       {/* Contact Hero Section */}
       <Section className="bg-primary-50 py-20">
         <AnimationWrapper type="fade">
@@ -46,7 +46,7 @@ export default function ContactPage() {
           />
         </AnimationWrapper>
       </Section>
-      
+
       {/* Contact Information and Form */}
       <Section name="contact-details" bgColor="light.white" className="py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -111,10 +111,10 @@ export default function ContactPage() {
                     <div className="pt-6 border-t border-gray-200">
                       <h3 className="font-semibold mb-4">Business Hours</h3>
                       <ul className="space-y-2">
-                        {siteConfig.businessHours.map((item, index) => (
-                          <li key={index} className="flex justify-between">
-                            <span className="text-gray-600">{item.day}</span>
-                            <span className="font-semibold">{item.hours}</span>
+                        {Object.entries(siteConfig.businessHours).map(([day, hours]) => (
+                          <li key={day} className="flex justify-between">
+                            <span className="text-gray-600 capitalize">{day}</span>
+                            <span className="font-semibold">{hours}</span>
                           </li>
                         ))}
                       </ul>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                     <div className="pt-6 border-t border-gray-200">
                       <h3 className="font-semibold mb-4">Follow Us</h3>
                       <div className="flex space-x-4">
-                        {Object.entries(siteConfig.social).map(([platform, url]) => (
+                        {Object.entries(siteConfig.links).map(([platform, url]) => (
                           <a
                             key={platform}
                             href={url}
@@ -147,7 +147,9 @@ export default function ContactPage() {
 
           {/* Contact Form Placeholder */}
           <AnimationWrapper type="slide-up" delay={0.2}>
-            <div className={`bg-white border border-gray-200 p-8 ${designSystem.borderRadius.form}`}>
+            <div
+              className={`bg-white border border-gray-200 p-8 ${designSystem.borderRadius.form}`}
+            >
               <h2 className="text-2xl font-bold mb-6 text-primary-800">Send Us a Message</h2>
               <p className="text-gray-600 mb-6">
                 This is a placeholder for a contact form. You can implement a form here with fields
@@ -155,22 +157,30 @@ export default function ContactPage() {
               </p>
 
               <div className="space-y-4">
-                <div className={`border border-gray-300 ${designSystem.borderRadius.input} p-3 bg-gray-50`}>
+                <div
+                  className={`border border-gray-300 ${designSystem.borderRadius.input} p-3 bg-gray-50`}
+                >
                   <label className="block text-sm font-medium text-gray-600 mb-1">Name</label>
                   <p className="text-gray-500 italic text-sm">Name field would go here</p>
                 </div>
 
-                <div className={`border border-gray-300 ${designSystem.borderRadius.input} p-3 bg-gray-50`}>
+                <div
+                  className={`border border-gray-300 ${designSystem.borderRadius.input} p-3 bg-gray-50`}
+                >
                   <label className="block text-sm font-medium text-gray-600 mb-1">Email</label>
                   <p className="text-gray-500 italic text-sm">Email field would go here</p>
                 </div>
 
-                <div className={`border border-gray-300 ${designSystem.borderRadius.input} p-3 bg-gray-50`}>
+                <div
+                  className={`border border-gray-300 ${designSystem.borderRadius.input} p-3 bg-gray-50`}
+                >
                   <label className="block text-sm font-medium text-gray-600 mb-1">Subject</label>
                   <p className="text-gray-500 italic text-sm">Subject field would go here</p>
                 </div>
 
-                <div className={`border border-gray-300 ${designSystem.borderRadius.input} p-3 bg-gray-50`}>
+                <div
+                  className={`border border-gray-300 ${designSystem.borderRadius.input} p-3 bg-gray-50`}
+                >
                   <label className="block text-sm font-medium text-gray-600 mb-1">Message</label>
                   <p className="text-gray-500 italic text-sm">Message field would go here</p>
                 </div>
@@ -190,7 +200,7 @@ export default function ContactPage() {
           </AnimationWrapper>
         </div>
       </Section>
-      
+
       {/* Map Section */}
       <Section className="bg-white py-16">
         <AnimationWrapper type="fade">
@@ -202,15 +212,15 @@ export default function ContactPage() {
             accentColor="primary.600"
           />
         </AnimationWrapper>
-        
+
         <AnimationWrapper type="slide-up" delay={0.2}>
           <div className="bg-primary-50 p-4 rounded-xl border border-primary-100 h-[400px] flex items-center justify-center">
             <div className="text-center p-8">
               <Icon name="map-pin" size={48} className="text-primary-600 mb-4 mx-auto" />
               <h3 className="text-xl font-bold mb-2 text-primary-800">Map Placeholder</h3>
               <p className="text-gray-600 max-w-md mx-auto">
-                This is a placeholder for a map component. You can integrate Google Maps, Mapbox, or another
-                mapping service to show your business location.
+                This is a placeholder for a map component. You can integrate Google Maps, Mapbox, or
+                another mapping service to show your business location.
               </p>
             </div>
           </div>

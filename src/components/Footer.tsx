@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { navigationConfig, siteConfig, type SocialPlatform } from '@/config/site';
 import { Icon } from '@/config/icons';
 import Container from './ui/Container';
-import type { IconName } from '@/config/icons';
+import Button from './ui/Button';
 
 const Footer = () => {
   const { footerNav } = navigationConfig;
@@ -15,11 +15,11 @@ const Footer = () => {
       <Container className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Business info */}
-          <div className="col-span-1">
+          <div key="business-info" className="col-span-1">
             <h3 className="text-xl font-bold mb-4">{siteConfig.name}</h3>
-            <p className="mb-4 text-gray-300">{siteConfig.description}</p>
+            <p className="mb-4 text-gray-300 text-sm">{siteConfig.description}</p>
             <div className="flex space-x-4">
-              {Object.entries(siteConfig.social).map(([platform, url]) => (
+              {Object.entries(siteConfig.links).map(([platform, url]) => (
                 <a
                   key={platform}
                   href={url}
@@ -38,13 +38,13 @@ const Footer = () => {
           {footerNav.map(section => (
             <div key={section.title} className="col-span-1">
               <div className="mb-8">
-                <h2 className="text-xl font-semibold mb-4 text-white">{section.title}</h2>
-                <ul className="space-y-3">
-                  {section.links.map((link) => (
-                    <li key={link.label}>
+                <h2 className="text-lg font-semibold mb-4 text-white">{section.title}</h2>
+                <ul className="space-y-2">
+                  {section.links.map(link => (
+                    <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-gray-300 hover:text-white transition-colors duration-200"
+                        className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
                       >
                         {link.label}
                       </Link>
@@ -59,19 +59,19 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-300">
-            <div className="flex items-center">
+            <div key="address" className="flex items-center">
               <Icon name="map-pin" className="mr-2 text-gray-400" size={16} />
-              <span>{siteConfig.contact.address}</span>
+              <span className="text-sm">{siteConfig.contact.address}</span>
             </div>
-            <div className="flex items-center">
+            <div key="phone" className="flex items-center">
               <Icon name="phone" className="mr-2 text-gray-400" size={16} />
-              <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-white">
+              <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-white text-sm">
                 {siteConfig.contact.phone}
               </a>
             </div>
-            <div className="flex items-center">
+            <div key="email" className="flex items-center">
               <Icon name="mail" className="mr-2 text-gray-400" size={16} />
-              <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white">
+              <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white text-sm">
                 {siteConfig.contact.email}
               </a>
             </div>
@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="pt-8 mt-8 border-t border-gray-700 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {/* Social links */}
-            {Object.entries(siteConfig.social).map(([platform, url]) => (
+            {Object.entries(siteConfig.links).map(([platform, url]) => (
               <a
                 key={platform}
                 href={url}
@@ -91,13 +91,18 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label={`${platform} page`}
               >
-                <Icon name={platform as SocialPlatform} className="h-6 w-6" />
+                <Icon name={platform as SocialPlatform} className="h-5 w-5" />
               </a>
             ))}
           </div>
-          <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-            &copy; {currentYear} {siteConfig.name}. All rights reserved.
-          </p>
+          <div className="mt-8 md:mt-0 md:order-1 flex flex-col md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-4">
+            <p className="text-sm text-gray-400">
+              &copy; {currentYear} {siteConfig.name}. All rights reserved.
+            </p>
+            <Button href="/contact" variant="primary" size="lg" className="w-full md:w-auto">
+              Get in Touch
+            </Button>
+          </div>
         </div>
       </Container>
     </footer>

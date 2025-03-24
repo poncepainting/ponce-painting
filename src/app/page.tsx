@@ -28,15 +28,15 @@ export default function Home() {
         ogImage={siteConfig.defaultMetadata.ogImage}
         schemaType="home"
       />
-      
+
       {/* Hero Section */}
       <HeroSection
         title={siteConfig.name}
         subtitle={siteConfig.description}
         imageUrl="/images/hero/hero-image.jpg"
         imageAlt="Hero image showing business environment"
-        primaryCTA={{ text: "Contact Us", href: "/contact" }}
-        secondaryCTA={{ text: "Our Services", href: "/services" }}
+        primaryCTA={{ text: 'Contact Us', href: '/contact' }}
+        secondaryCTA={{ text: 'Our Services', href: '/services' }}
         height="tall"
         showQuoteForm={true}
         textAlignment="left"
@@ -55,14 +55,10 @@ export default function Home() {
             subtitleClass="text-gray-600"
           />
         </AnimationWrapper>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
           {siteConfig.features.map((feature, index) => (
-            <AnimationWrapper 
-              key={index} 
-              type="scale" 
-              delay={index * 0.15}
-            >
+            <AnimationWrapper key={index} type="scale" delay={index * 0.15}>
               <HoverCard className="h-full">
                 <div className="flex flex-col items-center text-center p-6 border border-primary-100 rounded-xl h-full bg-white">
                   <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4">
@@ -90,16 +86,13 @@ export default function Home() {
             subtitleClass="text-gray-600"
           />
         </AnimationWrapper>
-        
+
         <AnimationWrapper type="fade" delay={0.2}>
           <ServiceCarousel />
         </AnimationWrapper>
-        
+
         <AnimationWrapper type="slide-up" delay={0.3} className="text-center mt-8">
-          <InteractiveButton 
-            href="/services" 
-            variant="primary"
-          >
+          <InteractiveButton href="/services" variant="primary">
             View All Services
           </InteractiveButton>
         </AnimationWrapper>
@@ -118,7 +111,7 @@ export default function Home() {
             subtitleClass="text-gray-600"
           />
         </AnimationWrapper>
-        
+
         <AnimationWrapper type="fade" delay={0.2}>
           <TestimonialCarousel autoplay={true} />
         </AnimationWrapper>
@@ -137,11 +130,11 @@ export default function Home() {
             subtitleClass="text-primary-600"
           />
         </AnimationWrapper>
-        
+
         <AnimationWrapper type="fade" delay={0.2}>
-          <HomeFAQSection 
-            maxItems={6} 
-            showCategories={true} 
+          <HomeFAQSection
+            maxItems={6}
+            showCategories={true}
             categories={['General', 'Services', 'Pricing']}
             showAllOption={true}
           />
@@ -160,13 +153,13 @@ export default function Home() {
             onDarkBackground={true}
           />
         </AnimationWrapper>
-        
+
         <AnimationWrapper type="scale" delay={0.2} className="text-center">
           <Button
             href={ctaConfig.primary.buttonLink}
-            variant="outline"
+            variant="primary"
             size="lg"
-            className="!bg-white !text-primary-600 !border-white hover:!bg-gray-50 !px-8 !py-4"
+            className="bg-white text-primary-600 border border-white hover:bg-gray-50 rounded-full !px-8 !py-4"
           >
             {ctaConfig.primary.buttonText}
           </Button>
