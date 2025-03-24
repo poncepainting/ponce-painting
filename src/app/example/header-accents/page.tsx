@@ -15,11 +15,17 @@ export default function HeaderAccentsPage() {
       <HeroSection
         title="Header Accents"
         subtitle="Consistently styled accent elements for headers"
-        description="Learn how to use the HeaderAccent and SectionHeading components to create visually consistent header styles that follow your design system."
-        ctaText="View Examples"
-        ctaLink="#examples"
-        secondaryCtaText="Design System"
-        secondaryCtaLink="#design-system"
+        imageUrl="/images/hero/hero-image.jpg"
+        imageAlt="Header accents example"
+        primaryCTA={{
+          text: "View Examples",
+          href: "#examples"
+        }}
+        secondaryCTA={{
+          text: "Design System",
+          href: "#design-system"
+        }}
+        height="medium"
       />
 
       <Section>
