@@ -14,7 +14,7 @@ const ContactStep = ({ formData, handleChange, handleBack }: FormStepProps) => {
         placeholder="John Doe"
         required
       />
-      
+
       <FormField
         id="email"
         name="email"
@@ -25,23 +25,13 @@ const ContactStep = ({ formData, handleChange, handleBack }: FormStepProps) => {
         placeholder="johndoe@example.com"
         required
       />
-      
+
       <div className="flex flex-col sm:flex-row gap-3 mt-6">
-        <Button
-          type="button"
-          variant="outline"
-          onClick={handleBack}
-          size="lg"
-        >
+        <Button type="button" variant="outline" onClick={handleBack} size="lg">
           Back
         </Button>
-        
-        <Button
-          type="submit"
-          variant="primary"
-          className="flex-1"
-          size="lg"
-        >
+
+        <Button type="submit" variant="primary" className="flex-1" size="lg">
           Continue
         </Button>
       </div>
@@ -49,4 +39,4 @@ const ContactStep = ({ formData, handleChange, handleBack }: FormStepProps) => {
   );
 };
 
-export default ContactStep; 
+export default ContactStep;

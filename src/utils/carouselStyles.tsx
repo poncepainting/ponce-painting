@@ -64,4 +64,4 @@ export const generateCarouselStyles = (swipeCursor = 'grab') => `
 // Component for non-clickable carousel paging dots
 export const CustomPaging: React.FC = () => {
   return <div className="custom-dot" />;
-}; 
+};

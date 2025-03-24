@@ -48,13 +48,13 @@ const InteractiveButton: React.FC<InteractiveButtonProps> = ({
   const wrapperClassName = fullWidth ? 'block w-full' : 'inline-block';
 
   // Calculate the real button size without affecting its appearance
-  const sizeStyles = (icon && !children) ? buttonConfig.iconSizes[size] : buttonConfig.sizes[size];
+  const sizeStyles = icon && !children ? buttonConfig.iconSizes[size] : buttonConfig.sizes[size];
 
   return (
     <motion.div
       className={wrapperClassName}
-      whileHover={isInteractive ? "hover" : undefined}
-      whileTap={isInteractive ? "tap" : undefined}
+      whileHover={isInteractive ? 'hover' : undefined}
+      whileTap={isInteractive ? 'tap' : undefined}
       variants={buttonVariants}
     >
       <Button
@@ -80,4 +80,4 @@ const InteractiveButton: React.FC<InteractiveButtonProps> = ({
   );
 };
 
-export default InteractiveButton; 
+export default InteractiveButton;

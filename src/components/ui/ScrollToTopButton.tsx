@@ -73,4 +73,4 @@ const ScrollToTopButton = ({
   );
 };
 
-export default ScrollToTopButton; 
+export default ScrollToTopButton;

@@ -35,10 +35,10 @@ const HeaderBase = ({
   subtitleClassName = '',
 }: HeaderBaseProps) => {
   const textAlignment = centered ? 'text-center' : 'text-left';
-  
+
   const textVariant = getTextVariantFromHeadingElement(as);
   const subtitleVariant = 'bodyLarge';
-  
+
   // Style for background & text colors
   const style: React.CSSProperties = {};
   if (backgroundColor) {
@@ -47,28 +47,20 @@ const HeaderBase = ({
   if (textColor) {
     style.color = getCssColorVariable(textColor);
   }
-  
+
   return (
-    <header 
+    <header
       className={`py-8 md:py-12 ${borderBottom ? 'border-b border-gray-200' : ''} ${className}`}
       style={style}
     >
       <Container>
         <div className={textAlignment}>
-          <Text 
-            variant={textVariant} 
-            as={as}
-            className={titleClassName}
-          >
+          <Text variant={textVariant} as={as} className={titleClassName}>
             {title}
           </Text>
-          
+
           {subtitle && (
-            <Text
-              variant={subtitleVariant}
-              as={subtitleAs}
-              className={`mt-3 ${subtitleClassName}`}
-            >
+            <Text variant={subtitleVariant} as={subtitleAs} className={`mt-3 ${subtitleClassName}`}>
               {subtitle}
             </Text>
           )}
@@ -81,7 +73,9 @@ const HeaderBase = ({
 /**
  * Helper function to map heading element to text variant
  */
-function getTextVariantFromHeadingElement(element: string): keyof typeof themeConfig.typography.textStyles {
+function getTextVariantFromHeadingElement(
+  element: string
+): keyof typeof themeConfig.typography.textStyles {
   switch (element) {
     case 'h1':
       return 'h1';
@@ -100,4 +94,4 @@ function getTextVariantFromHeadingElement(element: string): keyof typeof themeCo
   }
 }
 
-export default HeaderBase; 
+export default HeaderBase;

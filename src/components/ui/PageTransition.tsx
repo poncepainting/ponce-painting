@@ -24,8 +24,8 @@ const PageTransition = ({ children, className = '' }: PageTransitionProps) => {
       initial="hidden"
       animate="enter"
       exit="exit"
-      transition={{ 
-        type: 'tween', 
+      transition={{
+        type: 'tween',
         ease: 'easeInOut',
         duration: 0.3,
       }}
@@ -36,4 +36,4 @@ const PageTransition = ({ children, className = '' }: PageTransitionProps) => {
   );
 };
 
-export default PageTransition; 
+export default PageTransition;

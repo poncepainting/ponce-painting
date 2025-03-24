@@ -16,17 +16,12 @@ const AddressStep = ({ formData, handleChange }: FormStepProps) => {
         required
         icon={<Icon name="map-pin" size={16} />}
       />
-      
-      <Button
-        type="submit"
-        variant="primary"
-        className="w-full"
-        size="lg"
-      >
+
+      <Button type="submit" variant="primary" className="w-full" size="lg">
         Get My Quote
       </Button>
     </>
   );
 };
 
-export default AddressStep; 
+export default AddressStep;

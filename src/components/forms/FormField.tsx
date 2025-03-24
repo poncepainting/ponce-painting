@@ -12,7 +12,7 @@ const FormField = ({
   type = 'text',
   className = '',
   icon,
-  rows
+  rows,
 }: FormFieldProps) => {
   const isTextarea = type === 'textarea';
   const inputClasses = `w-full px-4 py-3 border border-gray-300 ${
@@ -60,4 +60,4 @@ const FormField = ({
   );
 };
 
-export default FormField; 
+export default FormField;

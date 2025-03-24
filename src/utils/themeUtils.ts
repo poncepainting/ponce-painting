@@ -13,7 +13,14 @@ import { themeConfig, designSystem } from '@/config/theme';
 export const flattenObject = (obj: any, prefix = ''): Record<string, string> => {
   return Object.keys(obj).reduce((acc: Record<string, string>, k) => {
     const pre = prefix.length ? `${prefix}-` : '';
-    if (typeof obj[k] === 'object' && obj[k] !== null && !Array.isArray(obj[k]) && k !== 'dark' && k !== 'hover' && k !== 'darkHover') {
+    if (
+      typeof obj[k] === 'object' &&
+      obj[k] !== null &&
+      !Array.isArray(obj[k]) &&
+      k !== 'dark' &&
+      k !== 'hover' &&
+      k !== 'darkHover'
+    ) {
       Object.assign(acc, flattenObject(obj[k], `${pre}${k}`));
     } else {
       acc[`${pre}${k}`] = obj[k];
@@ -28,47 +35,47 @@ export const flattenObject = (obj: any, prefix = ''): Record<string, string> => 
  */
 export const generateThemeCssVariables = (): string => {
   const variables: Record<string, string> = {};
-  
+
   // Process colors
   const colors = flattenObject(themeConfig.colors);
   Object.entries(colors).forEach(([key, value]) => {
     variables[`--color-${key}`] = value;
   });
-  
+
   // Process backgrounds
   const lightBgs = flattenObject(themeConfig.backgrounds.light);
   Object.entries(lightBgs).forEach(([key, value]) => {
     variables[`--bg-light-${key}`] = value;
   });
-  
+
   const darkBgs = flattenObject(themeConfig.backgrounds.dark);
   Object.entries(darkBgs).forEach(([key, value]) => {
     variables[`--bg-dark-${key}`] = value;
   });
-  
+
   // Process typography sizes
   Object.entries(themeConfig.typography.sizes).forEach(([key, value]) => {
     variables[`--font-size-${key}`] = value.fontSize;
     variables[`--line-height-${key}`] = value.lineHeight;
     variables[`--letter-spacing-${key}`] = value.letterSpacing;
   });
-  
+
   // Process font weights
   Object.entries(themeConfig.typography.weights).forEach(([key, value]) => {
     variables[`--font-weight-${key}`] = value;
   });
-  
+
   // Process spacing
   Object.entries(themeConfig.spacing).forEach(([key, value]) => {
     variables[`--spacing-${key}`] = value;
   });
-  
+
   // Process border radius
   Object.entries(themeConfig.borderRadius).forEach(([key, value]) => {
     const variableKey = key === 'DEFAULT' ? 'default' : key;
     variables[`--radius-${variableKey}`] = value;
   });
-  
+
   // Convert to CSS string
   return Object.entries(variables)
     .map(([key, value]) => `${key}: ${value};`)
@@ -81,7 +88,7 @@ export const generateThemeCssVariables = (): string => {
  */
 export const generateTextStyleClasses = (): string => {
   const classes: string[] = [];
-  
+
   // Process text styles
   Object.entries(themeConfig.typography.textStyles).forEach(([style, config]) => {
     // Skip if the config doesn't have required properties
@@ -94,7 +101,7 @@ export const generateTextStyleClasses = (): string => {
         return; // Skip this text style if it doesn't have the required properties
       }
     }
-    
+
     let colorValue = '';
     if ('color' in config && typeof config.color === 'string') {
       if (config.color.includes('.')) {
@@ -104,12 +111,12 @@ export const generateTextStyleClasses = (): string => {
         colorValue = `var(--color-${config.color})`;
       }
     }
-    
+
     // Generate regular style
     if ('fontSize' in config && 'fontWeight' in config) {
       const fontSizeKey = config.fontSize as keyof typeof themeConfig.typography.sizes;
       const fontSize = themeConfig.typography.sizes[fontSizeKey];
-      
+
       classes.push(`
         .text-style-${style} {
           font-size: var(--font-size-${config.fontSize});
@@ -117,11 +124,11 @@ export const generateTextStyleClasses = (): string => {
           font-weight: var(--font-weight-${config.fontWeight});
           ${fontSize.letterSpacing ? `letter-spacing: var(--letter-spacing-${config.fontSize});` : ''}
           ${colorValue ? `color: ${colorValue};` : ''}
-          ${('textTransform' in config && config.textTransform) ? `text-transform: ${config.textTransform};` : ''}
+          ${'textTransform' in config && config.textTransform ? `text-transform: ${config.textTransform};` : ''}
         }
       `);
     }
-    
+
     // Generate dark mode style if it exists
     if ('dark' in config && config.dark) {
       let darkColorValue = '';
@@ -131,14 +138,14 @@ export const generateTextStyleClasses = (): string => {
       } else {
         darkColorValue = `var(--color-${config.dark})`;
       }
-      
+
       classes.push(`
         .dark .text-style-${style} {
           color: ${darkColorValue};
         }
       `);
     }
-    
+
     // Generate hover style for links
     if (style === 'link' && 'hover' in config && config.hover) {
       let hoverColorValue = '';
@@ -148,13 +155,13 @@ export const generateTextStyleClasses = (): string => {
       } else {
         hoverColorValue = `var(--color-${config.hover})`;
       }
-      
+
       classes.push(`
         .text-style-${style}:hover {
           color: ${hoverColorValue};
         }
       `);
-      
+
       if ('darkHover' in config && config.darkHover) {
         let darkHoverColorValue = '';
         if (typeof config.darkHover === 'string' && config.darkHover.includes('.')) {
@@ -163,7 +170,7 @@ export const generateTextStyleClasses = (): string => {
         } else {
           darkHoverColorValue = `var(--color-${config.darkHover})`;
         }
-        
+
         classes.push(`
           .dark .text-style-${style}:hover {
             color: ${darkHoverColorValue};
@@ -172,7 +179,7 @@ export const generateTextStyleClasses = (): string => {
       }
     }
   });
-  
+
   return classes.join('\n');
 };
 
@@ -184,7 +191,7 @@ export const generateTextStyleClasses = (): string => {
 export const getThemeValue = (path: string): any => {
   const keys = path.split('.');
   let result = themeConfig as any;
-  
+
   for (const key of keys) {
     if (result && typeof result === 'object' && key in result) {
       result = result[key];
@@ -192,7 +199,7 @@ export const getThemeValue = (path: string): any => {
       return undefined;
     }
   }
-  
+
   return result;
 };
 
@@ -203,23 +210,23 @@ export const getThemeValue = (path: string): any => {
  */
 export const getCssColorVariable = (colorPath: string): string => {
   if (!colorPath) return 'inherit';
-  
+
   // Handle direct color values
   if (colorPath.startsWith('#') || colorPath.startsWith('rgb')) {
     return colorPath;
   }
-  
+
   if (colorPath === 'white' || colorPath === 'black' || colorPath === 'transparent') {
     return `var(--color-${colorPath})`;
   }
-  
+
   // Handle theme color paths like 'primary.500'
   const parts = colorPath.split('.');
-  
+
   if (parts.length === 1) {
     return `var(--color-${parts[0]})`;
   }
-  
+
   const [colorName, shade] = parts;
   return `var(--color-${colorName}${shade === 'DEFAULT' ? '' : `-${shade}`})`;
 };
@@ -239,7 +246,9 @@ export const getCssBackgroundVariable = (bgType: 'light' | 'dark', variant: stri
  * @param style - The text style name (e.g., 'h1', 'body')
  * @returns The CSS class name
  */
-export const getTextStyleClass = (style: keyof typeof themeConfig.typography.textStyles): string => {
+export const getTextStyleClass = (
+  style: keyof typeof themeConfig.typography.textStyles
+): string => {
   return `text-style-${style}`;
 };
 
@@ -275,41 +284,42 @@ export const useThemeStyles = (options: {
 }) => {
   const style: React.CSSProperties = {};
   const classNames: string[] = [];
-  
+
   // Background color
   if (options.backgroundColor) {
     style.backgroundColor = getCssColorVariable(options.backgroundColor);
   }
-  
+
   // Text color
   if (options.textColor) {
     style.color = getCssColorVariable(options.textColor);
   }
-  
+
   // Padding
   if (options.padding && options.padding !== 'none') {
     const padding = themeConfig.spacing[options.padding];
     style.padding = padding;
   }
-  
+
   // Border radius
   if (options.rounded && options.rounded !== 'none') {
-    const borderRadius = themeConfig.borderRadius[options.rounded as keyof typeof themeConfig.borderRadius];
+    const borderRadius =
+      themeConfig.borderRadius[options.rounded as keyof typeof themeConfig.borderRadius];
     style.borderRadius = borderRadius;
   }
-  
+
   // Border
   if (options.border) {
     style.borderWidth = '1px';
     style.borderStyle = 'solid';
-    
+
     if (options.borderColor) {
       style.borderColor = getCssColorVariable(options.borderColor);
     } else {
       style.borderColor = getCssColorVariable('gray.200');
     }
   }
-  
+
   // Shadow
   if (options.shadow && options.shadow !== 'none') {
     switch (options.shadow) {
@@ -330,7 +340,7 @@ export const useThemeStyles = (options: {
         break;
     }
   }
-  
+
   // Width
   if (options.width) {
     if (options.width === 'full') {
@@ -341,7 +351,7 @@ export const useThemeStyles = (options: {
       style.width = `${options.width}px`;
     }
   }
-  
+
   // Height
   if (options.height) {
     if (options.height === 'full') {
@@ -352,16 +362,16 @@ export const useThemeStyles = (options: {
       style.height = `${options.height}px`;
     }
   }
-  
+
   // Margin
   if (options.margin && options.margin !== 'none') {
     const margin = themeConfig.spacing[options.margin];
     style.margin = margin;
   }
-  
+
   return {
     style,
-    className: classNames.join(' ')
+    className: classNames.join(' '),
   };
 };
 
@@ -373,19 +383,19 @@ export const createColorPalette = () => {
   const palette: Record<string, Record<string, string>> = {
     primary: {},
     gray: {},
-    functional: {}
+    functional: {},
   };
-  
+
   // Add primary colors
   Object.entries(themeConfig.colors.primary).forEach(([shade, color]) => {
     palette.primary[shade === 'DEFAULT' ? 'default' : shade] = color;
   });
-  
+
   // Add gray colors
   Object.entries(themeConfig.colors.gray).forEach(([shade, color]) => {
     palette.gray[shade === 'DEFAULT' ? 'default' : shade] = color;
   });
-  
+
   // Add functional colors
   ['success', 'warning', 'error', 'info'].forEach(colorName => {
     const color = themeConfig.colors[colorName as keyof typeof themeConfig.colors];
@@ -393,14 +403,14 @@ export const createColorPalette = () => {
       palette.functional[colorName] = color;
     }
   });
-  
+
   // Add base colors
   palette.base = {
     white: themeConfig.colors.white,
     black: themeConfig.colors.black,
-    transparent: 'transparent'
+    transparent: 'transparent',
   };
-  
+
   return palette;
 };
 
@@ -412,7 +422,7 @@ export const createColorPalette = () => {
 export const getSectionBackgroundColor = (sectionName: keyof typeof themeConfig.sectionColors) => {
   const colorPath = themeConfig.sectionColors[sectionName];
   if (!colorPath) return '';
-  
+
   const [type, name] = colorPath.split('.');
   return `var(--bg-${type}-${name})`;
 };
@@ -431,4 +441,4 @@ export const getFormInputClass = (): string => {
  */
 export const getFormContainerClass = (): string => {
   return designSystem.borderRadius.form;
-}; 
+};

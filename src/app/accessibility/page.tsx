@@ -30,22 +30,22 @@ export default function AccessibilityPage() {
             <section className="mb-12">
               <h2>Introduction</h2>
               <p>
-                {siteConfig.name} is committed to ensuring digital accessibility for people with disabilities. 
-                We are continually improving the user experience for everyone and applying the relevant 
-                accessibility standards.
+                {siteConfig.name} is committed to ensuring digital accessibility for people with
+                disabilities. We are continually improving the user experience for everyone and
+                applying the relevant accessibility standards.
               </p>
             </section>
 
             <section className="mb-12">
               <h2>Conformance Status</h2>
               <p>
-                The Web Content Accessibility Guidelines (WCAG) define requirements for designers and developers 
-                to improve accessibility for people with disabilities. It defines three levels of conformance: 
-                Level A, Level AA, and Level AAA.
+                The Web Content Accessibility Guidelines (WCAG) define requirements for designers
+                and developers to improve accessibility for people with disabilities. It defines
+                three levels of conformance: Level A, Level AA, and Level AAA.
               </p>
               <p>
-                We strive for our website to be compliant with WCAG 2.1 level AA standards. We are actively 
-                working to increase the accessibility and usability of our website.
+                We strive for our website to be compliant with WCAG 2.1 level AA standards. We are
+                actively working to increase the accessibility and usability of our website.
               </p>
             </section>
 
@@ -67,9 +67,7 @@ export default function AccessibilityPage() {
 
             <section className="mb-12">
               <h2>Compatibility with Browsers and Assistive Technologies</h2>
-              <p>
-                We aim to support the following browsers and assistive technologies:
-              </p>
+              <p>We aim to support the following browsers and assistive technologies:</p>
               <ul>
                 <li>Latest versions of Chrome, Firefox, Safari, and Edge</li>
                 <li>Screen readers including NVDA, JAWS, and VoiceOver</li>
@@ -82,12 +80,19 @@ export default function AccessibilityPage() {
             <section className="mb-12">
               <h2>Known Limitations</h2>
               <p>
-                Despite our best efforts to ensure accessibility of our website, there may be some limitations. 
-                Below is a list of known limitations that we are currently working to resolve:
+                Despite our best efforts to ensure accessibility of our website, there may be some
+                limitations. Below is a list of known limitations that we are currently working to
+                resolve:
               </p>
               <ul>
-                <li>Some older PDF documents may not be fully accessible. We are working to update these documents.</li>
-                <li>Some third-party plugins or widgets may not be fully accessible. We are evaluating alternatives where necessary.</li>
+                <li>
+                  Some older PDF documents may not be fully accessible. We are working to update
+                  these documents.
+                </li>
+                <li>
+                  Some third-party plugins or widgets may not be fully accessible. We are evaluating
+                  alternatives where necessary.
+                </li>
                 <li>Some content may not be fully accessible on very small screen sizes.</li>
               </ul>
             </section>
@@ -95,12 +100,15 @@ export default function AccessibilityPage() {
             <section className="mb-12">
               <h2>Feedback</h2>
               <p>
-                We welcome your feedback on the accessibility of our website. Please let us know if you encounter 
-                accessibility barriers on our website. We will make every reasonable effort to address the issue.
+                We welcome your feedback on the accessibility of our website. Please let us know if
+                you encounter accessibility barriers on our website. We will make every reasonable
+                effort to address the issue.
               </p>
               <p>
-                Email: <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a><br />
-                Phone: <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a><br />
+                Email: <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+                <br />
+                Phone: <a href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a>
+                <br />
                 Address: {siteConfig.contact.address}
               </p>
             </section>
@@ -108,7 +116,8 @@ export default function AccessibilityPage() {
             <section className="mb-12">
               <h2>Assessment Approach</h2>
               <p>
-                {siteConfig.name} assesses the accessibility of our website by the following approaches:
+                {siteConfig.name} assesses the accessibility of our website by the following
+                approaches:
               </p>
               <ul>
                 <li>Self-evaluation</li>
@@ -121,22 +130,22 @@ export default function AccessibilityPage() {
             <section className="mb-12">
               <h2>Formal Approval</h2>
               <p>
-                This accessibility statement was approved by the management of {siteConfig.name} on [date].
+                This accessibility statement was approved by the management of {siteConfig.name} on
+                [date].
               </p>
             </section>
 
             <section className="mb-12">
               <h2>Ongoing Improvements</h2>
               <p>
-                We are committed to continually improving the accessibility of our website. If you encounter any 
-                issues or have suggestions for improvements, please contact us using the information provided in the 
-                "Feedback" section.
+                We are committed to continually improving the accessibility of our website. If you
+                encounter any issues or have suggestions for improvements, please contact us using
+                the information provided in the "Feedback" section.
               </p>
             </section>
-
           </div>
         </Container>
       </Section>
     </main>
   );
-} 
+}

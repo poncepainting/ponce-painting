@@ -31,7 +31,7 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: '#7BAAF4', // Base color
-          50: '#ECF2FD',  // Lightest pastel
+          50: '#ECF2FD', // Lightest pastel
           100: '#D9E6FC', // Lighter pastel
           200: '#C5DAFC', // Light pastel (calculated)
           300: '#B1CEF9', // Light (calculated)
@@ -73,7 +73,7 @@ module.exports = {
         success: '#16a34a',
         warning: '#ca8a04',
         error: '#dc2626',
-        info: '#7BAAF4',  // Updated to match our base color
+        info: '#7BAAF4', // Updated to match our base color
       },
     },
   },

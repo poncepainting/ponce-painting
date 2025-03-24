@@ -42,4 +42,4 @@ const FAQAccordion = ({ item, index }: FAQAccordionProps) => {
   );
 };
 
-export default FAQAccordion; 
+export default FAQAccordion;

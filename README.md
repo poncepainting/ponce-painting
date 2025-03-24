@@ -174,21 +174,21 @@ import SEO from '@/components/SEO';
   canonical="/services"
   noIndex={false}
   noFollow={false}
-/>
+/>;
 ```
 
 Properties accepted by the SEO component:
 
-| Property | Type | Description |
-|----------|------|-------------|
-| title | string | Page title (will be appended with site name) |
-| description | string | Page description |
-| canonical | string | Canonical URL |
-| noIndex | boolean | Should search engines index this page? |
-| noFollow | boolean | Should search engines follow links on this page? |
-| ogImage | string | Open Graph image URL |
-| pageType | string | Open Graph page type ('website', 'article', etc.) |
-| additionalMetaTags | array | Additional meta tags to include |
+| Property           | Type    | Description                                       |
+| ------------------ | ------- | ------------------------------------------------- |
+| title              | string  | Page title (will be appended with site name)      |
+| description        | string  | Page description                                  |
+| canonical          | string  | Canonical URL                                     |
+| noIndex            | boolean | Should search engines index this page?            |
+| noFollow           | boolean | Should search engines follow links on this page?  |
+| ogImage            | string  | Open Graph image URL                              |
+| pageType           | string  | Open Graph page type ('website', 'article', etc.) |
+| additionalMetaTags | array   | Additional meta tags to include                   |
 
 ### Using the PageWrapper Component
 
@@ -202,8 +202,8 @@ export default function MyPage() {
   return (
     <PageWrapper
       seo={{
-        title: "My Page",
-        description: "Page description"
+        title: 'My Page',
+        description: 'Page description',
       }}
     >
       {/* Page content */}

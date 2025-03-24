@@ -15,7 +15,9 @@ export interface FormFieldProps {
   id: string;
   name: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => void;
   label: string;
   placeholder?: string;
   required?: boolean;
@@ -35,7 +37,9 @@ export interface SelectFieldProps extends Omit<FormFieldProps, 'type' | 'rows'> 
 
 export interface FormStepProps {
   formData: QuoteFormData;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => void;
   handleBack?: () => void;
   isSubmitting?: boolean;
-} 
+}

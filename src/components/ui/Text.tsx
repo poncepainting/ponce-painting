@@ -24,7 +24,7 @@ const Text = <E extends React.ElementType = 'p'>({
 }: TextProps<E>) => {
   const Component = as || getDefaultElementForVariant(variant);
   const textStyleClass = getTextStyleClass(variant);
-  
+
   return (
     <Component className={`${textStyleClass} ${className}`} {...rest}>
       {children}
@@ -66,4 +66,4 @@ function getDefaultElementForVariant(variant: TextStyleType): React.ElementType 
   }
 }
 
-export default Text; 
+export default Text;

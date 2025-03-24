@@ -33,25 +33,30 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const isDisabled = disabled || isLoading;
     const iconToShow = icon || leftIcon;
     const isTextVariant = variant === 'text';
-    
+
     // Base styles
     const baseStyles = [
-      !isTextVariant && (iconOnly ? buttonConfig.defaults.roundedIcon : buttonConfig.defaults.rounded),
+      !isTextVariant &&
+        (iconOnly ? buttonConfig.defaults.roundedIcon : buttonConfig.defaults.rounded),
       buttonConfig.defaults.fontWeight,
       buttonConfig.defaults.transition,
       !isTextVariant && buttonConfig.defaults.display,
-    ].filter(Boolean).join(' ');
-    
+    ]
+      .filter(Boolean)
+      .join(' ');
+
     // Variant styles
-    const variantStyles = isDisabled 
+    const variantStyles = isDisabled
       ? buttonConfig.variants[variant].disabled
       : buttonConfig.variants[variant].base;
-    
+
     // Size styles
-    const sizeStyles = isTextVariant 
-      ? '' 
-      : (iconOnly ? buttonConfig.iconSizes[size] : buttonConfig.sizes[size]);
-    
+    const sizeStyles = isTextVariant
+      ? ''
+      : iconOnly
+        ? buttonConfig.iconSizes[size]
+        : buttonConfig.sizes[size];
+
     // Combined styles
     const buttonStyles = `${baseStyles} ${variantStyles} ${sizeStyles} ${
       fullWidth ? 'w-full' : ''
@@ -62,19 +67,24 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       if (isLoading) {
         return (
           <>
-            <span className={`${!iconOnly ? buttonConfig.icons.leftIconMargin : ''} inline-block animate-spin`}>
-              <Icon name="clock" className={iconOnly ? buttonConfig.icons.defaultSize : buttonConfig.icons.smallSize} />
+            <span
+              className={`${!iconOnly ? buttonConfig.icons.leftIconMargin : ''} inline-block animate-spin`}
+            >
+              <Icon
+                name="clock"
+                className={iconOnly ? buttonConfig.icons.defaultSize : buttonConfig.icons.smallSize}
+              />
             </span>
-            {!iconOnly && "Loading..."}
+            {!iconOnly && 'Loading...'}
           </>
         );
       }
 
       if (iconOnly && iconToShow) {
         return (
-          <Icon 
-            name={iconToShow} 
-            className={`${buttonConfig.icons.defaultSize} ${iconClassName}`} 
+          <Icon
+            name={iconToShow}
+            className={`${buttonConfig.icons.defaultSize} ${iconClassName}`}
           />
         );
       }
@@ -82,16 +92,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       return (
         <>
           {leftIcon && (
-            <Icon 
-              name={leftIcon} 
-              className={`${buttonConfig.icons.leftIconMargin} ${buttonConfig.icons.defaultSize} ${iconClassName}`} 
+            <Icon
+              name={leftIcon}
+              className={`${buttonConfig.icons.leftIconMargin} ${buttonConfig.icons.defaultSize} ${iconClassName}`}
             />
           )}
           {children}
           {rightIcon && (
-            <Icon 
-              name={rightIcon} 
-              className={`${buttonConfig.icons.rightIconMargin} ${buttonConfig.icons.defaultSize} ${iconClassName}`} 
+            <Icon
+              name={rightIcon}
+              className={`${buttonConfig.icons.rightIconMargin} ${buttonConfig.icons.defaultSize} ${iconClassName}`}
             />
           )}
         </>
@@ -110,12 +120,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         e.currentTarget.click();
       }
     };
-    
+
     // Render as Link if href is provided
     if (href && !isDisabled) {
       return (
-        <Link 
-          href={href} 
+        <Link
+          href={href}
           className={buttonStyles}
           tabIndex={0}
           onKeyDown={handleKeyDown}
@@ -128,9 +138,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     // Render as button
     return (
-      <button 
-        ref={ref} 
-        className={buttonStyles} 
+      <button
+        ref={ref}
+        className={buttonStyles}
         disabled={isDisabled}
         {...(iconOnly ? accessibilityProps : {})}
         {...props}
@@ -143,4 +153,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = 'Button';
 
-export default Button; 
+export default Button;

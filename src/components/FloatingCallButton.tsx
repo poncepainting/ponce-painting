@@ -26,7 +26,7 @@ const FloatingCallButton = ({
 
     // Add scroll listener
     window.addEventListener('scroll', handleScroll);
-    
+
     // Clean up
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -51,4 +51,4 @@ const FloatingCallButton = ({
   );
 };
 
-export default FloatingCallButton; 
+export default FloatingCallButton;

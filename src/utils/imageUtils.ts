@@ -30,12 +30,16 @@ export const toBase64 = (str: string) =>
   typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str);
 
 // Generate a base64 encoded SVG placeholder for use with next/image
-export const generatePlaceholderDataUrl = (width: number | string, height: number | string, enabled = true) => {
+export const generatePlaceholderDataUrl = (
+  width: number | string,
+  height: number | string,
+  enabled = true
+) => {
   if (!enabled) return undefined;
-  
+
   const w = typeof width === 'number' ? width : 700;
   const h = typeof height === 'number' ? height : 475;
-  
+
   return `data:image/svg+xml;base64,${toBase64(shimmer(w, h))}`;
 };
 

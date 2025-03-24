@@ -18,43 +18,49 @@ const QuoteForm = () => {
     email: '',
     phone: '',
     message: '',
-    service: ''
+    service: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
 
   // Progress percentage for the progress bar
-  const progressPercentage = 
-    currentStep === 'address' ? 25 :
-    currentStep === 'contact' ? 50 :
-    currentStep === 'details' ? 75 : 100;
+  const progressPercentage =
+    currentStep === 'address'
+      ? 25
+      : currentStep === 'contact'
+        ? 50
+        : currentStep === 'details'
+          ? 75
+          : 100;
 
   // Animation variants for the form steps
   const formVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
-      y: 15
+      y: 15,
     },
-    visible: { 
+    visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.3,
-        ease: 'easeInOut'
-      }
+        ease: 'easeInOut',
+      },
     },
-    exit: { 
+    exit: {
       opacity: 0,
       y: -15,
       transition: {
         duration: 0.2,
-        ease: 'easeInOut'
-      }
-    }
+        ease: 'easeInOut',
+      },
+    },
   };
 
   // Handle form field changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -62,30 +68,30 @@ const QuoteForm = () => {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (currentStep === 'address') {
       // Validate address
       if (!formData.address.trim()) return;
       setCurrentStep('contact');
       return;
     }
-    
+
     if (currentStep === 'contact') {
       // Validate contact info
       if (!formData.name.trim() || !formData.email.trim()) return;
       setCurrentStep('details');
       return;
     }
-    
+
     if (currentStep === 'details') {
       // Clear any previous error
       setSubmissionError(null);
       setIsSubmitting(true);
-      
+
       try {
         // Submit the form data using our utility
         const result = await submitForm(formData);
-        
+
         if (result.success) {
           setCurrentStep('success');
         } else {
@@ -114,104 +120,103 @@ const QuoteForm = () => {
       email: '',
       phone: '',
       message: '',
-      service: ''
+      service: '',
     });
     setCurrentStep('address');
     setSubmissionError(null);
   };
 
   return (
-    <div className={`w-full max-w-md mx-auto ${designSystem.borderRadius.form} bg-white shadow-xl overflow-hidden`}>
+    <div
+      className={`w-full max-w-md mx-auto ${designSystem.borderRadius.form} bg-white shadow-xl overflow-hidden`}
+    >
       {/* Progress bar */}
       <div className="h-1.5 bg-gray-100">
-        <motion.div 
-          className="h-full bg-primary-600" 
+        <motion.div
+          className="h-full bg-primary-600"
           initial={{ width: 0 }}
           animate={{ width: `${progressPercentage}%` }}
           transition={{ duration: 0.3 }}
         />
       </div>
-      
+
       <div className="p-6">
         {/* Form title - changes based on step */}
         <div className="mb-4">
           <h3 className="text-lg font-semibold text-gray-900">
-            {currentStep === 'address' && "Get a Quick Quote"}
-            {currentStep === 'contact' && "Your Contact Info"}
-            {currentStep === 'details' && "Additional Details"}
-            {currentStep === 'success' && "Quote Request Sent!"}
+            {currentStep === 'address' && 'Get a Quick Quote'}
+            {currentStep === 'contact' && 'Your Contact Info'}
+            {currentStep === 'details' && 'Additional Details'}
+            {currentStep === 'success' && 'Quote Request Sent!'}
           </h3>
           <p className="text-sm text-gray-600">
-            {currentStep === 'address' && "Enter your address to get started"}
-            {currentStep === 'contact' && "Tell us who you are"}
-            {currentStep === 'details' && "Almost there! Just a few more details"}
+            {currentStep === 'address' && 'Enter your address to get started'}
+            {currentStep === 'contact' && 'Tell us who you are'}
+            {currentStep === 'details' && 'Almost there! Just a few more details'}
             {currentStep === 'success' && "We'll contact you shortly"}
           </p>
         </div>
-        
+
         {/* Display submission error if any */}
         {submissionError && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-md text-sm">
             {submissionError}
           </div>
         )}
-        
+
         <form onSubmit={handleSubmit}>
           <AnimatePresence mode="wait">
             {/* Address Step */}
             {currentStep === 'address' && (
-              <motion.div 
+              <motion.div
                 key="address-step"
                 variants={formVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
-                <AddressStep 
-                  formData={formData} 
-                  handleChange={handleChange} 
-                />
+                <AddressStep formData={formData} handleChange={handleChange} />
               </motion.div>
             )}
-            
+
             {/* Contact Step */}
             {currentStep === 'contact' && (
-              <motion.div 
+              <motion.div
                 key="contact-step"
                 variants={formVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
-                <ContactStep 
-                  formData={formData} 
+                <ContactStep
+                  formData={formData}
                   handleChange={handleChange}
                   handleBack={handleBack}
                 />
               </motion.div>
             )}
-            
+
             {/* Details Step */}
             {currentStep === 'details' && (
-              <motion.div 
+              <motion.div
                 key="details-step"
                 variants={formVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
-                <DetailsStep 
-                  formData={formData} 
+                <DetailsStep
+                  formData={formData}
                   handleChange={handleChange}
                   handleBack={handleBack}
                   isSubmitting={isSubmitting}
                 />
               </motion.div>
             )}
-            
+
             {/* Success Step */}
             {currentStep === 'success' && (
-              <motion.div 
+              <motion.div
                 key="success-step"
                 variants={formVariants}
                 initial="hidden"
@@ -228,4 +233,4 @@ const QuoteForm = () => {
   );
 };
 
-export default QuoteForm; 
+export default QuoteForm;

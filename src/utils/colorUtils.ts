@@ -65,9 +65,13 @@ export const getThemeColor = (colorPath: string): string => {
   if (colorPath.includes('light.') || colorPath.includes('dark.')) {
     const [category, colorName] = colorPath.split('.');
     if (category === 'light') {
-      return (themeConfig.backgrounds as BackgroundColors).light[colorName as LightColorKey] || '#ffffff';
+      return (
+        (themeConfig.backgrounds as BackgroundColors).light[colorName as LightColorKey] || '#ffffff'
+      );
     } else if (category === 'dark') {
-      return (themeConfig.backgrounds as BackgroundColors).dark[colorName as DarkColorKey] || '#1f2937';
+      return (
+        (themeConfig.backgrounds as BackgroundColors).dark[colorName as DarkColorKey] || '#1f2937'
+      );
     }
   }
 
@@ -78,13 +82,13 @@ export const getThemeColor = (colorPath: string): string => {
   if (parts.length === 1) {
     const [colorName] = parts;
     const color = (themeConfig.colors as any)[colorName];
-    return typeof color === 'object' ? color.DEFAULT : (color || '#000000');
+    return typeof color === 'object' ? color.DEFAULT : color || '#000000';
   }
 
   // Get nested color value
   const [colorName, shade] = parts;
   const colorObj = (themeConfig.colors as any)[colorName];
-  return (colorObj && typeof colorObj === 'object') ? colorObj[shade] || '#000000' : '#000000';
+  return colorObj && typeof colorObj === 'object' ? colorObj[shade] || '#000000' : '#000000';
 };
 
 /**
@@ -106,9 +110,9 @@ export const getTextColors = (bgColorPath: string) => {
   const bgColor = getThemeColor(bgColorPath);
 
   // Check if the background color is a dark one from our restricted palette
-  const isDark = 
-    bgColorPath.startsWith('dark.') || 
-    bgColor === (themeConfig.backgrounds as BackgroundColors).dark.primary || 
+  const isDark =
+    bgColorPath.startsWith('dark.') ||
+    bgColor === (themeConfig.backgrounds as BackgroundColors).dark.primary ||
     bgColor === (themeConfig.backgrounds as BackgroundColors).dark.gray;
 
   if (isDark) {
@@ -145,7 +149,7 @@ export const generateColorCssVars = () => {
 
   // Add regular color variables from primary and gray
   const colors = themeConfig.colors as any;
-  
+
   // Process primary colors
   if (colors.primary && typeof colors.primary === 'object') {
     Object.entries(colors.primary).forEach(([shade, value]) => {
@@ -156,7 +160,7 @@ export const generateColorCssVars = () => {
       }
     });
   }
-  
+
   // Process gray colors
   if (colors.gray && typeof colors.gray === 'object') {
     Object.entries(colors.gray).forEach(([shade, value]) => {
@@ -170,11 +174,11 @@ export const generateColorCssVars = () => {
 
   // Add the restricted background colors
   const backgrounds = themeConfig.backgrounds as BackgroundColors;
-  
+
   // Light backgrounds
   cssVars['--bg-light-white'] = backgrounds.light.white;
   cssVars['--bg-light-gray'] = backgrounds.light.gray;
-  
+
   // Dark backgrounds
   cssVars['--bg-dark-primary'] = backgrounds.dark.primary;
   cssVars['--bg-dark-gray'] = backgrounds.dark.gray;

@@ -11,7 +11,7 @@ const SelectField = ({
   required = false,
   className = '',
   icon,
-  options
+  options,
 }: SelectFieldProps) => {
   const selectClasses = `w-full px-4 py-3 border border-gray-300 ${
     designSystem.borderRadius.input
@@ -38,12 +38,8 @@ const SelectField = ({
               {placeholder}
             </option>
           )}
-          {options.map((option) => (
-            <option 
-              key={option.value} 
-              value={option.value}
-              disabled={option.disabled}
-            >
+          {options.map(option => (
+            <option key={option.value} value={option.value} disabled={option.disabled}>
               {option.label}
             </option>
           ))}
@@ -58,4 +54,4 @@ const SelectField = ({
   );
 };
 
-export default SelectField; 
+export default SelectField;

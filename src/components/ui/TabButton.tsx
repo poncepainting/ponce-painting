@@ -15,14 +15,14 @@ interface TabButtonProps {
 /**
  * Reusable TabButton component used for tab navigation in various components
  */
-const TabButton = ({ 
-  isActive, 
-  onClick, 
-  children, 
+const TabButton = ({
+  isActive,
+  onClick,
+  children,
   onDarkBackground = false,
   variant = 'default',
   activeClassName,
-  inactiveClassName
+  inactiveClassName,
 }: TabButtonProps) => {
   // Default colors based on background context
   const defaultColors = onDarkBackground
@@ -56,4 +56,4 @@ const TabButton = ({
   );
 };
 
-export default TabButton; 
+export default TabButton;

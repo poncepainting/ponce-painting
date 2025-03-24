@@ -30,4 +30,4 @@ export interface InteractiveButtonProps extends BaseButtonProps {
   type?: 'button' | 'submit' | 'reset';
   target?: string;
   rel?: string;
-} 
+}

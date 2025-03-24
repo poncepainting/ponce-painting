@@ -17,12 +17,12 @@ interface BrokenLinkData {
 export async function POST(request: Request) {
   try {
     const data: BrokenLinkData = await request.json();
-    
+
     // Validate required fields with safe fallbacks
     if (!data.brokenUrl) {
       data.brokenUrl = 'unknown-url';
     }
-    
+
     // Add defaults for missing fields
     data.referringUrl = data.referringUrl || 'unknown-referrer';
     data.userAgent = data.userAgent || 'unknown-user-agent';
@@ -53,12 +53,12 @@ async function logBrokenLink(data: BrokenLinkData) {
     if (process.env.NODE_ENV === 'development') {
       const logDir = path.join(process.cwd(), 'logs');
       const logFile = path.join(logDir, 'broken-links.json');
-      
+
       // Ensure the logs directory exists
       if (!fs.existsSync(logDir)) {
         fs.mkdirSync(logDir, { recursive: true });
       }
-      
+
       // Read existing logs or initialize empty array
       let logs: BrokenLinkData[] = [];
       if (fs.existsSync(logFile)) {
@@ -69,11 +69,11 @@ async function logBrokenLink(data: BrokenLinkData) {
           console.error('Failed to parse existing logs:', e);
         }
       }
-      
+
       // Add new log and write to file
       logs.push(data);
       fs.writeFileSync(logFile, JSON.stringify(logs, null, 2), 'utf-8');
-      
+
       console.log(`[Development] Broken link logged to ${logFile}`);
     } else {
       // For production: Just log to console for now
@@ -83,4 +83,4 @@ async function logBrokenLink(data: BrokenLinkData) {
     console.error('Error in logBrokenLink:', error);
     // Don't throw, just log the error
   }
-} 
+}

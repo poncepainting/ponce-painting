@@ -11,10 +11,12 @@ import PageSEO from '@/components/PageSEO';
 
 export const metadata: Metadata = {
   title: 'FAQ | Ponce Painting',
-  description: 'Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana.',
+  description:
+    'Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana.',
   openGraph: {
     title: 'FAQ | Ponce Painting',
-    description: 'Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana.',
+    description:
+      'Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana.',
     type: 'website',
   },
 };
@@ -23,7 +25,7 @@ export default function FAQPage() {
   return (
     <main>
       {/* SEO Component */}
-      <PageSEO 
+      <PageSEO
         title="FAQ | Ponce Painting"
         description="Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana."
         canonical="/faq"
@@ -65,14 +67,10 @@ export default function FAQPage() {
                 Ready to transform your space?
               </h3>
               <p className="text-lg text-primary-600 max-w-2xl mx-auto mb-8">
-                Contact us today for a free estimate and let us bring color to your life with our professional painting services.
+                Contact us today for a free estimate and let us bring color to your life with our
+                professional painting services.
               </p>
-              <Button 
-                href="/contact" 
-                variant="primary"
-                size="lg"
-                className="!px-8"
-              >
+              <Button href="/contact" variant="primary" size="lg" className="!px-8">
                 Get Free Estimate
               </Button>
             </div>

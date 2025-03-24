@@ -57,31 +57,33 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
       transition: {
         delay: 0.3,
-        when: "beforeChildren",
-        staggerChildren: 0.2
-      }
-    }
+        when: 'beforeChildren',
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
-      transition: { 
-        type: "spring", 
-        damping: 12, 
-        stiffness: 100 
-      } 
-    }
+      transition: {
+        type: 'spring',
+        damping: 12,
+        stiffness: 100,
+      },
+    },
   };
 
   return (
-    <section className={`relative flex items-center justify-center bg-dark-primary ${heightClasses[height]}`}>
+    <section
+      className={`relative flex items-center justify-center bg-dark-primary ${heightClasses[height]}`}
+    >
       <div className="absolute inset-0 z-0 overflow-hidden">
         <OptimizedImage
           src={imageUrl}
@@ -103,52 +105,44 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className={showQuoteForm ? "" : "lg:col-span-2"}
+            className={showQuoteForm ? '' : 'lg:col-span-2'}
           >
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
               variants={itemVariants}
             >
               {title}
             </motion.h1>
-            
+
             {subtitle && (
-              <motion.p 
+              <motion.p
                 className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-white"
                 variants={itemVariants}
               >
                 {subtitle}
               </motion.p>
             )}
-            
+
             {!showQuoteForm && primaryCTA && secondaryCTA && (
-              <motion.div 
+              <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center"
                 variants={itemVariants}
               >
                 {primaryCTA && (
-                  <Button
-                    variant="primary"
-                    href={primaryCTA.href}
-                    size="lg"
-                  >
+                  <Button variant="primary" href={primaryCTA.href} size="lg">
                     {primaryCTA.text}
                   </Button>
                 )}
-                
+
                 {secondaryCTA && (
-                  <Button
-                    href={secondaryCTA.href} 
-                    variant="outline"
-                    size="lg"
-                  >
+                  <Button href={secondaryCTA.href} variant="outline" size="lg">
                     {secondaryCTA.text}
                   </Button>
                 )}
               </motion.div>
             )}
           </motion.div>
-          
+
           {showQuoteForm && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -165,4 +159,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   );
 };
 
-export default HeroSection; 
+export default HeroSection;

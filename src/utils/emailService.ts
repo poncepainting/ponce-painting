@@ -23,7 +23,7 @@ const getTransporter = () => {
       },
     });
   }
-  
+
   // For production, use actual SMTP settings
   return nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -42,7 +42,7 @@ const getTransporter = () => {
 export const sendFormSubmissionEmail = async (formData: QuoteFormData): Promise<EmailResult> => {
   try {
     const transporter = getTransporter();
-    
+
     // Create the email content
     const mailOptions = {
       from: process.env.EMAIL_FROM || 'noreply@yourbusiness.com',
@@ -84,24 +84,25 @@ export const sendFormSubmissionEmail = async (formData: QuoteFormData): Promise<
         <p>${formData.message || 'No additional message provided.'}</p>
       `,
     };
-    
+
     // Send the email
     const info = await transporter.sendMail(mailOptions);
-    
+
     console.log('Email sent:', info.messageId);
-    
+
     return {
       success: true,
       message: 'Email notification sent successfully',
     };
   } catch (error) {
     console.error('Error sending email:', error);
-    
+
     return {
       success: false,
-      message: error instanceof Error 
-        ? `Failed to send email: ${error.message}` 
-        : 'Failed to send email due to an unknown error',
+      message:
+        error instanceof Error
+          ? `Failed to send email: ${error.message}`
+          : 'Failed to send email due to an unknown error',
     };
   }
-}; 
+};

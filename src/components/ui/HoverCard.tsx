@@ -14,20 +14,15 @@ interface HoverCardProps {
 /**
  * An enhanced card component with subtle hover animations
  */
-const HoverCard = ({ 
-  children, 
-  className = '',
-  href,
-  onClick
-}: HoverCardProps) => {
+const HoverCard = ({ children, className = '', href, onClick }: HoverCardProps) => {
   const variants = {
-    initial: { 
-      y: 0, 
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+    initial: {
+      y: 0,
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
     },
-    hover: { 
-      y: -6, 
-      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+    hover: {
+      y: -6,
+      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
     },
   };
 
@@ -37,10 +32,10 @@ const HoverCard = ({
       initial="initial"
       whileHover="hover"
       variants={variants}
-      transition={{ 
+      transition={{
         type: 'tween',
         duration: 0.3,
-        ease: [0.25, 0.1, 0.25, 1.0] // Cubic bezier curve for Apple-like smoothness
+        ease: [0.25, 0.1, 0.25, 1.0], // Cubic bezier curve for Apple-like smoothness
       }}
     >
       {children}
@@ -57,10 +52,7 @@ const HoverCard = ({
 
   if (onClick) {
     return (
-      <button 
-        className="w-full text-left bg-transparent border-0 p-0 m-0"
-        onClick={onClick}
-      >
+      <button className="w-full text-left bg-transparent border-0 p-0 m-0" onClick={onClick}>
         {content}
       </button>
     );
@@ -69,4 +61,4 @@ const HoverCard = ({
   return content;
 };
 
-export default HoverCard; 
+export default HoverCard;

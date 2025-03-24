@@ -3,12 +3,12 @@ import type { NextRequest } from 'next/server';
 
 // Define path patterns that should be excluded from 404 tracking
 const EXCLUDE_PATTERNS = [
-  /^\/api\//,        // API routes
-  /^\/favicon\.ico$/,// Favicon
+  /^\/api\//, // API routes
+  /^\/favicon\.ico$/, // Favicon
   /^\/robots\.txt$/, // Robots.txt
-  /^\/sitemap/,      // Sitemaps
+  /^\/sitemap/, // Sitemaps
   /\.(png|jpg|jpeg|gif|svg|webp|css|js|woff|woff2|ttf|eot)$/, // Static assets
-  /^\/_next\//,      // Next.js internal routes
+  /^\/_next\//, // Next.js internal routes
 ];
 
 /**
@@ -23,7 +23,7 @@ export function middleware(request: NextRequest) {
 
   // Get the request URL
   const url = request.nextUrl.clone();
-  
+
   // Function to check if this is a path we should ignore for 404 tracking
   const shouldIgnorePath = (path: string) => {
     return EXCLUDE_PATTERNS.some(pattern => pattern.test(path));
@@ -52,4 +52,4 @@ export const config = {
      */
     '/((?!_next/static|_next/image|favicon.ico|images/|public/).*)',
   ],
-}; 
+};

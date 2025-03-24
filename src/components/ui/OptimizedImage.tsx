@@ -33,16 +33,13 @@ const OptimizedImage = ({
   const displayText = fallbackText || `Image needs updating: ${imageName}`;
 
   // Only use loading='lazy' when priority is false
-  const loading = priority ? undefined : (loadingProp || 'lazy');
+  const loading = priority ? undefined : loadingProp || 'lazy';
 
   // Generate placeholder - only if requested and not priority loading
-  const placeholderDataUrl = !priority && blurPlaceholder
-    ? generatePlaceholderDataUrl(
-        width || 700,
-        height || 475,
-        true
-      )
-    : undefined;
+  const placeholderDataUrl =
+    !priority && blurPlaceholder
+      ? generatePlaceholderDataUrl(width || 700, height || 475, true)
+      : undefined;
 
   const handleError = () => {
     setError(true);

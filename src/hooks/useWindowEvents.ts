@@ -31,7 +31,7 @@ const useWindowEvents = ({
     const handleScroll = () => {
       const scrolledState = window.scrollY > scrollThreshold;
       setIsScrolled(scrolledState);
-      
+
       if (onScroll) {
         onScroll(window.scrollY);
       }
@@ -41,7 +41,7 @@ const useWindowEvents = ({
     window.addEventListener('keydown', handleEsc);
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-    
+
     // Initial scroll check
     handleScroll();
 
@@ -56,4 +56,4 @@ const useWindowEvents = ({
   return { isScrolled };
 };
 
-export default useWindowEvents; 
+export default useWindowEvents;

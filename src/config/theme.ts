@@ -9,7 +9,7 @@ export const themeConfig = {
     // Primary brand color - blue spectrum based on #7BAAF4
     primary: {
       DEFAULT: '#7BAAF4', // Base color
-      50: '#ECF2FD',  // Lightest pastel - almost white
+      50: '#ECF2FD', // Lightest pastel - almost white
       100: '#D9E6FC', // Lighter pastel
       200: '#C5DAFC', // Light pastel (calculated)
       300: '#B1CEF9', // Light (calculated)
@@ -42,21 +42,21 @@ export const themeConfig = {
     success: '#16a34a',
     warning: '#ca8a04',
     error: '#dc2626',
-    info: '#7BAAF4',  // Updated to match our base color
+    info: '#7BAAF4', // Updated to match our base color
   },
 
   // Restricted background color options (per client request)
   backgrounds: {
     // 2 light options
     light: {
-      white: '#ffffff',          // Pure white
-      gray: '#f9fafb',           // Very light gray (gray.50)
+      white: '#ffffff', // Pure white
+      gray: '#f9fafb', // Very light gray (gray.50)
     },
     // 2 dark options
     dark: {
-      primary: '#1A3560',        // Dark primary (primary.800)
-      gray: '#1f2937',           // Dark gray (gray.800)
-    }
+      primary: '#1A3560', // Dark primary (primary.800)
+      gray: '#1f2937', // Dark gray (gray.800)
+    },
   },
 
   // Section-specific background colors - using restricted palette
@@ -80,7 +80,7 @@ export const themeConfig = {
       sans: 'var(--font-geist-sans)',
       mono: 'var(--font-geist-mono)',
     },
-    
+
     // Font sizes with associated line heights and letter spacing
     sizes: {
       xs: {
@@ -134,7 +134,7 @@ export const themeConfig = {
         letterSpacing: '-0.025em',
       },
     },
-    
+
     // Font weights
     weights: {
       thin: '100',
@@ -147,13 +147,13 @@ export const themeConfig = {
       extrabold: '800',
       black: '900',
     },
-    
+
     // Text styles for consistent typography
     textStyles: {
       h1: {
         fontSize: '4xl',
         fontWeight: 'bold',
-        color: 'primary.800', 
+        color: 'primary.800',
         dark: 'white',
       },
       h2: {

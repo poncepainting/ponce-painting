@@ -20,16 +20,16 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const { mainNav } = navigationConfig;
-  
+
   // Use custom hook for window events
-  const { isScrolled: windowScrolled } = useWindowEvents({ 
+  const { isScrolled: windowScrolled } = useWindowEvents({
     scrollThreshold: 50,
     onEscape: () => setIsMenuOpen(false),
-    onResize: (width) => {
+    onResize: width => {
       if (width >= parseInt(themeConfig.breakpoints.md) && isMenuOpen) {
         setIsMenuOpen(false);
       }
-    }
+    },
   });
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            
+
             <Button
               href={`tel:${siteConfig.contact.phone}`}
               variant="primary"
@@ -139,7 +139,7 @@ const Header = () => {
                 variants={animations.item}
                 className="pt-4 pb-3 border-t border-gray-200 mt-4"
               >
-                <Button 
+                <Button
                   href={`tel:${siteConfig.contact.phone}`}
                   onClick={() => setIsMenuOpen(false)}
                   variant="primary"

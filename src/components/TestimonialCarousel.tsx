@@ -11,14 +11,14 @@ interface TestimonialCarouselProps {
   autoplay?: boolean;
 }
 
-const TestimonialCarousel: FC<TestimonialCarouselProps> = ({ 
+const TestimonialCarousel: FC<TestimonialCarouselProps> = ({
   className = '',
-  autoplay = false
+  autoplay = false,
 }) => {
   return (
     <div className={`testimonial-carousel ${className}`}>
-      <Carousel 
-        slidesToShow={3} 
+      <Carousel
+        slidesToShow={3}
         mobileSlidesToShow={1}
         autoplay={autoplay}
         autoplaySpeed={5000}
@@ -29,7 +29,10 @@ const TestimonialCarousel: FC<TestimonialCarouselProps> = ({
         className="pb-2"
       >
         {siteConfig.testimonials.map(testimonial => (
-          <div key={testimonial.name} className="bg-gray-50 p-6 rounded-xl h-full shadow-sm border border-gray-200">
+          <div
+            key={testimonial.name}
+            className="bg-gray-50 p-6 rounded-xl h-full shadow-sm border border-gray-200"
+          >
             <div className="mb-4 flex items-center">
               <div className="flex-shrink-0 mr-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100">
@@ -61,4 +64,4 @@ const TestimonialCarousel: FC<TestimonialCarouselProps> = ({
   );
 };
 
-export default TestimonialCarousel; 
+export default TestimonialCarousel;

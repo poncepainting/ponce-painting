@@ -39,7 +39,7 @@ const SectionHeading = ({
 }: SectionHeadingProps) => {
   // Get section background context
   const { isDarkBackground } = useSectionBackground();
-  
+
   // Use explicitly provided value or detect from context
   const isOnDarkBackground = onDarkBackground !== undefined ? onDarkBackground : isDarkBackground;
 
@@ -66,7 +66,9 @@ const SectionHeading = ({
     centered ? 'text-center' : '',
     titleClass || defaultTextColors.title,
     className,
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   // Classes for the subtitle
   const subtitleClasses = [
@@ -76,30 +78,32 @@ const SectionHeading = ({
     Component === 'h3' ? 'text-base' : '',
     centered ? 'text-center' : '',
     subtitleClass || defaultTextColors.subtitle,
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <div className="mb-10">
       {useSubheading ? (
-        <HeaderAccent 
+        <HeaderAccent
           useAsSubheading
-          text={subheadingText} 
+          text={subheadingText}
           color={accentColor}
           centered={centered}
           onDarkBackground={isOnDarkBackground}
         />
       ) : showAccent ? (
-        <HeaderAccent 
-          color={accentColor} 
-          centered={centered} 
+        <HeaderAccent
+          color={accentColor}
+          centered={centered}
           onDarkBackground={isOnDarkBackground}
         />
       ) : null}
-      
+
       <Component className={headingClasses}>{title}</Component>
       {subtitle && <p className={subtitleClasses}>{subtitle}</p>}
     </div>
   );
 };
 
-export default SectionHeading; 
+export default SectionHeading;

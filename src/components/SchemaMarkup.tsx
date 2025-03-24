@@ -8,7 +8,7 @@ interface SchemaMarkupProps {
 
 /**
  * Component that adds JSON-LD schema markup to the page
- * 
+ *
  * @param schemas Array of schema.org structured data objects
  */
 const SchemaMarkup = ({ schemas }: SchemaMarkupProps) => {
@@ -32,4 +32,4 @@ const SchemaMarkup = ({ schemas }: SchemaMarkupProps) => {
   );
 };
 
-export default SchemaMarkup; 
+export default SchemaMarkup;

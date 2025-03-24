@@ -15,9 +15,10 @@ export default function NotFound() {
         <div className="text-center max-w-lg mx-auto">
           <h1 className="text-8xl font-bold text-primary-600 mb-4">404</h1>
           <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>
-          
+
           <p className="text-gray-600 mb-8">
-            Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or never existed.
+            Sorry, we couldn't find the page you're looking for. It might have been moved, deleted,
+            or never existed.
           </p>
 
           <div className="space-y-4">
@@ -39,4 +40,4 @@ export default function NotFound() {
       </Container>
     </Section>
   );
-} 
+}

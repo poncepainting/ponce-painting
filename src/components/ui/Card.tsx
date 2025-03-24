@@ -38,15 +38,21 @@ const Card = ({
   // Get padding value based on size
   const getPaddingValue = (size: string) => {
     switch (size) {
-      case 'sm': return 4;
-      case 'md': return 6;
-      case 'lg': return 8;
-      case 'xl': return 10;
-      case 'none': return 0;
-      default: return 6;
+      case 'sm':
+        return 4;
+      case 'md':
+        return 6;
+      case 'lg':
+        return 8;
+      case 'xl':
+        return 10;
+      case 'none':
+        return 0;
+      default:
+        return 6;
     }
   };
-  
+
   // Apply theme styles
   const { style, className: themeClassName } = useThemeStyles({
     backgroundColor,
@@ -57,25 +63,20 @@ const Card = ({
     borderColor,
     shadow,
   });
-  
+
   // Add hover effects if needed
   const hoverClasses = hover
     ? 'transition-all duration-200 hover:shadow-md hover:border-gray-300'
     : '';
-  
+
   // Combine all classes
   const combinedClassName = `${themeClassName} ${hoverClasses} ${className}`;
-  
+
   return (
-    <Component 
-      className={combinedClassName} 
-      style={style} 
-      onClick={onClick}
-      {...rest}
-    >
+    <Component className={combinedClassName} style={style} onClick={onClick} {...rest}>
       {children}
     </Component>
   );
 };
 
-export default Card; 
+export default Card;

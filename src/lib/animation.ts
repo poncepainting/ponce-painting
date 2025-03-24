@@ -11,9 +11,9 @@ export const fadeIn: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 // Slide up animation
@@ -23,9 +23,9 @@ export const slideUp: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 // Slide in from left animation
@@ -35,9 +35,9 @@ export const slideInLeft: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 // Slide in from right animation
@@ -47,9 +47,9 @@ export const slideInRight: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 // Scale animation
@@ -59,9 +59,9 @@ export const scale: Variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 // Container animation for staggered children
@@ -71,9 +71,9 @@ export const staggerContainer: Variants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.2
-    }
-  }
+      delayChildren: 0.2,
+    },
+  },
 };
 
 // Item animation for staggered children
@@ -83,9 +83,9 @@ export const staggerItem: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3
-    }
-  }
+      duration: 0.3,
+    },
+  },
 };
 
 // Menu animation variant
@@ -97,17 +97,17 @@ export const menuAnimation: Variants = {
       bounce: 0,
       duration: 0.7,
       delayChildren: 0.3,
-      staggerChildren: 0.05
-    }
+      staggerChildren: 0.05,
+    },
   },
   closed: {
     clipPath: 'inset(10% 50% 90% 50% round 10px)',
     transition: {
       type: 'spring',
       bounce: 0,
-      duration: 0.3
-    }
-  }
+      duration: 0.3,
+    },
+  },
 };
 
 // Menu item animation variant
@@ -115,7 +115,7 @@ export const menuItemAnimation: Variants = {
   open: {
     opacity: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 300, damping: 24 }
+    transition: { type: 'spring', stiffness: 300, damping: 24 },
   },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
-}; 
+  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+};

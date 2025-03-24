@@ -5,8 +5,8 @@ import { getSectionBgColor, getTextColors } from '@/utils/colorUtils';
 import Container from './Container';
 
 // Create a context to share background state
-export const SectionBackgroundContext = createContext<{ isDarkBackground: boolean }>({ 
-  isDarkBackground: false 
+export const SectionBackgroundContext = createContext<{ isDarkBackground: boolean }>({
+  isDarkBackground: false,
 });
 
 type SectionProps = {
@@ -18,18 +18,13 @@ type SectionProps = {
   children: React.ReactNode;
   fullWidth?: boolean;
   py?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
-}
+};
 
 // Helper function to determine if a background color is dark
 const isDarkBackground = (className = ''): boolean => {
   // Only the background classes with 'dark.' prefix are dark
-  const darkBackgroundPatterns = [
-    'dark.primary',
-    'dark.gray',
-    'bg-dark-primary',
-    'bg-dark-gray'
-  ];
-  
+  const darkBackgroundPatterns = ['dark.primary', 'dark.gray', 'bg-dark-primary', 'bg-dark-gray'];
+
   return darkBackgroundPatterns.some(pattern => className.includes(pattern));
 };
 
@@ -70,27 +65,21 @@ const Section = ({
   };
 
   // Determine if this section has a dark background
-  const isDark = useMemo(() => 
-    isDarkBackground(className) || 
-    sectionBgColor.startsWith('dark.') || 
-    isDarkBackground(sectionBgColor), 
-  [className, sectionBgColor]);
-  
+  const isDark = useMemo(
+    () =>
+      isDarkBackground(className) ||
+      sectionBgColor.startsWith('dark.') ||
+      isDarkBackground(sectionBgColor),
+    [className, sectionBgColor]
+  );
+
   // Context value to share with children
   const contextValue = useMemo(() => ({ isDarkBackground: isDark }), [isDark]);
 
   return (
     <SectionBackgroundContext.Provider value={contextValue}>
-      <Component 
-        className={`${paddingClasses[py]} ${className}`} 
-        style={colorStyle}
-        id={name}
-      >
-        {fullWidth ? (
-          children
-        ) : (
-          <Container className={containerClassName}>{children}</Container>
-        )}
+      <Component className={`${paddingClasses[py]} ${className}`} style={colorStyle} id={name}>
+        {fullWidth ? children : <Container className={containerClassName}>{children}</Container>}
       </Component>
     </SectionBackgroundContext.Provider>
   );

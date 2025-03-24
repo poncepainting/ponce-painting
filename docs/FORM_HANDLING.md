@@ -18,6 +18,7 @@ The template offers three ways to handle form submissions, which can be easily s
 ### 1. Formspree (Default, Works Everywhere)
 
 The default and simplest option uses [Formspree](https://formspree.io/), a third-party form handling service that requires:
+
 - No server configuration
 - No backend code
 - Works on any hosting platform
@@ -35,6 +36,7 @@ The default and simplest option uses [Formspree](https://formspree.io/), a third
 ### 2. Next.js API Route (Optimized for Vercel)
 
 This option uses a Next.js API route with email sending capabilities:
+
 - Best for Vercel deployments
 - Requires server-side execution
 - Sends email notifications via SMTP
@@ -42,6 +44,7 @@ This option uses a Next.js API route with email sending capabilities:
 #### Configuration for Vercel:
 
 1. Update your `.env.local` file:
+
    ```
    NEXT_PUBLIC_FORM_HANDLER=api
    EMAIL_HOST=smtp.example.com
@@ -58,6 +61,7 @@ This option uses a Next.js API route with email sending capabilities:
 ### 3. EmailJS (Alternative Client-Side Option)
 
 Another client-side only option that doesn't require server configuration:
+
 - Works on any hosting platform
 - No server configuration needed
 - Sends emails directly from the client
@@ -65,7 +69,7 @@ Another client-side only option that doesn't require server configuration:
 #### Configuration for EmailJS:
 
 1. Create a free account at [EmailJS](https://www.emailjs.com/)
-2. Create an email service and template 
+2. Create an email service and template
 3. Update your `.env.local` file:
    ```
    NEXT_PUBLIC_FORM_HANDLER=emailjs
@@ -101,6 +105,7 @@ The form handling is implemented in these key files:
 ## EmailJS Template Setup
 
 If using EmailJS, your template should include these variables:
+
 - `{{name}}`
 - `{{email}}`
 - `{{phone}}`
@@ -130,16 +135,19 @@ To add new fields to the form:
 ## Troubleshooting
 
 ### Formspree Issues
+
 - Verify your form ID is correct
 - Check if you've exceeded the free tier limits
 - Check browser console for CORS errors
 
 ### API Route Issues
+
 - Verify SMTP credentials are correct
 - Check server logs for detailed error messages
 - Make sure environment variables are set on Vercel
 
 ### EmailJS Issues
+
 - Confirm service ID, template ID, and public key are correct
 - Check if your template is properly configured
-- Verify you haven't exceeded the free tier limits 
+- Verify you haven't exceeded the free tier limits

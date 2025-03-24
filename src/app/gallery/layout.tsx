@@ -6,10 +6,6 @@ export const metadata: Metadata = {
   description: 'See our portfolio and previous work.',
 };
 
-export default function GalleryLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function GalleryLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
-} 
+}

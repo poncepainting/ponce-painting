@@ -144,21 +144,26 @@ export const generatePageSchema = (
     case 'services':
       return [...baseSchemas, ...generateServicesSchema()];
     case 'gallery':
-      return [...baseSchemas, {
-        '@context': 'https://schema.org',
-        '@type': 'CollectionPage',
-        name: 'Gallery | ' + siteConfig.name,
-        description: 'Portfolio and examples of our work',
-        isPartOf: {
-          '@type': 'WebSite',
-          name: siteConfig.name,
-          url: siteConfig.url
+      return [
+        ...baseSchemas,
+        {
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: 'Gallery | ' + siteConfig.name,
+          description: 'Portfolio and examples of our work',
+          isPartOf: {
+            '@type': 'WebSite',
+            name: siteConfig.name,
+            url: siteConfig.url,
+          },
+          url: `${siteConfig.url}/gallery`,
         },
-        url: `${siteConfig.url}/gallery`,
-      }];
+      ];
     case 'service':
       if (additionalData?.serviceId) {
-        const service = siteConfig.services.find(s => s.title.toLowerCase().replace(/\s+/g, '-') === additionalData.serviceId);
+        const service = siteConfig.services.find(
+          s => s.title.toLowerCase().replace(/\s+/g, '-') === additionalData.serviceId
+        );
         if (service) {
           return [
             ...baseSchemas,
@@ -182,4 +187,4 @@ export const generatePageSchema = (
     default:
       return baseSchemas;
   }
-}; 
+};

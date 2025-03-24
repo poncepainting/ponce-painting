@@ -4,7 +4,12 @@ import SelectField from '@/components/forms/SelectField';
 import Button from '@/components/ui/Button';
 import { Icon } from '@/config/icons';
 
-const DetailsStep = ({ formData, handleChange, handleBack, isSubmitting = false }: FormStepProps) => {
+const DetailsStep = ({
+  formData,
+  handleChange,
+  handleBack,
+  isSubmitting = false,
+}: FormStepProps) => {
   const serviceOptions = [
     { value: '', label: 'Select a service', disabled: true },
     { value: 'Service 1', label: 'Service 1' },
@@ -24,7 +29,7 @@ const DetailsStep = ({ formData, handleChange, handleBack, isSubmitting = false 
         label="Phone Number (Optional)"
         placeholder="(123) 456-7890"
       />
-      
+
       <SelectField
         id="service"
         name="service"
@@ -34,7 +39,7 @@ const DetailsStep = ({ formData, handleChange, handleBack, isSubmitting = false 
         options={serviceOptions}
         required
       />
-      
+
       <FormField
         id="message"
         name="message"
@@ -45,17 +50,12 @@ const DetailsStep = ({ formData, handleChange, handleBack, isSubmitting = false 
         placeholder="Tell us more about what you need..."
         rows={3}
       />
-      
+
       <div className="flex flex-col sm:flex-row gap-3 mt-6">
-        <Button
-          type="button"
-          variant="outline"
-          onClick={handleBack}
-          size="lg"
-        >
+        <Button type="button" variant="outline" onClick={handleBack} size="lg">
           Back
         </Button>
-        
+
         <Button
           type="submit"
           variant="primary"
@@ -69,7 +69,7 @@ const DetailsStep = ({ formData, handleChange, handleBack, isSubmitting = false 
               Submitting...
             </span>
           ) : (
-            "Submit Request"
+            'Submit Request'
           )}
         </Button>
       </div>
@@ -77,4 +77,4 @@ const DetailsStep = ({ formData, handleChange, handleBack, isSubmitting = false 
   );
 };
 
-export default DetailsStep; 
+export default DetailsStep;

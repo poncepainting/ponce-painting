@@ -41,7 +41,7 @@ export default function HeaderAccentsPage() {
                 {`<HeaderAccent />`}
               </pre>
             </div>
-            
+
             {/* Custom color accent */}
             <div className="p-8 bg-white rounded-xl shadow-md">
               <HeaderAccent color="bg-secondary-500" />
@@ -53,7 +53,7 @@ export default function HeaderAccentsPage() {
                 {`<HeaderAccent color="bg-secondary-500" />`}
               </pre>
             </div>
-            
+
             {/* Wide accent */}
             <div className="p-8 bg-white rounded-xl shadow-md">
               <HeaderAccent width="w-24" height="h-1" />
@@ -65,7 +65,7 @@ export default function HeaderAccentsPage() {
                 {`<HeaderAccent width="w-24" height="h-1" />`}
               </pre>
             </div>
-            
+
             {/* Left-aligned accent */}
             <div className="p-8 bg-white rounded-xl shadow-md">
               <HeaderAccent centered={false} />
@@ -77,7 +77,7 @@ export default function HeaderAccentsPage() {
                 {`<HeaderAccent centered={false} />`}
               </pre>
             </div>
-            
+
             {/* Gradient accent */}
             <div className="p-8 bg-white rounded-xl shadow-md">
               <HeaderAccent color="bg-gradient-to-r from-primary-500 to-secondary-500" />
@@ -89,7 +89,7 @@ export default function HeaderAccentsPage() {
                 {`<HeaderAccent color="bg-gradient-to-r from-primary-500 to-secondary-500" />`}
               </pre>
             </div>
-            
+
             {/* Custom class accent */}
             <div className="p-8 bg-white rounded-xl shadow-md">
               <HeaderAccent className="shadow-sm" height="h-3" />
@@ -101,18 +101,12 @@ export default function HeaderAccentsPage() {
                 {`<HeaderAccent className="shadow-sm" height="h-3" />`}
               </pre>
             </div>
-            
+
             {/* Subheading accent with text */}
             <div className="p-8 bg-white rounded-xl shadow-md">
-              <HeaderAccent 
-                useAsSubheading 
-                text="NEW FEATURE" 
-                color="bg-secondary-600"
-              />
+              <HeaderAccent useAsSubheading text="NEW FEATURE" color="bg-secondary-600" />
               <h3 className="text-xl font-bold mb-4">Subheading Text</h3>
-              <p className="text-gray-600">
-                Use the accent as a subheading with text content.
-              </p>
+              <p className="text-gray-600">Use the accent as a subheading with text content.</p>
               <pre className="mt-4 bg-gray-100 p-3 rounded text-sm overflow-x-auto">
                 {`<HeaderAccent 
   useAsSubheading 
@@ -124,7 +118,7 @@ export default function HeaderAccentsPage() {
           </div>
         </div>
       </Section>
-      
+
       <Section bgColor="#f8f9fa">
         <div id="design-system">
           <SectionHeading
@@ -132,14 +126,14 @@ export default function HeaderAccentsPage() {
             subtitle="How header accents connect to your design system"
             accentColor="bg-gray-400"
           />
-          
+
           <div className="mt-8 p-6 bg-white rounded-xl shadow-md">
             <h3 className="text-xl font-bold mb-4">Border Radius Consistency</h3>
             <p className="mb-4">
-              The HeaderAccent component automatically uses the border radius defined in your design system.
-              This ensures visual consistency across your entire application. 
+              The HeaderAccent component automatically uses the border radius defined in your design
+              system. This ensures visual consistency across your entire application.
             </p>
-            
+
             <div className="mt-8 p-4 bg-gray-100 rounded-lg">
               <h4 className="font-bold mb-2">Current Design System Settings:</h4>
               <pre className="bg-white p-3 rounded overflow-x-auto">
@@ -155,7 +149,7 @@ export const designSystem = {
               </pre>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <div className="p-6 bg-white rounded-xl shadow-md">
               <h3 className="text-xl font-bold mb-4">Using with SectionHeading</h3>
@@ -172,7 +166,7 @@ export const designSystem = {
 />`}
               </pre>
             </div>
-            
+
             <div className="p-6 bg-white rounded-xl shadow-md">
               <h3 className="text-xl font-bold mb-4">Benefits</h3>
               <ul className="list-disc pl-5 space-y-2 text-gray-600">
@@ -188,4 +182,4 @@ export const designSystem = {
       </Section>
     </main>
   );
-} 
+}

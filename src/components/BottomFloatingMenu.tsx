@@ -26,7 +26,7 @@ const BottomFloatingMenu = ({
 
     // Add scroll listener
     window.addEventListener('scroll', handleScroll);
-    
+
     // Clean up
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -49,16 +49,16 @@ const BottomFloatingMenu = ({
     <div className={baseClass}>
       <div className="flex items-center bg-white shadow-lg border-t border-gray-200">
         <button
-          onClick={() => window.location.href = `tel:${siteConfig.contact.phone}`}
+          onClick={() => (window.location.href = `tel:${siteConfig.contact.phone}`)}
           className="flex items-center text-primary-600 flex-grow py-4 px-6 justify-center"
           aria-label="Book a quote"
         >
           <Icon name="phone" size={20} className="mr-3" />
           <span className="font-medium">Book a Quote</span>
         </button>
-        
+
         <div className="h-10 w-px bg-gray-300" aria-hidden="true" />
-        
+
         <button
           onClick={handleScrollToTop}
           className="flex items-center justify-center text-primary-600 py-4 px-4"
@@ -71,4 +71,4 @@ const BottomFloatingMenu = ({
   );
 };
 
-export default BottomFloatingMenu; 
+export default BottomFloatingMenu;

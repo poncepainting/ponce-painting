@@ -126,7 +126,7 @@ const Carousel: React.FC<CarouselProps> = ({
           {React.Children.map(children, (child, index) => {
             if (index < slidesToShow) {
               return (
-                <div 
+                <div
                   className={`${isDesktop ? `w-1/${slidesToShow}` : 'w-full'} flex-shrink-0 px-2`}
                 >
                   {child}
@@ -142,10 +142,12 @@ const Carousel: React.FC<CarouselProps> = ({
 
   return (
     <>
-      <style jsx global>{carouselStyles}</style>
+      <style jsx global>
+        {carouselStyles}
+      </style>
       <div className="relative w-full">
         <Slider {...settings}>
-          {React.Children.map(children, (child) => (
+          {React.Children.map(children, child => (
             <div className="px-2 h-full">{child}</div>
           ))}
         </Slider>
@@ -154,4 +156,4 @@ const Carousel: React.FC<CarouselProps> = ({
   );
 };
 
-export default Carousel; 
+export default Carousel;
