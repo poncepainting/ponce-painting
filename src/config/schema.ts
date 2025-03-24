@@ -27,18 +27,19 @@ export const generateOrganizationSchema = () => {
       addressCountry: 'US',
     },
     sameAs: [
-      siteConfig.social.facebook,
-      siteConfig.social.twitter,
-      siteConfig.social.instagram,
-      siteConfig.social.linkedin,
+      siteConfig.links.facebook,
+      siteConfig.links.twitter,
+      siteConfig.links.instagram,
+      siteConfig.links.linkedin,
+      siteConfig.links.houzz,
     ],
-    openingHoursSpecification: siteConfig.businessHours
-      .filter(hour => hour.hours !== 'Closed')
-      .map(hour => ({
+    openingHoursSpecification: Object.entries(siteConfig.businessHours)
+      .filter(([_, hours]) => hours !== 'Closed')
+      .map(([day, hours]) => ({
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: `https://schema.org/${hour.day}`,
-        opens: hour.hours.split('-')[0]?.trim(),
-        closes: hour.hours.split('-')[1]?.trim(),
+        dayOfWeek: `https://schema.org/${day.charAt(0).toUpperCase() + day.slice(1)}`,
+        opens: hours.split('-')[0]?.trim(),
+        closes: hours.split('-')[1]?.trim(),
       })),
   };
 };
@@ -66,24 +67,25 @@ export const generateLocalBusinessSchema = () => {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 40.7128, // Example coordinates - replace with actual business location
-      longitude: -74.006,
+      latitude: 30.2266, // Lake Charles coordinates
+      longitude: -93.2174,
     },
-    openingHoursSpecification: siteConfig.businessHours
-      .filter(hour => hour.hours !== 'Closed')
-      .map(hour => ({
+    openingHoursSpecification: Object.entries(siteConfig.businessHours)
+      .filter(([_, hours]) => hours !== 'Closed')
+      .map(([day, hours]) => ({
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: `https://schema.org/${hour.day}`,
-        opens: hour.hours.split('-')[0]?.trim(),
-        closes: hour.hours.split('-')[1]?.trim(),
+        dayOfWeek: `https://schema.org/${day.charAt(0).toUpperCase() + day.slice(1)}`,
+        opens: hours.split('-')[0]?.trim(),
+        closes: hours.split('-')[1]?.trim(),
       })),
     priceRange: '$$',
-    image: `${siteConfig.url}${siteConfig.defaultMetadata.ogImage}`,
+    image: siteConfig.defaultMetadata.openGraph.images[0].url,
     sameAs: [
-      siteConfig.social.facebook,
-      siteConfig.social.twitter,
-      siteConfig.social.instagram,
-      siteConfig.social.linkedin,
+      siteConfig.links.facebook,
+      siteConfig.links.twitter,
+      siteConfig.links.instagram,
+      siteConfig.links.linkedin,
+      siteConfig.links.houzz,
     ],
   };
 };
@@ -120,8 +122,8 @@ export const generateServicesSchema = () => {
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    url: `${siteConfig.url}/services/${service.id}`,
-    image: `${siteConfig.url}${service.imageUrl}`,
+    url: `${siteConfig.url}/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`,
+    image: `${siteConfig.url}/images/services/${service.title.toLowerCase().replace(/\s+/g, '-')}.jpg`,
   }));
 };
 
@@ -156,7 +158,7 @@ export const generatePageSchema = (
       }];
     case 'service':
       if (additionalData?.serviceId) {
-        const service = siteConfig.services.find(s => s.id === additionalData.serviceId);
+        const service = siteConfig.services.find(s => s.title.toLowerCase().replace(/\s+/g, '-') === additionalData.serviceId);
         if (service) {
           return [
             ...baseSchemas,
@@ -170,8 +172,8 @@ export const generatePageSchema = (
                 name: siteConfig.name,
                 url: siteConfig.url,
               },
-              url: `${siteConfig.url}/services/${service.id}`,
-              image: `${siteConfig.url}${service.imageUrl}`,
+              url: `${siteConfig.url}/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`,
+              image: `${siteConfig.url}/images/services/${service.title.toLowerCase().replace(/\s+/g, '-')}.jpg`,
             },
           ];
         }
