@@ -1,0 +1,8 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#F3F4F6"/>
+  <rect x="100" y="100" width="200" height="200" rx="10" stroke="#D1D5DB" stroke-width="8"/>
+  <path d="M150 175L200 125L250 175" stroke="#9CA3AF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M150 225L200 275L250 225" stroke="#9CA3AF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="200" y1="130" x2="200" y2="270" stroke="#9CA3AF" stroke-width="6" stroke-linecap="round"/>
+  <text x="200" y="350" text-anchor="middle" font-family="Arial" font-size="14" fill="#6B7280">Product Image Needed</text>
+</svg> 

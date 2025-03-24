@@ -1,0 +1,7 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#F3F4F6"/>
+  <circle cx="150" cy="100" r="50" fill="#D1D5DB"/>
+  <circle cx="150" cy="85" r="20" fill="#9CA3AF"/>
+  <path d="M110 205C110 171.863 136.863 145 170 145H180C213.137 145 240 171.863 240 205V210C240 226.569 226.569 240 210 240H140C123.431 240 110 226.569 110 210V205Z" fill="#D1D5DB"/>
+  <text x="150" y="275" text-anchor="middle" font-family="Arial" font-size="14" fill="#6B7280">Person Image Needed</text>
+</svg> 

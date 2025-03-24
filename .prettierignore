@@ -1,0 +1,21 @@
+# Build and cache directories
+.next/
+node_modules/
+build/
+dist/
+.vercel/
+.turbo/
+.cache/
+
+# Generated files
+next-env.d.ts
+*.gen.*
+*.generated.*
+coverage/
+public/sitemap*.xml
+public/robots.txt
+
+# Config files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock 

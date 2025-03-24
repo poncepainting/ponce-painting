@@ -1,0 +1,26 @@
+# Build output directories
+.next/
+out/
+build/
+dist/
+coverage/
+
+# Package manager directories
+node_modules/
+.pnp/
+.pnp.js
+
+# Cache directories
+.turbo/
+.vercel/
+.cache/
+
+# Generated files
+next-env.d.ts
+public/sitemap*.xml
+public/robots.txt
+
+# Config files
+next.config.mjs
+postcss.config.js
+tailwind.config.js 
