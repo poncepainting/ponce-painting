@@ -31,7 +31,7 @@ const AnimationWrapper = ({
   margin = '-100px 0px',
 }: AnimationWrapperProps) => {
   const ref = useRef(null);
-  // @ts-ignore - framer-motion useInView accepts string for margin
+  // @ts-expect-error - Framer Motion types are not fully compatible with React 18
   const isInView = useInView(ref, { once, margin });
 
   // Predefined animation variants

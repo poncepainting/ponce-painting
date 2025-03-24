@@ -8,39 +8,26 @@ import Button from '@/components/ui/Button';
 import SectionHeading from '@/components/SectionHeading';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import PageSEO from '@/components/PageSEO';
-import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: `FAQ | ${siteConfig.name}`,
+  title: 'FAQ | Your Business Name',
   description: 'Frequently asked questions about our services, process, and pricing.',
+  openGraph: {
+    title: 'FAQ | Your Business Name',
+    description: 'Frequently asked questions about our services, process, and pricing.',
+    type: 'website',
+  },
 };
 
 export default function FAQPage() {
-  // Create an FAQ schema directly
-  const faqSchemas = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqItems.map(item => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.answer
-        }
-      }))
-    }
-  ];
-
   return (
     <main>
       {/* SEO Component */}
       <PageSEO 
-        title={metadata.title}
-        description={metadata.description}
+        title="FAQ | Your Business Name"
+        description="Frequently asked questions about our services, process, and pricing."
         canonical="/faq"
         schemaType="other"
-        additionalSchemas={faqSchemas}
       />
 
       {/* Hero Section */}
