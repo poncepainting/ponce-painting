@@ -1,5 +1,3 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import Section from '@/components/ui/Section';
 import SEO from '@/components/SEO';

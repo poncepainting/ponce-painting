@@ -1,13 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { getFaqByCategory, faqCategories, faqItems, FAQItem } from '@/config/faq';
+import Section from './ui/Section';
 import FAQAccordion from './FAQAccordion';
+import SectionHeading from './SectionHeading';
+import { useSectionBackground } from './ui/Section';
+import TabButton from './ui/TabButton';
 import { cn } from '@/utils';
 import Button from '@/components/ui/Button';
 import { Icon } from '@/config/icons';
-import { useSectionBackground } from './ui/Section';
-import TabButton from './ui/TabButton';
+import { faqItems } from '@/config/faq';
+import type { FAQItem } from '@/types/faq';
 
 interface HomeFAQSectionProps {
   className?: string;
@@ -115,7 +118,7 @@ const HomeFAQSection = ({
       <div className={`rounded-lg shadow-sm border ${colors.container} divide-y ${colors.divider} mb-8`}>
         {displayFaqs.length > 0 ? (
           displayFaqs.map((item, index) => (
-            <FAQAccordion key={index} item={item} index={index} />
+            <FAQAccordion key={index} item={item} _index={index} />
           ))
         ) : (
           <div className={`py-10 px-4 text-center ${colors.noFaqsText}`}>

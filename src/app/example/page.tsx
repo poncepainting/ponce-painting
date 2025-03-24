@@ -2,7 +2,6 @@
 
 import { designSystem } from '@/config/theme';
 import Section from '@/components/ui/Section';
-import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/SectionHeading';
 import HeaderAccent from '@/components/ui/HeaderAccent';
 

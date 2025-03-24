@@ -1,4 +1,3 @@
-import Container from '@/components/ui/Container';
 import { Icon } from '@/config/icons';
 import { siteConfig } from '@/config/site';
 import Section from '@/components/ui/Section';
@@ -9,7 +8,6 @@ import { designSystem } from '@/config/theme';
 import SectionHeading from '@/components/SectionHeading';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import HoverCard from '@/components/ui/HoverCard';
-import Button from '@/components/ui/Button';
 import ContactForm from '@/components/forms/ContactForm';
 
 export const metadata = {

@@ -7,10 +7,10 @@ import { FAQItem } from '@/types/faq';
 
 interface FAQAccordionProps {
   item: FAQItem;
-  index: number;
+  _index: number;
 }
 
-const FAQAccordion = ({ item, index }: FAQAccordionProps) => {
+const FAQAccordion = ({ item, _index }: FAQAccordionProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

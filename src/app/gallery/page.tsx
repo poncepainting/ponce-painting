@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Container from '@/components/ui/Container';
 import { siteConfig } from '@/config/site';
 import Section from '@/components/ui/Section';
 import { generatePageSchema } from '@/config/schema';

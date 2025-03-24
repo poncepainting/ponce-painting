@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { navigationConfig, siteConfig, type SocialPlatform } from '@/config/site';
 import { Icon } from '@/config/icons';
 import Container from './ui/Container';
-import Button from './ui/Button';
 
 const Footer = () => {
   const { footerNav } = navigationConfig;
