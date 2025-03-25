@@ -37,7 +37,7 @@ const nextConfig = {
     'lucide-react': {
       transform: 'lucide-react/dist/esm/icons/{{member}}',
       preventFullImport: true,
-    }
+    },
   },
   // Reduce polyfills where possible
   transpilePackages: [],
