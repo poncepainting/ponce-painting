@@ -12,7 +12,7 @@ const AboutStory = () => {
           <div className="text-center lg:text-left">
             <SectionHeading
               title="Our Story"
-              subtitle="How we started and where we're going"
+              subtitle="Bringing color and quality to Lake Charles since 2010"
               centered={false}
               useSubheading={true}
               subheadingText="OUR JOURNEY"
@@ -23,21 +23,25 @@ const AboutStory = () => {
             />
 
             <p className="text-gray-600 mb-4 text-center lg:text-left">
-              Founded in 2010, Ponce Painting has established itself as Lake Charles' premier
-              professional painting company, serving both residential and commercial clients
-              throughout the region.
+              When we opened our doors in 2010, we had one simple goal: to become Lake Charles' most
+              trusted painting company by delivering exceptional quality on every project. As local
+              residents ourselves, we understand the unique challenges our Gulf Coast climate
+              presents to homes and businesses in Southwest Louisiana.
             </p>
 
             <p className="text-gray-600 mb-4 text-center lg:text-left">
-              Our journey began with a simple mission: to provide exceptional painting services that
-              transform spaces and exceed customer expectations. Over the years, we've built our
-              reputation on quality craftsmanship, attention to detail, and professional service.
+              What began as a small family operation has grown into Lake Charles' premier painting
+              service through word-of-mouth referrals from satisfied customers. Our success comes
+              from our unwavering commitment to quality craftsmanship, meticulous attention to
+              detail, and treating every property with the same care we would our own homes.
             </p>
 
             <p className="text-gray-600 text-center lg:text-left">
-              Today, our team of skilled professionals continues to deliver outstanding results for
-              homeowners and businesses across Lake Charles and surrounding areas. We take pride in
-              our work and are committed to making every project a success.
+              Today, our team of skilled Lake Charles painting professionals continues to serve
+              residential and commercial clients throughout Lake Charles, Sulphur, Iowa, Moss Bluff,
+              Vinton, and Westlake. We remain deeply committed to our community, delivering
+              beautiful, durable finishes that protect and enhance properties across Southwest
+              Louisiana.
             </p>
           </div>
         </AnimationWrapper>
@@ -46,7 +50,7 @@ const AboutStory = () => {
           <div className="overflow-hidden rounded-xl shadow-lg">
             <OptimizedImage
               src="/images/ponce-painting-about-us.jpg"
-              alt="Ponce Painting professionals at work - Professional painting team serving Lake Charles"
+              alt="Ponce Painting professionals transforming Lake Charles homes and businesses with expert painting services"
               width={600}
               height={400}
               className="w-full h-auto"
@@ -61,9 +65,10 @@ const AboutStory = () => {
           <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
             <h3 className="text-xl font-bold mb-4 text-primary-800">Our Mission</h3>
             <p className="text-gray-600">
-              To deliver exceptional painting services that enhance the beauty, value, and
-              protection of our clients' properties through skilled craftsmanship and superior
-              customer service.
+              To elevate Lake Charles homes and businesses through expert painting services that
+              provide lasting beauty, protection, and value. We combine premium materials, skilled
+              craftsmanship, and exceptional customer service to exceed expectations on every
+              project, large or small.
             </p>
           </div>
         </AnimationWrapper>
@@ -72,8 +77,10 @@ const AboutStory = () => {
           <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
             <h3 className="text-xl font-bold mb-4 text-primary-800">Our Vision</h3>
             <p className="text-gray-600">
-              To be the most trusted painting company in Lake Charles, known for our commitment to
-              quality, integrity, and customer satisfaction in every project we undertake.
+              To be recognized as the most trusted and respected painting contractor in Southwest
+              Louisiana, known for our uncompromising quality, integrity, and dedication to customer
+              satisfaction. We aim to build lasting relationships with our clients while beautifying
+              our Lake Charles community one property at a time.
             </p>
           </div>
         </AnimationWrapper>

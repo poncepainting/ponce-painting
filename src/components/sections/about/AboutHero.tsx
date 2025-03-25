@@ -9,7 +9,7 @@ const AboutHero = () => {
       <AnimationWrapper type="fade">
         <SectionHeading
           title={`About ${siteConfig.name}`}
-          subtitle="Learn about our story, mission, and the team behind our success."
+          subtitle="Trusted Lake Charles painting professionals delivering exceptional results since 2010. Family-owned, customer-focused, and committed to transforming your spaces."
           useSubheading={true}
           subheadingText="OUR STORY"
           accentColor="primary.600"

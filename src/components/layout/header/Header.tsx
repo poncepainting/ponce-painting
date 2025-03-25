@@ -27,7 +27,7 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <OptimizedImage
-              src="/images/logo.svg"
+              src="/images/ponce-painting-logo-blue.png"
               alt={siteConfig.name}
               width={160}
               height={40}

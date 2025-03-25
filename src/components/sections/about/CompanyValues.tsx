@@ -9,21 +9,21 @@ const CompanyValues = () => {
   // Company values data
   const companyValues = [
     {
-      title: 'Excellence',
+      title: 'Quality Craftsmanship',
       description:
-        'We strive for excellence in everything we do, setting high standards and consistently exceeding expectations.',
+        "We take immense pride in our work, using premium materials and proven techniques to deliver flawless finishes that stand the test of time in Lake Charles' challenging climate.",
       icon: 'star' as IconName,
     },
     {
-      title: 'Integrity',
+      title: 'Honest Communication',
       description:
-        'We conduct our business with honesty, transparency, and ethical practices that build trust with our customers.',
+        'We believe in transparent, straightforward communication from start to finish. From detailed estimates to addressing concerns, we keep you informed throughout your painting project.',
       icon: 'check-circle' as IconName,
     },
     {
-      title: 'Customer Focus',
+      title: 'Customer-First Approach',
       description:
-        "We prioritize our customers' needs and satisfaction, ensuring a positive experience from start to finish.",
+        'Your complete satisfaction drives everything we do. We listen carefully to your needs, respect your property, and go above and beyond to exceed your expectations on every painting project.',
       icon: 'users' as IconName,
     },
   ];
@@ -32,8 +32,8 @@ const CompanyValues = () => {
     <Section className="bg-gray-50">
       <AnimationWrapper type="fade">
         <SectionHeading
-          title="Our Values"
-          subtitle="The principles that guide everything we do"
+          title="Our Core Values"
+          subtitle="The principles that guide our Lake Charles painting services"
           useSubheading={true}
           subheadingText="VALUES"
           accentColor="primary.600"

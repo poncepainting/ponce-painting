@@ -19,8 +19,10 @@ const SiteHead: React.FC<SiteHeadProps> = ({ schemas }) => {
       {/* Resource hints for performance optimization */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+      {/* Jakarta Sans font - removing Inter font */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
         media="print"
         onLoad={() => {
@@ -31,10 +33,10 @@ const SiteHead: React.FC<SiteHeadProps> = ({ schemas }) => {
       <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
       <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
-      {/* Preload critical fonts */}
+      {/* Preload critical fonts - correct path for Plus Jakarta Sans */}
       <link
         rel="preload"
-        href="/_next/static/media/plus-jakarta-sans-latin-wght.xxxxx.woff2" // Update with actual font path
+        href="/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2"
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"

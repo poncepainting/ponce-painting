@@ -7,7 +7,7 @@
 export const typography = {
   // Font families
   fonts: {
-    sans: 'var(--font-geist-sans)',
+    sans: 'var(--font-jakarta-sans)',
     mono: 'var(--font-geist-mono)',
   },
 
@@ -165,6 +165,6 @@ export const typography = {
 // Font options
 export const fonts = {
   // Font family names as defined in layout.tsx
-  sans: 'var(--font-geist-sans)',
+  sans: 'var(--font-jakarta-sans)',
   mono: 'var(--font-geist-mono)',
 };

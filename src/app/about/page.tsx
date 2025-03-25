@@ -5,9 +5,9 @@ import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { AboutHero, AboutStory, CompanyValues, TeamSection } from '@/components/sections/about';
 
 export const metadata = {
-  title: `Lake Charles Professional Painters | Our Story Since 2010 | ${siteConfig.name}`,
+  title: `Lake Charles Premier Painting Contractors | Our Story Since 2010 | ${siteConfig.name}`,
   description:
-    "Meet Ponce Painting's expert team of professional painters serving Lake Charles since 2010. Learn about our mission, values, and commitment to exceptional quality and customer satisfaction in every residential and commercial painting project.",
+    'Discover why Lake Charles homeowners and businesses have trusted Ponce Painting since 2010. Our local, experienced team delivers exceptional interior and exterior painting services with quality craftsmanship, premium materials, and personalized service throughout Southwest Louisiana.',
 };
 
 export default function AboutPage() {
