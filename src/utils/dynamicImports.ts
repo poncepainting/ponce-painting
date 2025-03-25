@@ -7,13 +7,16 @@ import type { ComponentType } from 'react';
  */
 export const dynamicImport = <T>(
   importFn: () => Promise<{ default: ComponentType<T> }>,
-  options = { ssr: false }
-) => dynamic(importFn, options);
+  ssr = false
+) => dynamic(importFn, { ssr });
 
 /**
  * Loads a component only on the client side
  * Use this for components that rely on browser APIs
  * or aren't needed for the initial render
+ *
+ * IMPORTANT: This must only be used in client components
+ * marked with 'use client' directive
  */
 export const clientOnly = <T>(importFn: () => Promise<{ default: ComponentType<T> }>) =>
   dynamic(importFn, { ssr: false });
