@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FAQItem, FAQCategory } from '@/types/faq';
 import FAQAccordion from './FAQAccordion';
 import { cn } from '@/utils';
-import TabButton from './ui/TabButton';
+import TabButton from '@/components/ui/buttons/TabButton';
 
 interface FAQSectionProps {
   items: FAQItem[];

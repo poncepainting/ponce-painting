@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Container from '@/components/ui/Container';
-import Section from '@/components/ui/Section';
-import Button from '@/components/ui/Button';
+import Container from '@/components/ui/containers/Container';
+import Section from '@/components/ui/containers/Section';
+import Button from '@/components/ui/buttons/Button';
 
 /**
  * Simple 404 page without tracking functionality for now

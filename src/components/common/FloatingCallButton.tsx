@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Button from './ui/Button';
+import Button from '@/components/ui/buttons/Button';
 import { siteConfig } from '@/config/site';
 
 interface FloatingCallButtonProps {

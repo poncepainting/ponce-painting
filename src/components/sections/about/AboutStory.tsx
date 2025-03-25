@@ -53,15 +53,23 @@ const AboutStory = () => {
               quality={imageQuality.high}
             />
           </div>
+        </AnimationWrapper>
+      </div>
 
-          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 mt-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+        <AnimationWrapper type="fade" delay={0.4}>
+          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
             <h3 className="text-xl font-bold mb-4 text-primary-800">Our Mission</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600">
               To deliver exceptional painting services that enhance the beauty, value, and
               protection of our clients' properties through skilled craftsmanship and superior
               customer service.
             </p>
+          </div>
+        </AnimationWrapper>
 
+        <AnimationWrapper type="fade" delay={0.6}>
+          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
             <h3 className="text-xl font-bold mb-4 text-primary-800">Our Vision</h3>
             <p className="text-gray-600">
               To be the most trusted painting company in Lake Charles, known for our commitment to
