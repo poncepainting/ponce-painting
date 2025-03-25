@@ -12,6 +12,7 @@ import ClockIcon from './ClockIcon';
 import MenuIcon from './MenuIcon';
 import XIcon from './XIcon';
 import HomeIcon from './HomeIcon';
+import StarIcon from './StarIcon';
 
 // Icon mapping for easy reference by name
 const iconComponents = {
@@ -20,6 +21,7 @@ const iconComponents = {
   menu: MenuIcon,
   x: XIcon,
   home: HomeIcon,
+  star: StarIcon,
   // Add other icons here as they are implemented
 };
 

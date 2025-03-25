@@ -12,14 +12,11 @@ interface ServiceCarouselProps {
   autoplay?: boolean;
 }
 
-const ServiceCarousel: FC<ServiceCarouselProps> = ({ 
-  className = '',
-  autoplay = false,
-}) => {
+const ServiceCarousel: FC<ServiceCarouselProps> = ({ className = '', autoplay = false }) => {
   return (
     <div className={`service-carousel ${className}`}>
-      <Carousel 
-        slidesToShow={3} 
+      <Carousel
+        slidesToShow={3}
         mobileSlidesToShow={1}
         slidesToScroll={1}
         infinite={true}
@@ -33,14 +30,14 @@ const ServiceCarousel: FC<ServiceCarouselProps> = ({
         {siteConfig.services.map(service => {
           const serviceSlug = service.title.toLowerCase().replace(/\s+/g, '-');
           return (
-            <div 
+            <div
               className="bg-white rounded-xl overflow-hidden border border-gray-200 h-full transition-all duration-300 hover:shadow-md hover:border-gray-300"
               key={service.title}
             >
               <div className="relative h-48">
                 <OptimizedImage
                   src={service.imageUrl}
-                  alt={service.title}
+                  alt={`${service.title} - ${siteConfig.name} offers professional ${service.title.toLowerCase()} services in Lake Charles, LA`}
                   width={600}
                   height={400}
                   className="object-cover"
@@ -66,4 +63,4 @@ const ServiceCarousel: FC<ServiceCarouselProps> = ({
   );
 };
 
-export default ServiceCarousel; 
+export default ServiceCarousel;

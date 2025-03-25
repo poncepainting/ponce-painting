@@ -11,7 +11,10 @@ export type FormSubmissionResult = {
 /**
  * Submit form data using the configured handler method
  */
-export const submitForm = async (formData: QuoteFormData, formType: FormType = 'lead'): Promise<FormSubmissionResult> => {
+export const submitForm = async (
+  formData: QuoteFormData,
+  formType: FormType = 'lead'
+): Promise<FormSubmissionResult> => {
   const handler = formConfig.handler || 'formspree';
 
   switch (handler) {
@@ -68,11 +71,14 @@ export const submitFormData = async (formData: QuoteFormData): Promise<FormSubmi
  * Submit form data to Formspree
  * Works anywhere without server configuration
  */
-export const submitToFormspree = async (formData: QuoteFormData, formType: FormType = 'lead'): Promise<FormSubmissionResult> => {
+export const submitToFormspree = async (
+  formData: QuoteFormData,
+  formType: FormType = 'lead'
+): Promise<FormSubmissionResult> => {
   try {
     // Select the appropriate form ID based on the form type
     let formId: string;
-    
+
     if (formType === 'contact') {
       formId = formConfig.formspree.contactFormId;
     } else {

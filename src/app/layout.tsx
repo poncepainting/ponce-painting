@@ -38,9 +38,10 @@ const themeCssVariables = createCssColorVariables();
 export const metadata: Metadata = {
   title: {
     template: `%s | ${siteConfig.name}`,
-    default: typeof siteConfig.defaultMetadata.title === 'string' 
-      ? siteConfig.defaultMetadata.title 
-      : `${siteConfig.name} - Professional Painting Services`,
+    default:
+      typeof siteConfig.defaultMetadata.title === 'string'
+        ? siteConfig.defaultMetadata.title
+        : `${siteConfig.name} - Professional Painting Services`,
   },
   description: siteConfig.defaultMetadata.description,
   keywords: siteConfig.defaultMetadata.keywords,

@@ -17,11 +17,15 @@ export const metadata = {
 export default function ServicesPage() {
   // Generate schema for all services
   const servicesSchemas = generateServicesSchema();
-  
+
   // Use string literals for SEO props to ensure they're the correct type
-  const seoTitle = typeof metadata.title === 'string' ? metadata.title : `Services | ${siteConfig.name}`;
-  const seoDescription = typeof metadata.description === 'string' ? metadata.description : 'Explore our range of professional services tailored to your needs.';
-  
+  const seoTitle =
+    typeof metadata.title === 'string' ? metadata.title : `Services | ${siteConfig.name}`;
+  const seoDescription =
+    typeof metadata.description === 'string'
+      ? metadata.description
+      : 'Explore our range of professional services tailored to your needs.';
+
   return (
     <main>
       {/* SEO Component */}
@@ -31,10 +35,10 @@ export default function ServicesPage() {
         canonical="/services"
         schemaType="services"
       />
-      
+
       {/* Schema markup specific to services page */}
       <SchemaMarkup schemas={servicesSchemas} />
-      
+
       {/* Services Hero Section */}
       <Section className="bg-primary-50 py-20">
         <AnimationWrapper type="fade">
@@ -48,21 +52,17 @@ export default function ServicesPage() {
           />
         </AnimationWrapper>
       </Section>
-      
+
       {/* Services Grid */}
       <Section name="services-list" bgColor="light.white">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {siteConfig.services.map((service, index) => (
-            <AnimationWrapper 
-              key={service.id} 
-              type="scale" 
-              delay={index * 0.1}
-            >
+            <AnimationWrapper key={service.id} type="scale" delay={index * 0.1}>
               <HoverCard className="h-full">
                 <div className="h-48 overflow-hidden relative rounded-t-xl">
                   <OptimizedImage
                     src={service.imageUrl}
-                    alt={service.title}
+                    alt={`${service.title} - Professional ${service.title} services in Lake Charles, LA by ${siteConfig.name}`}
                     width={400}
                     height={300}
                     useFill={true}
@@ -87,7 +87,7 @@ export default function ServicesPage() {
           ))}
         </div>
       </Section>
-      
+
       {/* Custom Services CTA */}
       <Section className="bg-gray-50">
         <AnimationWrapper type="fade">
@@ -99,20 +99,16 @@ export default function ServicesPage() {
               subheadingText="CUSTOM SERVICES"
               accentColor="primary.600"
             />
-            
+
             <AnimationWrapper type="slide-up" delay={0.2} className="mt-8">
-              <Button
-                href="/contact"
-                variant="primary"
-                size="lg"
-              >
+              <Button href="/contact" variant="primary" size="lg">
                 Get in Touch
               </Button>
             </AnimationWrapper>
           </div>
         </AnimationWrapper>
       </Section>
-      
+
       {/* Service Process */}
       <Section bgColor="light.white">
         <AnimationWrapper type="fade">
@@ -124,7 +120,7 @@ export default function ServicesPage() {
             accentColor="primary.600"
           />
         </AnimationWrapper>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
           <AnimationWrapper type="slide-up" delay={0.1}>
             <div className="bg-white p-6 rounded-xl border border-gray-200 text-center">
@@ -137,7 +133,7 @@ export default function ServicesPage() {
               </p>
             </div>
           </AnimationWrapper>
-          
+
           <AnimationWrapper type="slide-up" delay={0.2}>
             <div className="bg-white p-6 rounded-xl border border-gray-200 text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -145,11 +141,12 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-primary-800">Implementation</h3>
               <p className="text-gray-600">
-                Our experts implement the solution, ensuring quality and attention to detail at every step.
+                Our experts implement the solution, ensuring quality and attention to detail at
+                every step.
               </p>
             </div>
           </AnimationWrapper>
-          
+
           <AnimationWrapper type="slide-up" delay={0.3}>
             <div className="bg-white p-6 rounded-xl border border-gray-200 text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">

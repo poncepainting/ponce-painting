@@ -46,50 +46,74 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       if (size === 'md') return 'px-6 py-3';
       return 'px-8 py-4'; // lg
     };
-    
+
     // Apply padding directly as inline style to ensure it can't be overridden
     const paddingStyle = {
-      padding: iconOnly 
-        ? (size === 'sm' ? '0.5rem' : size === 'md' ? '0.75rem' : '1rem')  // p-2, p-3, p-4
+      padding: iconOnly
+        ? size === 'sm'
+          ? '0.5rem'
+          : size === 'md'
+            ? '0.75rem'
+            : '1rem' // p-2, p-3, p-4
         : undefined,
-      paddingLeft: !iconOnly && !isTextVariant 
-        ? (size === 'sm' ? '1rem' : size === 'md' ? '1.5rem' : '2rem')  // px-4, px-6, px-8
-        : undefined,
-      paddingRight: !iconOnly && !isTextVariant
-        ? (size === 'sm' ? '1rem' : size === 'md' ? '1.5rem' : '2rem')  // px-4, px-6, px-8
-        : undefined,
-      paddingTop: !iconOnly && !isTextVariant
-        ? (size === 'sm' ? '0.5rem' : size === 'md' ? '0.75rem' : '1rem')  // py-2, py-3, py-4
-        : undefined,
-      paddingBottom: !iconOnly && !isTextVariant
-        ? (size === 'sm' ? '0.5rem' : size === 'md' ? '0.75rem' : '1rem')  // py-2, py-3, py-4
-        : undefined,
+      paddingLeft:
+        !iconOnly && !isTextVariant
+          ? size === 'sm'
+            ? '1rem'
+            : size === 'md'
+              ? '1.5rem'
+              : '2rem' // px-4, px-6, px-8
+          : undefined,
+      paddingRight:
+        !iconOnly && !isTextVariant
+          ? size === 'sm'
+            ? '1rem'
+            : size === 'md'
+              ? '1.5rem'
+              : '2rem' // px-4, px-6, px-8
+          : undefined,
+      paddingTop:
+        !iconOnly && !isTextVariant
+          ? size === 'sm'
+            ? '0.5rem'
+            : size === 'md'
+              ? '0.75rem'
+              : '1rem' // py-2, py-3, py-4
+          : undefined,
+      paddingBottom:
+        !iconOnly && !isTextVariant
+          ? size === 'sm'
+            ? '0.5rem'
+            : size === 'md'
+              ? '0.75rem'
+              : '1rem' // py-2, py-3, py-4
+          : undefined,
     };
 
     // Font size based on button size
     const fontSizeClass = size === 'sm' ? 'text-sm' : 'text-base';
-    
+
     // Layout styles
     const layoutStyles = 'inline-flex items-center justify-center';
-    
-    // Typography styles 
+
+    // Typography styles
     const typographyStyles = `font-medium ${fontSizeClass}`;
-    
+
     // Visual styles
-    const cornerStyles = iconOnly 
-      ? buttonConfig.defaults.roundedIcon 
+    const cornerStyles = iconOnly
+      ? buttonConfig.defaults.roundedIcon
       : buttonConfig.defaults.rounded;
-      
+
     const transitionStyles = 'transition-colors duration-200';
-    
+
     // Variant styles (colors, etc.)
     const variantStyles = isDisabled
       ? buttonConfig.variants[variant].disabled
       : buttonConfig.variants[variant].base;
-    
+
     // Width styles
     const widthStyles = fullWidth ? 'w-full' : '';
-    
+
     // Join all styles together
     const buttonStyles = [
       layoutStyles,

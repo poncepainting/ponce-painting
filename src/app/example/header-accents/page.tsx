@@ -18,12 +18,12 @@ export default function HeaderAccentsPage() {
         imageUrl="/images/hero/hero-image.jpg"
         imageAlt="Header accents example"
         primaryCTA={{
-          text: "View Examples",
-          href: "#examples"
+          text: 'View Examples',
+          href: '#examples',
         }}
         secondaryCTA={{
-          text: "Design System",
-          href: "#design-system"
+          text: 'Design System',
+          href: '#design-system',
         }}
         height="medium"
       />

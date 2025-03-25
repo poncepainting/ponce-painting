@@ -32,17 +32,9 @@ export default {
         allow: '/',
       },
     ],
-    additionalSitemaps: [
-      `${siteUrl}/sitemap.xml`,
-    ],
+    additionalSitemaps: [`${siteUrl}/sitemap.xml`],
   },
-  exclude: [
-    ...nonIndexedPaths,
-    '/admin/*',
-    '/private/*',
-    '/api/*',
-    '/server-sitemap.xml',
-  ],
+  exclude: [...nonIndexedPaths, '/admin/*', '/private/*', '/api/*', '/server-sitemap.xml'],
   generateIndexSitemap: true,
   outDir: 'public',
   transform: async (config, path) => {

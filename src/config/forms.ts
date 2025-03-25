@@ -22,7 +22,10 @@ export const formConfig = {
     formId: process.env.NEXT_PUBLIC_FORMSPREE_ID || 'YOUR_FORMSPREE_FORM_ID',
     // Specific form IDs for different form types
     contactFormId: process.env.NEXT_PUBLIC_CONTACT_FORM_ID || 'xqapbnvy',
-    leadFormId: process.env.NEXT_PUBLIC_LEAD_FORM_ID || process.env.NEXT_PUBLIC_FORMSPREE_ID || 'YOUR_FORMSPREE_FORM_ID',
+    leadFormId:
+      process.env.NEXT_PUBLIC_LEAD_FORM_ID ||
+      process.env.NEXT_PUBLIC_FORMSPREE_ID ||
+      'YOUR_FORMSPREE_FORM_ID',
   },
 
   // EmailJS configuration (used when handler is 'emailjs')

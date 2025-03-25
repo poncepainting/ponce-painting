@@ -15,7 +15,7 @@ const ContactForm = () => {
     message: '',
     service: 'Contact Form Message',
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -31,21 +31,21 @@ const ContactForm = () => {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setFormStatus('error');
       setErrorMessage('Please fill out all required fields');
       return;
     }
-    
+
     setIsSubmitting(true);
     setFormStatus('idle');
     setErrorMessage('');
 
     try {
       const result = await submitForm(formData, 'contact');
-      
+
       if (result.success) {
         setFormStatus('success');
         // Reset form
@@ -77,13 +77,13 @@ const ContactForm = () => {
           Your message has been sent! We'll get back to you as soon as possible.
         </div>
       )}
-      
+
       {formStatus === 'error' && (
         <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
           {errorMessage || 'An error occurred. Please try again.'}
         </div>
       )}
-      
+
       <div className="space-y-4">
         <FormField
           id="name"
@@ -105,7 +105,7 @@ const ContactForm = () => {
           placeholder="john@example.com"
           required
         />
-        
+
         <FormField
           id="phone"
           name="phone"
@@ -115,7 +115,7 @@ const ContactForm = () => {
           label="Phone Number (Optional)"
           placeholder="(123) 456-7890"
         />
-        
+
         <FormField
           id="message"
           name="message"
@@ -142,4 +142,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm; 
+export default ContactForm;

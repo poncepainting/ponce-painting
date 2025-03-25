@@ -22,10 +22,8 @@ const PageSEO: React.FC<PageSEOProps> = ({
 }) => {
   // Generate appropriate schemas based on page type
   const schemas = React.useMemo(() => {
-    const baseSchemas = schemaType !== 'other' 
-      ? generatePageSchema(schemaType, schemaData)
-      : []; 
-    
+    const baseSchemas = schemaType !== 'other' ? generatePageSchema(schemaType, schemaData) : [];
+
     return [...baseSchemas, ...additionalSchemas];
   }, [schemaType, schemaData, additionalSchemas]);
 
@@ -37,4 +35,4 @@ const PageSEO: React.FC<PageSEOProps> = ({
   );
 };
 
-export default PageSEO; 
+export default PageSEO;

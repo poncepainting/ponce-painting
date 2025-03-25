@@ -22,6 +22,7 @@ export type Testimonial = {
   role: string;
   content: string;
   image: string;
+  rating: number;
 };
 
 export type Feature = {
@@ -38,7 +39,7 @@ export const servicesConfig = [
     description:
       'Revitalize your Lake Charles home with premium interior and exterior painting services tailored to your unique style and preferences.',
     icon: 'home',
-    imageUrl: '/images/services/residential-painting.jpg',
+    imageUrl: '/images/exterior-residential-painting.jpg',
     features: [
       'Interior Wall & Ceiling Painting',
       'Exterior Siding & Trim Painting',
@@ -53,7 +54,7 @@ export const servicesConfig = [
     description:
       'Enhance your business image with professional commercial painting services that minimize disruption while maximizing visual impact.',
     icon: 'building',
-    imageUrl: '/images/services/commercial-painting.jpg',
+    imageUrl: '/images/exterior-commercial-painting.jpg',
     features: [
       'Office & Retail Space Painting',
       'Restaurant & Hospitality Painting',
@@ -87,6 +88,7 @@ export const testimonialsConfig = [
     content:
       'Ponce Painting transformed our outdated living room into a stunning space we love showing off to family and friends. Their attention to detail and clean work process made the experience stress-free.',
     image: '/testimonials/sarah-johnson.jpg',
+    rating: 5,
   },
   {
     name: 'Michael Chen',
@@ -94,6 +96,7 @@ export const testimonialsConfig = [
     content:
       'As a restaurant owner, I needed painters who could work around our schedule with minimal disruption. Ponce Painting delivered on time, on budget, and the fresh look has our customers raving.',
     image: '/testimonials/michael-chen.jpg',
+    rating: 5,
   },
   {
     name: 'Emily Rodriguez',
@@ -101,6 +104,7 @@ export const testimonialsConfig = [
     content:
       'Managing multiple properties requires reliable contractors. Ponce Painting has become our go-to for all painting needs. Their consistent quality, fair pricing, and professionalism are unmatched in Lake Charles.',
     image: '/testimonials/emma-wilson.jpg',
+    rating: 4,
   },
 ] satisfies Testimonial[];
 

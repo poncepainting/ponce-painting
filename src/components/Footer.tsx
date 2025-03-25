@@ -39,7 +39,7 @@ const Footer = () => {
               <div className="mb-8">
                 <h2 className="text-lg font-semibold mb-4 text-white">{section.title}</h2>
                 <ul className="space-y-2">
-                  {section.links.map((link) => (
+                  {section.links.map(link => (
                     <li key={link.href}>
                       <Link
                         href={link.href}

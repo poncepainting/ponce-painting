@@ -35,7 +35,8 @@ export type IconName =
   | 'message-square'
   | 'home'
   | 'building'
-  | 'palette';
+  | 'palette'
+  | 'star';
 
 // Common SVG attributes for consistent rendering
 export const baseSvgProps = (props: IconProps): SVGProps<SVGSVGElement> => ({

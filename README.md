@@ -233,4 +233,5 @@ To manually control which pages appear in the sitemap, you can:
 
 1. Configure paths in `src/config/seo.ts`
 2. Override on individual pages using the `noIndex` prop on the SEO component
+
 # Deployment test

@@ -15,8 +15,12 @@ export default function TermsOfServicePage() {
   const lastUpdated = 'January 1, 2023'; // Update this with your actual date
 
   // Use string literals for SEO props to ensure they're the correct type
-  const seoTitle = typeof metadata.title === 'string' ? metadata.title : `Terms of Service | ${siteConfig.name}`;
-  const seoDescription = typeof metadata.description === 'string' ? metadata.description : 'Terms and conditions for using our services.';
+  const seoTitle =
+    typeof metadata.title === 'string' ? metadata.title : `Terms of Service | ${siteConfig.name}`;
+  const seoDescription =
+    typeof metadata.description === 'string'
+      ? metadata.description
+      : 'Terms and conditions for using our services.';
 
   return (
     <main>

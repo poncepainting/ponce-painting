@@ -10,4 +10,4 @@ export interface FAQCategory {
   id: string;
   name: string;
   description: string;
-} 
+}

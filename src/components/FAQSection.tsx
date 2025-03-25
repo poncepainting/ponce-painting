@@ -22,20 +22,20 @@ const FAQSection = ({
   className,
 }: FAQSectionProps) => {
   // Get unique categories if not provided
-  const uniqueCategories = categories.length > 0 
-    ? categories 
-    : [...new Set(items.map(item => item.category))].map(category => ({
-        id: category.toLowerCase().replace(/\s+/g, '-'),
-        name: category,
-        description: `Questions about ${category.toLowerCase()}`
-      }));
-    
+  const uniqueCategories =
+    categories.length > 0
+      ? categories
+      : [...new Set(items.map(item => item.category))].map(category => ({
+          id: category.toLowerCase().replace(/\s+/g, '-'),
+          name: category,
+          description: `Questions about ${category.toLowerCase()}`,
+        }));
+
   const [activeCategory, setActiveCategory] = useState('All');
-  
+
   // Simplified filtering logic
-  const filteredItems = activeCategory === 'All' 
-    ? items 
-    : items.filter(item => item.categoryId === activeCategory);
+  const filteredItems =
+    activeCategory === 'All' ? items : items.filter(item => item.categoryId === activeCategory);
 
   return (
     <div className={cn('w-full', className)}>
@@ -55,8 +55,8 @@ const FAQSection = ({
           >
             All
           </TabButton>
-          
-          {uniqueCategories.map((category) => (
+
+          {uniqueCategories.map(category => (
             <TabButton
               key={category.id}
               isActive={activeCategory === category.id}
@@ -84,4 +84,4 @@ const FAQSection = ({
   );
 };
 
-export default FAQSection; 
+export default FAQSection;

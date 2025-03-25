@@ -110,7 +110,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             className={showQuoteForm ? '' : 'lg:col-span-2'}
           >
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white"
               variants={itemVariants}
             >
               {title}
@@ -118,7 +118,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
             {subtitle && (
               <motion.p
-                className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-white"
+                className="text-xl md:text-2xl mb-7 max-w-2xl mx-auto text-white"
                 variants={itemVariants}
               >
                 {subtitle}
@@ -150,7 +150,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="mt-4 sm:mt-6 lg:mt-0 mb-5 sm:mb-6 lg:mb-0"
+              className="mt-3 sm:mt-4 lg:mt-0 mb-5 sm:mb-6 lg:mb-0"
             >
               <QuoteForm />
             </motion.div>

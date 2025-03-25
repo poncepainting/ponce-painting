@@ -3,22 +3,23 @@
 import { FC } from 'react';
 import Carousel from './ui/Carousel';
 import OptimizedImage from './ui/OptimizedImage';
+import StarRating from './ui/StarRating';
 import { siteConfig } from '@/config/site';
-import { imageSizes } from '@/config/images';
+import { Icon } from '@/components/icons';
 
 interface TestimonialCarouselProps {
   className?: string;
   autoplay?: boolean;
 }
 
-const TestimonialCarousel: FC<TestimonialCarouselProps> = ({ 
+const TestimonialCarousel: FC<TestimonialCarouselProps> = ({
   className = '',
-  autoplay = false
+  autoplay = false,
 }) => {
   return (
     <div className={`testimonial-carousel ${className}`}>
-      <Carousel 
-        slidesToShow={3} 
+      <Carousel
+        slidesToShow={3}
         mobileSlidesToShow={1}
         autoplay={autoplay}
         autoplaySpeed={5000}
@@ -29,23 +30,16 @@ const TestimonialCarousel: FC<TestimonialCarouselProps> = ({
         className="pb-2"
       >
         {siteConfig.testimonials.map(testimonial => (
-          <div key={testimonial.name} className="bg-gray-50 p-6 rounded-xl h-full shadow-sm border border-gray-200">
+          <div
+            key={testimonial.name}
+            className="bg-gray-50 p-6 rounded-xl h-full shadow-sm border border-gray-200"
+          >
             <div className="mb-4 flex items-center">
               <div className="flex-shrink-0 mr-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100">
-                  {testimonial.image ? (
-                    <OptimizedImage
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-100 text-primary-700">
-                      {testimonial.name.charAt(0)}
-                    </div>
-                  )}
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-primary-100 border border-primary-200">
+                  <div className="w-full h-full flex items-center justify-center text-primary-700">
+                    <Icon name="star" size={24} />
+                  </div>
                 </div>
               </div>
               <div>
@@ -53,6 +47,7 @@ const TestimonialCarousel: FC<TestimonialCarouselProps> = ({
                 <p className="text-gray-500 text-sm">{testimonial.role}</p>
               </div>
             </div>
+            <StarRating rating={testimonial.rating} className="mb-3" />
             <p className="text-gray-700 italic">"{testimonial.content}"</p>
           </div>
         ))}
@@ -61,4 +56,4 @@ const TestimonialCarousel: FC<TestimonialCarouselProps> = ({
   );
 };
 
-export default TestimonialCarousel; 
+export default TestimonialCarousel;

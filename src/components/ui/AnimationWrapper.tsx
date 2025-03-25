@@ -56,13 +56,17 @@ const AnimationWrapper = ({
   };
 
   // Select the appropriate variant based on type
-  const selectedVariants = variants || (
-    type === 'fade' ? fadeVariants :
-    type === 'slide-up' ? slideUpVariants :
-    type === 'slide-right' ? slideRightVariants :
-    type === 'scale' ? scaleVariants :
-    { hidden: {}, visible: {} } // 'none' case
-  );
+  const selectedVariants =
+    variants ||
+    (type === 'fade'
+      ? fadeVariants
+      : type === 'slide-up'
+        ? slideUpVariants
+        : type === 'slide-right'
+          ? slideRightVariants
+          : type === 'scale'
+            ? scaleVariants
+            : { hidden: {}, visible: {} }); // 'none' case
 
   return (
     <motion.div
@@ -78,4 +82,4 @@ const AnimationWrapper = ({
   );
 };
 
-export default AnimationWrapper; 
+export default AnimationWrapper;

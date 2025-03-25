@@ -52,6 +52,7 @@ export const imageQuality = {
   low: 60, // For thumbnails, placeholders
   medium: 75, // Default quality for most images
   high: 85, // For hero images, important product photos
+  maximum: 100,
 };
 
 // Placeholder images paths
@@ -94,4 +95,73 @@ export const generateImageMetadata = (src: string, alt: string, width: number, h
           ? 'image/webp'
           : 'image/jpeg',
   };
+};
+
+// Image metadata for SEO
+export type ImageMetadata = {
+  src: string;
+  alt: string;
+  description: string;
+  keywords: string[];
+  width: number;
+  height: number;
+};
+
+// Centralized image metadata for SEO and accessibility
+export const imageMetadata: Record<string, ImageMetadata> = {
+  // Residential painting image metadata
+  'exterior-residential-painting': {
+    src: '/images/exterior-residential-painting.jpg',
+    alt: 'Professional residential exterior painting by Ponce Painting in Lake Charles, LA',
+    description:
+      'High-quality exterior painting service for homes in Lake Charles, showcasing our premium workmanship and attention to detail.',
+    keywords: [
+      'residential painting',
+      'exterior painting',
+      'house painting',
+      'Lake Charles painting contractor',
+      'home improvement',
+      'professional painters',
+      'quality painting',
+    ],
+    width: 1600,
+    height: 1200,
+  },
+
+  // Commercial painting image metadata
+  'exterior-commercial-painting': {
+    src: '/images/exterior-commercial-painting.jpg',
+    alt: 'Professional commercial exterior painting services by Ponce Painting for businesses in Lake Charles, LA',
+    description:
+      'Expert commercial painting services for businesses in Lake Charles, displaying our commitment to quality and professionalism.',
+    keywords: [
+      'commercial painting',
+      'business painting',
+      'exterior commercial painting',
+      'Lake Charles commercial painter',
+      'professional painting service',
+      'business improvement',
+      'commercial property maintenance',
+    ],
+    width: 1600,
+    height: 1200,
+  },
+};
+
+// Helper function to get image metadata by key
+export const getImageMetadata = (key: string): ImageMetadata | undefined => {
+  return imageMetadata[key];
+};
+
+// Helper function to get image metadata by path
+export const getImageMetadataByPath = (path: string): ImageMetadata | undefined => {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+
+  for (const key in imageMetadata) {
+    if (imageMetadata[key].src === normalizedPath) {
+      return imageMetadata[key];
+    }
+  }
+
+  return undefined;
 };

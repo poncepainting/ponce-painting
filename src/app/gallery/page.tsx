@@ -69,13 +69,14 @@ const categories = ['all', 'commercial', 'residential'];
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [activeItem, setActiveItem] = useState<string | null>(null);
-  
-  // Filter gallery items based on selected category
-  const filteredItems = selectedCategory === 'all' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === selectedCategory);
 
-  // Handle modal open/close  
+  // Filter gallery items based on selected category
+  const filteredItems =
+    selectedCategory === 'all'
+      ? galleryItems
+      : galleryItems.filter(item => item.category === selectedCategory);
+
+  // Handle modal open/close
   const handleOpenModal = (id: string) => {
     setActiveItem(id);
     document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
@@ -88,19 +89,15 @@ export default function GalleryPage() {
 
   // Generate gallery page schema
   const gallerySchemas = generatePageSchema('gallery');
-  
+
   return (
     <main>
       {/* SEO Component */}
-      <SEO
-        title={pageMetadata.title}
-        description={pageMetadata.description}
-        canonical="/gallery"
-      />
-      
+      <SEO title={pageMetadata.title} description={pageMetadata.description} canonical="/gallery" />
+
       {/* Schema markup specific to gallery page */}
       <SchemaMarkup schemas={gallerySchemas} />
-      
+
       <Section name="gallery-hero" className="bg-primary-50">
         <SectionHeading
           title="Our Portfolio"
@@ -114,7 +111,7 @@ export default function GalleryPage() {
       <Section name="gallery-filter" bgColor="light.white" className="py-16">
         {/* Category filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {categories.map((category) => (
+          {categories.map(category => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
@@ -131,8 +128,8 @@ export default function GalleryPage() {
 
         {/* Gallery grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => (
-            <div 
+          {filteredItems.map(item => (
+            <div
               key={item.id}
               onClick={() => handleOpenModal(item.id)}
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer border border-gray-200"
@@ -163,11 +160,10 @@ export default function GalleryPage() {
         {filteredItems.length === 0 && (
           <div className="text-center py-12">
             <h3 className="text-xl font-semibold text-gray-700 mb-2">No projects found</h3>
-            <p className="text-gray-500 mb-6">There are no projects matching your selected filter.</p>
-            <Button 
-              onClick={() => setSelectedCategory('all')}
-              variant="secondary"
-            >
+            <p className="text-gray-500 mb-6">
+              There are no projects matching your selected filter.
+            </p>
+            <Button onClick={() => setSelectedCategory('all')} variant="secondary">
               View All Projects
             </Button>
           </div>
@@ -186,10 +182,10 @@ export default function GalleryPage() {
             onDarkBackground={true}
           />
         </AnimationWrapper>
-        
+
         <AnimationWrapper type="scale" delay={0.2} className="text-center">
-          <Button 
-            href="/contact" 
+          <Button
+            href="/contact"
             variant="outline"
             size="lg"
             className="bg-white text-primary-600 border-white hover:bg-gray-50"
@@ -205,21 +201,32 @@ export default function GalleryPage() {
           <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-auto">
             {/* Close button */}
             <div className="p-4 flex justify-end">
-              <button 
+              <button
                 onClick={handleCloseModal}
                 className="rounded-full p-2 bg-gray-200 hover:bg-gray-300 transition-colors"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
-            
+
             {/* Modal content */}
             {(() => {
               const item = galleryItems.find(item => item.id === activeItem);
               if (!item) return null;
-              
+
               return (
                 <div className="p-4 pt-0">
                   <div className="relative h-64 md:h-80">
@@ -239,17 +246,13 @@ export default function GalleryPage() {
                   <div className="mt-6">
                     <h3 className="text-lg font-semibold">Project Details</h3>
                     <p className="mt-2 text-gray-600">
-                      This is a placeholder for additional project details. In a real implementation, 
-                      you would include information like the project scope, completion date, client 
-                      testimonial, and other relevant details.
+                      This is a placeholder for additional project details. In a real
+                      implementation, you would include information like the project scope,
+                      completion date, client testimonial, and other relevant details.
                     </p>
                   </div>
                   <div className="mt-6 pt-6 border-t border-gray-200">
-                    <Button 
-                      href="/contact" 
-                      variant="primary"
-                      className="w-full"
-                    >
+                    <Button href="/contact" variant="primary" className="w-full">
                       Discuss a Similar Project
                     </Button>
                   </div>
@@ -261,4 +264,4 @@ export default function GalleryPage() {
       )}
     </main>
   );
-} 
+}

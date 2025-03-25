@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image, { ImageProps } from 'next/image';
-import { imageQuality } from '@/config/images';
+import { imageQuality, getImageMetadataByPath } from '@/config/images';
 import { generatePlaceholderDataUrl, getImageName } from '@/utils';
 
 interface OptimizedImageProps extends Omit<ImageProps, 'onError'> {
@@ -32,13 +32,23 @@ const OptimizedImage = ({
   const imageName = getImageName(src);
   const displayText = fallbackText || `Image needs updating: ${imageName}`;
 
+  // Try to get metadata for the image
+  const metadata = getImageMetadataByPath(src as string);
+
+  // Use metadata alt if available and no explicit alt was provided
+  const altText = alt || metadata?.alt || displayText;
+
+  // Use metadata dimensions if available and no explicit dimensions provided
+  const imageWidth = width || metadata?.width;
+  const imageHeight = height || metadata?.height;
+
   // Only use loading='lazy' when priority is false
   const loading = priority ? undefined : loadingProp || 'lazy';
 
   // Generate placeholder - only if requested and not priority loading
   const placeholderDataUrl =
     !priority && blurPlaceholder
-      ? generatePlaceholderDataUrl(width || 700, height || 475, true)
+      ? generatePlaceholderDataUrl(imageWidth || 700, imageHeight || 475, true)
       : undefined;
 
   const handleError = () => {
@@ -86,7 +96,7 @@ const OptimizedImage = ({
         <div className={`relative w-full h-full ${className}`}>
           <Image
             src={src}
-            alt={alt}
+            alt={altText}
             fill={true}
             className="object-cover"
             priority={priority}
@@ -102,9 +112,9 @@ const OptimizedImage = ({
       ) : (
         <Image
           src={src}
-          alt={alt}
-          width={width}
-          height={height}
+          alt={altText}
+          width={imageWidth}
+          height={imageHeight}
           className={`object-cover ${className}`}
           priority={priority}
           quality={quality}
