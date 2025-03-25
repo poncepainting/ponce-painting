@@ -83,8 +83,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
-      className={`relative flex flex-col bg-dark-primary pt-16 md:pt-20 lg:pt-28 ${
-        showQuoteForm ? 'pb-0 md:py-20' : heightClasses[height]
+      className={`relative flex flex-col bg-dark-primary pt-12 md:pt-16 lg:pt-24 ${
+        showQuoteForm ? 'pb-12 md:py-16' : heightClasses[height]
       }`}
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
