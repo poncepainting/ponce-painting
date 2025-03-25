@@ -13,9 +13,9 @@ import { imageSizes, imageQuality } from '@/config/images';
 import type { IconName } from '@/components/icons/types';
 
 export const metadata = {
-  title: `About Us | ${siteConfig.name}`,
+  title: `Lake Charles Professional Painters | Our Story Since 2010 | ${siteConfig.name}`,
   description:
-    "Learn about Ponce Painting - Lake Charles' premier professional painting company serving residential and commercial clients since 2010.",
+    "Meet Ponce Painting's expert team of professional painters serving Lake Charles since 2010. Learn about our mission, values, and commitment to exceptional quality and customer satisfaction in every residential and commercial painting project.",
 };
 
 export default function AboutPage() {

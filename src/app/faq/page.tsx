@@ -7,29 +7,48 @@ import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import PageSEO from '@/components/PageSEO';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'FAQ | Ponce Painting',
+  title: 'Painting FAQs | Common Questions About Professional Painting | Ponce Painting',
   description:
-    'Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana.',
+    'Get answers to common questions about painting services in Lake Charles, including pricing, preparation, paint types, timelines, and our professional process for residential and commercial projects.',
   openGraph: {
-    title: 'FAQ | Ponce Painting',
+    title: 'Painting FAQs | Common Questions About Professional Painting | Ponce Painting',
     description:
-      'Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana.',
+      'Get answers to common questions about painting services in Lake Charles, including pricing, preparation, paint types, timelines, and our professional process for residential and commercial projects.',
     type: 'website',
   },
 };
 
 export default function FAQPage() {
+  // Generate FAQ schema
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <main>
       {/* SEO Component */}
       <PageSEO
-        title="FAQ | Ponce Painting"
-        description="Find answers to common questions about our professional painting services in Lake Charles and Southwest Louisiana."
+        title="Painting FAQs | Common Questions About Professional Painting | Ponce Painting"
+        description="Get answers to common questions about painting services in Lake Charles, including pricing, preparation, paint types, timelines, and our professional process for residential and commercial projects."
         canonical="/faq"
         schemaType="other"
+        additionalSchemas={[faqSchema]}
       />
+
+      {/* Schema markup specific to FAQ page */}
+      <SchemaMarkup schemas={[faqSchema]} />
 
       {/* Hero Section */}
       <Section className="bg-primary-50 py-20">

@@ -11,8 +11,9 @@ import HoverCard from '@/components/ui/HoverCard';
 import ContactForm from '@/components/forms/ContactForm';
 
 export const metadata = {
-  title: `Contact Us | ${siteConfig.name}`,
-  description: 'Get in touch with our team for inquiries, quotes, or support.',
+  title: `Contact Our Lake Charles Painting Experts | Free Quotes | ${siteConfig.name}`,
+  description:
+    'Request a free quote for your Lake Charles painting project. Contact our expert team at Ponce Painting by phone, email, or our convenient online form for professional residential and commercial painting services.',
 };
 
 export default function ContactPage() {

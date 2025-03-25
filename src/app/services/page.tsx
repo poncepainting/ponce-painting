@@ -8,10 +8,13 @@ import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import Button from '@/components/ui/Button';
 import HoverCard from '@/components/ui/HoverCard';
 import OptimizedImage from '@/components/ui/OptimizedImage';
+import Breadcrumb from '@/components/Breadcrumb';
+import Container from '@/components/ui/Container';
 
 export const metadata = {
-  title: `Services | ${siteConfig.name}`,
-  description: 'Explore our range of professional services tailored to your needs.',
+  title: `Professional Painting Services Lake Charles | Residential & Commercial | ${siteConfig.name}`,
+  description:
+    'Transform your home or business with our professional painting services in Lake Charles. We offer interior, exterior, residential, and commercial painting with premium materials and expert techniques for flawless results.',
 };
 
 export default function ServicesPage() {
@@ -38,6 +41,11 @@ export default function ServicesPage() {
 
       {/* Schema markup specific to services page */}
       <SchemaMarkup schemas={servicesSchemas} />
+
+      {/* Breadcrumb Navigation */}
+      <Container>
+        <Breadcrumb />
+      </Container>
 
       {/* Services Hero Section */}
       <Section className="bg-primary-50 py-20">

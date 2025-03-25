@@ -19,6 +19,11 @@ import ChevronLeftIcon from './ChevronLeftIcon';
 import ChevronRightIcon from './ChevronRightIcon';
 import MailIcon from './MailIcon';
 import MapPinIcon from './MapPinIcon';
+import PhoneIcon from './PhoneIcon';
+import FacebookIcon from './FacebookIcon';
+import TwitterIcon from './TwitterIcon';
+import InstagramIcon from './InstagramIcon';
+import LinkedinIcon from './LinkedinIcon';
 
 // Icon mapping for easy reference by name
 const iconComponents = {
@@ -34,6 +39,11 @@ const iconComponents = {
   'chevron-right': ChevronRightIcon,
   mail: MailIcon,
   'map-pin': MapPinIcon,
+  phone: PhoneIcon,
+  facebook: FacebookIcon,
+  twitter: TwitterIcon,
+  instagram: InstagramIcon,
+  linkedin: LinkedinIcon,
   // Add other icons here as they are implemented
 };
 
@@ -60,6 +70,11 @@ export { default as ClockIcon } from './ClockIcon';
 export { default as MenuIcon } from './MenuIcon';
 export { default as XIcon } from './XIcon';
 export { default as HomeIcon } from './HomeIcon';
+export { default as PhoneIcon } from './PhoneIcon';
+export { default as FacebookIcon } from './FacebookIcon';
+export { default as TwitterIcon } from './TwitterIcon';
+export { default as InstagramIcon } from './InstagramIcon';
+export { default as LinkedinIcon } from './LinkedinIcon';
 
 // Export types
 export * from './types';

@@ -4,6 +4,7 @@ import Container from '@/components/ui/Container';
 import { themeConfig } from '@/config/theme';
 import Section from '@/components/ui/Section';
 import { getCssColorVariable } from '@/utils/themeUtils';
+import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'Theme Demo',
@@ -18,6 +19,73 @@ export default function ThemeDemoPage() {
           <Text variant="h1" className="mb-8">
             Theme System Demo
           </Text>
+
+          <div className="mb-12">
+            <Text variant="h2" className="mb-4">
+              Buttons
+            </Text>
+            <div className="space-y-6">
+              <div>
+                <Text variant="h3" className="mb-4">
+                  Button Variants
+                </Text>
+                <div className="flex flex-wrap gap-4">
+                  <Button variant="primary">Primary Button</Button>
+                  <Button variant="secondary">Secondary Button</Button>
+                  <Button variant="outline">Outline Button</Button>
+                  <Button variant="ghost">Ghost Button</Button>
+                  <Button variant="text">Text Button</Button>
+                </div>
+              </div>
+
+              <div>
+                <Text variant="h3" className="mb-4">
+                  Button Sizes
+                </Text>
+                <div className="flex flex-wrap gap-4 items-center">
+                  <Button variant="primary" size="sm">
+                    Small
+                  </Button>
+                  <Button variant="primary" size="md">
+                    Medium
+                  </Button>
+                  <Button variant="primary" size="lg">
+                    Large
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <Text variant="h3" className="mb-4">
+                  Button States
+                </Text>
+                <div className="flex flex-wrap gap-4">
+                  <Button variant="primary">Normal</Button>
+                  <Button variant="primary" disabled>
+                    Disabled
+                  </Button>
+                  <Button variant="primary" isLoading>
+                    Loading
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <Text variant="h3" className="mb-4">
+                  Button with Icons
+                </Text>
+                <div className="flex flex-wrap gap-4">
+                  <Button variant="primary" leftIcon="home">
+                    Left Icon
+                  </Button>
+                  <Button variant="primary" rightIcon="chevron-right">
+                    Right Icon
+                  </Button>
+                  <Button variant="primary" icon="star" iconOnly aria-label="Star" />
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="mb-12">
             <Text variant="h2" className="mb-4">

@@ -1,10 +1,29 @@
-# *
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Host
+# Disallow crawling of admin or development areas
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /theme-demo/
+Disallow: /.well-known/
+
+# Ensure image bots can access images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /public/images/
+
+# Allow product bot to crawl product information
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Host specification
 Host: https://ponce-painting.com
 
 # Sitemaps
 Sitemap: https://ponce-painting.com/sitemap.xml
-Sitemap: https://ponce-painting.com/api/sitemap
+Sitemap: https://ponce-painting.com/sitemap-0.xml
+
+# Crawl delay for all bots
+Crawl-delay: 10
