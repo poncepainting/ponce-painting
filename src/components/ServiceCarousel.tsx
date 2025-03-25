@@ -48,10 +48,7 @@ const ServiceCarousel: FC<ServiceCarouselProps> = ({ className = '', autoplay = 
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-primary-800">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
-                <Link
-                  href={`/services/${serviceSlug}`}
-                  className="text-primary-600 hover:text-primary-700"
-                >
+                <Link href="/services" className="text-primary-600 hover:text-primary-700">
                   Learn more →
                 </Link>
               </div>

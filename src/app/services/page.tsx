@@ -74,7 +74,7 @@ export default function ServicesPage() {
                   <h2 className="text-xl font-bold mb-3 text-primary-800">{service.title}</h2>
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <Button
-                    href={`/services/${service.id}`}
+                    href="/services"
                     variant="text"
                     rightIcon="chevron-right"
                     className="text-primary-600 font-medium"
