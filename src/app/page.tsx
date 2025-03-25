@@ -14,6 +14,27 @@ import HeroSection from '@/components/HeroSection';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import HoverCard from '@/components/ui/HoverCard';
 import OptimizedImage from '@/components/ui/OptimizedImage';
+import { Suspense } from 'react';
+import React from 'react';
+
+// Lazy load components that are not needed for initial render or below the fold
+const LazyServiceCarousel = () => {
+  const ServiceCarouselComponent = React.lazy(() => import('@/components/ServiceCarousel'));
+  return (
+    <Suspense fallback={<div className="w-full h-64 bg-gray-100 animate-pulse rounded-lg"></div>}>
+      <ServiceCarouselComponent />
+    </Suspense>
+  );
+};
+
+const LazyTestimonialCarousel = () => {
+  const TestimonialCarouselComponent = React.lazy(() => import('@/components/TestimonialCarousel'));
+  return (
+    <Suspense fallback={<div className="w-full h-64 bg-gray-100 animate-pulse rounded-lg"></div>}>
+      <TestimonialCarouselComponent autoplay={true} />
+    </Suspense>
+  );
+};
 
 export default function Home() {
   return (
@@ -25,19 +46,30 @@ export default function Home() {
         canonical="/"
         ogImage={siteConfig.ogImage}
         schemaType="home"
+        additionalMetaTags={[
+          { name: 'geo.region', content: 'US-LA' },
+          { name: 'geo.placename', content: 'Lake Charles' },
+          { name: 'geo.position', content: '30.2266;-93.2174' },
+          { name: 'ICBM', content: '30.2266, -93.2174' },
+          { name: 'twitter:label1', content: 'Est. reading time' },
+          { name: 'twitter:data1', content: '4 minutes' },
+          { name: 'twitter:label2', content: 'Serving' },
+          { name: 'twitter:data2', content: 'Lake Charles, LA and surrounding areas' },
+        ]}
       />
 
       {/* Hero Section */}
       <HeroSection
         title="Bring Your Vision to Life with Expert Painting Services"
         subtitle="Lake Charles' trusted painting professionals delivering flawless residential and commercial results since 2010"
-        imageUrl="/images/hero/hero-image.jpg"
-        imageAlt="Professional painters transforming a Lake Charles home with expert painting services"
+        imageUrl="/images/Painter in front of home with thumbs up.jpg"
+        imageAlt="Professional painter giving thumbs up in front of a freshly painted home"
         primaryCTA={{ text: 'Get a Free Quote', href: '/contact' }}
         secondaryCTA={{ text: 'Explore Our Services', href: '/services' }}
         height="tall"
         showQuoteForm={true}
         textAlignment="left"
+        overlayOpacity={40}
       />
 
       {/* About Us Section */}
@@ -138,7 +170,7 @@ export default function Home() {
         </AnimationWrapper>
 
         <AnimationWrapper type="fade" delay={0.2}>
-          <ServiceCarousel />
+          <LazyServiceCarousel />
         </AnimationWrapper>
 
         <AnimationWrapper type="slide-up" delay={0.3} className="text-center mt-8">
@@ -163,7 +195,7 @@ export default function Home() {
         </AnimationWrapper>
 
         <AnimationWrapper type="fade" delay={0.2}>
-          <TestimonialCarousel autoplay={true} />
+          <LazyTestimonialCarousel />
         </AnimationWrapper>
       </Section>
 

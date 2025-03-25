@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button';
 import { motion } from 'framer-motion';
 import { imageSizes, imageQuality } from '@/config/images';
 import QuoteForm from '@/components/forms/QuoteForm';
+import { colors } from '@/config/theme/colors';
 
 interface HeroSectionProps {
   title: string;
@@ -101,6 +102,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         />
       </div>
       <div className={`absolute inset-0 bg-black/[0.${overlayOpacity}] z-10`}></div>
+      <div className="absolute inset-0 bg-primary-600/30 mix-blend-multiply z-10"></div>
       <Container className={`z-20 ${alignmentClasses[textAlignment]}`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
           <motion.div

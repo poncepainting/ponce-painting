@@ -29,6 +29,9 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: '#ffffff',
+  viewportFit: 'cover',
+  colorScheme: 'light',
+  userScalable: true,
 };
 
 // Generate theme CSS variables
@@ -100,6 +103,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Resource hints for performance optimization */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <SchemaMarkup schemas={baseSchemas} />
         <style dangerouslySetInnerHTML={{ __html: themeCssVariables }} />
       </head>

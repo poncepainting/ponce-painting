@@ -85,6 +85,44 @@ export const generateLocalBusinessSchema = () => {
       siteConfig.links.instagram,
       siteConfig.links.linkedin,
     ],
+    areaServed: siteConfig.serviceAreas.map(area => ({
+      '@type': 'City',
+      name: area,
+      '@id': `https://en.wikipedia.org/wiki/${area.replace(' ', '_')},_Louisiana`,
+    })),
+    servesCuisine: 'Painting and Decorating',
+    slogan: "Transform your space with Lake Charles' top-rated painting service",
+    paymentAccepted: 'Cash, Credit Card, Debit Card, Check',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Painting Services',
+      itemListElement: siteConfig.services.map((service, index) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: service.title,
+          description: service.description,
+        },
+      })),
+    },
+    review: siteConfig.testimonials.slice(0, 5).map(testimonial => ({
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: testimonial.rating,
+        bestRating: '5',
+      },
+      author: {
+        '@type': 'Person',
+        name: testimonial.name,
+      },
+      reviewBody: testimonial.content,
+    })),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: siteConfig.testimonials.length.toString(),
+    },
   };
 };
 
