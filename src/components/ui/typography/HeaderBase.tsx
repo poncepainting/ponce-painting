@@ -1,7 +1,9 @@
+import React from 'react';
 import Text from './Text';
-import Container from './Container';
+import { Container } from '@/components/ui/containers';
 import { themeConfig } from '@/config/theme';
 import { getCssColorVariable } from '@/utils/themeUtils';
+import { componentSpacing } from '@/config/theme/spacing';
 
 type HeaderBaseProps = {
   title: string;
@@ -48,10 +50,20 @@ const HeaderBase = ({
     style.color = getCssColorVariable(textColor);
   }
 
+  // Get padding classes from theme configuration
+  const { base, md } = componentSpacing.header.padding;
+  const paddingClasses = `${base} ${md}`;
+
+  // Get border color from theme
+  const borderColor = getCssColorVariable('gray.200');
+
   return (
     <header
-      className={`py-8 md:py-12 ${borderBottom ? 'border-b border-gray-200' : ''} ${className}`}
-      style={style}
+      className={`${paddingClasses} ${borderBottom ? `border-b` : ''} ${className}`}
+      style={{
+        ...style,
+        borderColor: borderBottom ? borderColor : undefined,
+      }}
     >
       <Container>
         <div className={textAlignment}>

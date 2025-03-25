@@ -1,6 +1,8 @@
 'use client';
 
+import React from 'react';
 import { themeConfig } from '@/config/theme';
+import { componentSpacing } from '@/config/theme/spacing';
 
 type ContainerProps = {
   children: React.ReactNode;
@@ -27,8 +29,9 @@ const Container = ({
   // Determine container styling based on props
   const containerStyle = fullWidth ? {} : { maxWidth };
 
-  // Padding classes
-  const paddingClasses = noPadding ? '' : 'px-4 sm:px-6 lg:px-8';
+  // Get padding classes from theme configuration
+  const { base, sm, lg } = componentSpacing.container.padding;
+  const paddingClasses = noPadding ? '' : `${base} ${sm} ${lg}`;
 
   return (
     <Component className={`mx-auto w-full ${paddingClasses} ${className}`} style={containerStyle}>

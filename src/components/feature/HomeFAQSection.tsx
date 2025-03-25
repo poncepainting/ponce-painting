@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Section from './ui/Section';
+import { Section } from '@/components/ui/containers';
 import FAQAccordion from './FAQAccordion';
 import SectionHeading from './SectionHeading';
-import { useSectionBackground } from './ui/Section';
-import TabButton from './ui/TabButton';
+import { useSectionBackground } from '@/components/ui/containers/Section';
+import { TabButton } from '@/components/ui/buttons';
 import { cn } from '@/utils';
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/buttons';
 import { Icon } from '@/config/icons';
 import { faqItems } from '@/config/faq';
 import type { FAQItem } from '@/types/faq';

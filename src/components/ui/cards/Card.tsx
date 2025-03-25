@@ -1,6 +1,8 @@
 import React from 'react';
 import { useThemeStyles } from '@/utils/themeUtils';
 import { themeConfig } from '@/config/theme';
+import { componentSpacing } from '@/config/theme/spacing';
+import { getCssColorVariable } from '@/utils/themeUtils';
 
 type CardProps = {
   children: React.ReactNode;
@@ -35,29 +37,14 @@ const Card = ({
   onClick,
   ...rest
 }: CardProps & React.HTMLAttributes<HTMLElement>) => {
-  // Get padding value based on size
-  const getPaddingValue = (size: string) => {
-    switch (size) {
-      case 'sm':
-        return 4;
-      case 'md':
-        return 6;
-      case 'lg':
-        return 8;
-      case 'xl':
-        return 10;
-      case 'none':
-        return 0;
-      default:
-        return 6;
-    }
-  };
+  // Get padding value from theme configuration
+  const paddingValue = componentSpacing.card.padding[padding] as keyof typeof themeConfig.spacing;
 
   // Apply theme styles
   const { style, className: themeClassName } = useThemeStyles({
     backgroundColor,
     textColor,
-    padding: getPaddingValue(padding),
+    padding: paddingValue,
     rounded: rounded === 'none' ? 'none' : rounded,
     border,
     borderColor,
@@ -66,7 +53,7 @@ const Card = ({
 
   // Add hover effects if needed
   const hoverClasses = hover
-    ? 'transition-all duration-200 hover:shadow-md hover:border-gray-300'
+    ? `transition-all duration-200 hover:shadow-md hover:border-[${getCssColorVariable('gray.300')}]`
     : '';
 
   // Combine all classes

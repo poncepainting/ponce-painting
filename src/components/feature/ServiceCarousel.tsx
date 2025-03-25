@@ -1,9 +1,9 @@
 'use client';
 
 import { FC } from 'react';
-import Carousel from './ui/Carousel';
-import OptimizedImage from './ui/OptimizedImage';
-import Button from './ui/Button';
+import Carousel from '@/components/common/Carousel';
+import OptimizedImage from '@/components/common/OptimizedImage';
+import { Button } from '@/components/ui/buttons';
 import { siteConfig } from '@/config/site';
 import Link from 'next/link';
 

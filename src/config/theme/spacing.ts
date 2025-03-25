@@ -3,7 +3,7 @@
  * Centralized management of spacing and sizing
  */
 
-// Spacing/sizing scales
+// Base spacing scale
 export const spacing = {
   0: '0px',
   0.5: '0.125rem',
@@ -39,6 +39,32 @@ export const spacing = {
   72: '18rem',
   80: '20rem',
   96: '24rem',
+};
+
+// Component-specific spacing
+export const componentSpacing = {
+  container: {
+    padding: {
+      base: 'px-4',
+      sm: 'sm:px-6',
+      lg: 'lg:px-8',
+    },
+  },
+  header: {
+    padding: {
+      base: 'py-8',
+      md: 'md:py-12',
+    },
+  },
+  card: {
+    padding: {
+      sm: 4,
+      md: 6,
+      lg: 8,
+      xl: 10,
+      none: 0,
+    },
+  },
 };
 
 // Border radius
