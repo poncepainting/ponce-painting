@@ -83,8 +83,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
-      className={`relative flex items-center justify-center bg-dark-primary pt-3 md:pt-16 lg:pt-24 ${
-        showQuoteForm ? 'min-h-screen pb-6 md:py-20' : heightClasses[height]
+      className={`relative flex flex-col bg-dark-primary pt-0 md:pt-16 lg:pt-24 ${
+        showQuoteForm ? 'pb-0 md:py-20' : heightClasses[height]
       }`}
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -105,7 +105,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className={`absolute inset-0 bg-black/[0.${overlayOpacity}] z-10`}></div>
       <div className="absolute inset-0 bg-primary-600/50 mix-blend-multiply z-10"></div>
       <div className="absolute inset-0 bg-blue-900/30 mix-blend-darken z-10"></div>
-      <Container className={`z-20 ${alignmentClasses[textAlignment]}`}>
+      <Container className={`z-20 py-0 my-0 ${alignmentClasses[textAlignment]}`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-5 lg:gap-8 items-center">
           <motion.div
             initial="hidden"
