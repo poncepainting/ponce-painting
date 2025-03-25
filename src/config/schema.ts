@@ -9,6 +9,13 @@ import { siteConfig } from './site';
  * Generate Organization schema
  */
 export const generateOrganizationSchema = () => {
+  // Parse address parts
+  const addressParts = siteConfig.contact.address.split(',').map(part => part.trim());
+  const city = addressParts[0] || 'Lake Charles';
+  const stateWithZip = addressParts[1] || 'LA';
+  const state = stateWithZip.split(' ')[0];
+  const zip = stateWithZip.split(' ')[1] || '';
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -20,10 +27,9 @@ export const generateOrganizationSchema = () => {
     telephone: siteConfig.contact.phone,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: siteConfig.contact.address.split(',')[0]?.trim(),
-      addressLocality: siteConfig.contact.address.split(',')[1]?.trim(),
-      addressRegion: siteConfig.contact.address.split(',')[2]?.trim()?.split(' ')[0],
-      postalCode: siteConfig.contact.address.split(',')[2]?.trim()?.split(' ')[1],
+      addressLocality: city,
+      addressRegion: state,
+      postalCode: zip,
       addressCountry: 'US',
     },
     sameAs: [
@@ -47,6 +53,13 @@ export const generateOrganizationSchema = () => {
  * Generate LocalBusiness schema
  */
 export const generateLocalBusinessSchema = () => {
+  // Parse address parts
+  const addressParts = siteConfig.contact.address.split(',').map(part => part.trim());
+  const city = addressParts[0] || 'Lake Charles';
+  const stateWithZip = addressParts[1] || 'LA';
+  const state = stateWithZip.split(' ')[0];
+  const zip = stateWithZip.split(' ')[1] || '';
+
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -58,10 +71,9 @@ export const generateLocalBusinessSchema = () => {
     email: siteConfig.contact.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: siteConfig.contact.address.split(',')[0]?.trim(),
-      addressLocality: siteConfig.contact.address.split(',')[1]?.trim(),
-      addressRegion: siteConfig.contact.address.split(',')[2]?.trim()?.split(' ')[0],
-      postalCode: siteConfig.contact.address.split(',')[2]?.trim()?.split(' ')[1],
+      addressLocality: city,
+      addressRegion: state,
+      postalCode: zip,
       addressCountry: 'US',
     },
     geo: {

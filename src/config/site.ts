@@ -88,7 +88,7 @@ export const siteConfig = {
   contact: {
     email: 'info@ponce-painting.com',
     phone: '337-304-7936',
-    address: '123 Pine Street, Lake Charles, LA 70601',
+    address: 'Lake Charles, LA',
   } satisfies ContactInfo,
 
   // Social media
