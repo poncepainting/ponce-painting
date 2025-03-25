@@ -6,10 +6,11 @@ import PageSEO from '@/components/PageSEO';
 import SectionHeading from '@/components/SectionHeading';
 import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import HoverCard from '@/components/ui/HoverCard';
-import { Icon } from '@/config/icons';
+import { Icon } from '@/components/icons';
 import Button from '@/components/ui/Button';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import { imageSizes, imageQuality } from '@/config/images';
+import type { IconName } from '@/components/icons/types';
 
 export const metadata = {
   title: `About Us | ${siteConfig.name}`,
@@ -27,19 +28,19 @@ export default function AboutPage() {
       title: 'Excellence',
       description:
         'We strive for excellence in everything we do, setting high standards and consistently exceeding expectations.',
-      icon: 'star',
+      icon: 'star' as IconName,
     },
     {
       title: 'Integrity',
       description:
         'We conduct our business with honesty, transparency, and ethical practices that build trust with our customers.',
-      icon: 'check-circle',
+      icon: 'check-circle' as IconName,
     },
     {
       title: 'Customer Focus',
       description:
         "We prioritize our customers' needs and satisfaction, ensuring a positive experience from start to finish.",
-      icon: 'users',
+      icon: 'users' as IconName,
     },
   ];
 
