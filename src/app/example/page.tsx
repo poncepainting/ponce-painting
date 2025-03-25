@@ -1,9 +1,10 @@
 'use client';
 
 import { designSystem } from '@/config/theme';
-import Section from '@/components/ui/Section';
-import SectionHeading from '@/components/SectionHeading';
-import HeaderAccent from '@/components/ui/HeaderAccent';
+import { Section } from '@/components/ui/containers';
+import { HeaderAccent } from '@/components/ui/typography';
+import { SectionHeading, HeroSection } from '@/components/feature';
+import type { Metadata } from 'next';
 
 /**
  * Example page to demonstrate the use of HeaderAccent and SectionHeading components

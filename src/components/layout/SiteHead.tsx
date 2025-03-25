@@ -1,5 +1,5 @@
 import React from 'react';
-import SchemaMarkup from '@/components/SchemaMarkup';
+import { SchemaMarkup } from '@/components/seo';
 
 interface SiteHeadProps {
   schemas: Record<string, unknown>[];

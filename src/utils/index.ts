@@ -5,7 +5,14 @@
  * import { animations, generatePlaceholderDataUrl, cn } from '@/utils';
  */
 
-export { animations } from './animationUtils';
-export { generatePlaceholderDataUrl, getImageName, shimmer, toBase64 } from './imageUtils';
-export { generateCarouselStyles, CustomPaging } from './carouselStyles';
-export { cn } from './cn';
+// Re-export all utilities
+export * from './animationUtils';
+export * from './carouselStyles';
+export * from './cn';
+export * from './colorUtils';
+export * from './emailService';
+export * from './formSubmission';
+export * from './imageUtils';
+export * from './link-checker';
+export * from './metadataUtils';
+export * from './themeUtils';

@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
-import Container from '@/components/ui/Container';
-import Section from '@/components/ui/Section';
-import SectionHeading from '@/components/SectionHeading';
-import AnimationWrapper from '@/components/ui/AnimationWrapper';
-import PageSEO from '@/components/PageSEO';
+import { Container } from '@/components/ui/containers';
+import { Section } from '@/components/ui/containers';
+import { SectionHeading } from '@/components/feature';
+import { AnimationWrapper } from '@/components/ui/animations';
+import { PageSEO } from '@/components/seo';
 
 export const metadata: Metadata = {
   title: `Privacy Policy | ${siteConfig.name}`,

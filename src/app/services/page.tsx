@@ -1,15 +1,14 @@
-import { siteConfig } from '@/config/site';
-import Section from '@/components/ui/Section';
+import type { Metadata } from 'next';
+import { Section } from '@/components/ui/containers';
 import { generateServicesSchema } from '@/config/schema';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import PageSEO from '@/components/PageSEO';
-import SectionHeading from '@/components/SectionHeading';
-import AnimationWrapper from '@/components/ui/AnimationWrapper';
-import Button from '@/components/ui/Button';
-import HoverCard from '@/components/ui/HoverCard';
-import OptimizedImage from '@/components/ui/OptimizedImage';
-import Breadcrumb from '@/components/Breadcrumb';
-import Container from '@/components/ui/Container';
+import { PageSEO, SchemaMarkup } from '@/components/seo';
+import { SectionHeading } from '@/components/feature';
+import { AnimationWrapper } from '@/components/ui/animations';
+import { Button } from '@/components/ui/buttons';
+import { HoverCard } from '@/components/ui/cards';
+import { OptimizedImage, Breadcrumb } from '@/components/common';
+import { Container } from '@/components/ui/containers';
+import { siteConfig } from '@/config/site';
 
 export const metadata = {
   title: `Professional Painting Services Lake Charles | Residential & Commercial | ${siteConfig.name}`,

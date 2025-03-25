@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
-import Container from '@/components/ui/Container';
-import Section from '@/components/ui/Section';
-import SectionHeading from '@/components/SectionHeading';
+import { Container } from '@/components/ui/containers';
+import { Section } from '@/components/ui/containers';
+import SectionHeading from '@/components/feature/SectionHeading';
 
 export const metadata: Metadata = {
   title: `Accessibility Statement | ${siteConfig.name}`,

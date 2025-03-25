@@ -1,13 +1,12 @@
 import { Icon } from '@/config/icons';
 import { siteConfig } from '@/config/site';
-import Section from '@/components/ui/Section';
+import { Section } from '@/components/ui/containers';
 import { generatePageSchema } from '@/config/schema';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import PageSEO from '@/components/PageSEO';
+import { PageSEO, SchemaMarkup } from '@/components/seo';
 import { designSystem } from '@/config/theme';
-import SectionHeading from '@/components/SectionHeading';
-import AnimationWrapper from '@/components/ui/AnimationWrapper';
-import HoverCard from '@/components/ui/HoverCard';
+import { SectionHeading } from '@/components/feature';
+import { AnimationWrapper } from '@/components/ui/animations';
+import { HoverCard } from '@/components/ui/cards';
 import ContactForm from '@/components/forms/ContactForm';
 
 export const metadata = {

@@ -2,7 +2,7 @@ import type { Viewport } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/config/schema';
-import ThemeProvider from '@/components/ThemeProvider';
+import { ThemeProvider } from '@/components/theme';
 import { SiteHead, SiteLayout } from '@/components/layout';
 import { generateBaseMetadata } from '@/utils/metadataUtils';
 

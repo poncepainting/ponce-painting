@@ -235,3 +235,35 @@ To manually control which pages appear in the sitemap, you can:
 2. Override on individual pages using the `noIndex` prop on the SEO component
 
 # Deployment test
+
+## Codebase Organization
+
+The codebase is organized in a structured way to make it easy to navigate and extend:
+
+### `/src` Directory
+
+- `/app` - Next.js pages using the App Router pattern
+- `/components` - UI components organized by function (see detailed breakdown below)
+- `/config` - Configuration files for various site aspects
+- `/hooks` - Custom React hooks
+- `/lib` - Core functionality and utilities
+- `/types` - TypeScript type definitions
+- `/utils` - Utility functions
+
+### Component Organization
+
+Components are organized into logical categories:
+
+- `/common` - Reusable utility components (Breadcrumb, Carousel, etc.)
+- `/feature` - Feature-specific components (HeroSection, FAQSection, etc.)
+- `/layout` - Layout components (header, footer, etc.)
+- `/seo` - SEO-related components
+- `/theme` - Theme-related components
+- `/ui` - UI components organized by type:
+  - `/buttons` - Button components
+  - `/containers` - Container components
+  - `/typography` - Text and heading components
+  - `/cards` - Card components
+  - `/animations` - Animation components
+
+For more details, see the [src/README.md](src/README.md) file.

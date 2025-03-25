@@ -1,13 +1,14 @@
 import { siteConfig } from '@/config/site';
-import { Section } from '@/components/ui/containers';
+import Section from '@/components/ui/Section';
 import { generatePageSchema } from '@/config/schema';
-import { SchemaMarkup, PageSEO } from '@/components/seo';
-import { SectionHeading } from '@/components/feature';
-import { AnimationWrapper } from '@/components/ui/animations';
-import { HoverCard } from '@/components/ui/cards';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import PageSEO from '@/components/PageSEO';
+import SectionHeading from '@/components/SectionHeading';
+import AnimationWrapper from '@/components/ui/AnimationWrapper';
+import HoverCard from '@/components/ui/HoverCard';
 import { Icon } from '@/components/icons';
-import { Button } from '@/components/ui/buttons';
-import { OptimizedImage } from '@/components/common';
+import Button from '@/components/ui/Button';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 import { imageSizes, imageQuality } from '@/config/images';
 import type { IconName } from '@/components/icons/types';
 

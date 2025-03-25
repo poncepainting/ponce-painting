@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import HeaderAccent from './ui/HeaderAccent';
-import { useSectionBackground } from './ui/Section';
+import { HeaderAccent } from '@/components/ui/typography';
+import { useSectionBackground } from '@/components/ui/containers/Section';
 
 interface SectionHeadingProps {
   title: string;

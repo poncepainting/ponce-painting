@@ -3,17 +3,19 @@
  * Export all configuration from a single import
  */
 
-// Site configuration
-export * from './site';
-
-// Navigation configuration
-export * from './navigation';
-
-// Content configuration (services, testimonials, features)
+// Re-export all configuration
+export * from './buttons';
 export * from './content';
-
-// Call to action configuration
 export * from './cta';
+export * from './faq';
+export * from './forms';
+export * from './icons';
+export * from './images';
+export * from './navigation';
+export * from './schema';
+export * from './seo';
+export * from './site';
+export * from './theme';
 
 // Theme configuration
 export * from './theme';

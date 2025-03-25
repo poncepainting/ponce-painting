@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { ReactNode } from 'react';
 import { shouldExcludeFromIndexing } from '@/config/seo';
-import SEO, { SEOProps } from '@/components/SEO';
+import SEO, { SEOProps } from '@/components/seo/SEO';
 
 interface PageWrapperProps {
   children: ReactNode;

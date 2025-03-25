@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import BottomFloatingMenu from '@/components/BottomFloatingMenu';
-import PageTransition from '@/components/ui/PageTransition';
+import Header from './header/Header';
+import Footer from './footer/Footer';
+import { BottomFloatingMenu } from '@/components/common';
+import { PageTransition } from '@/components/ui/animations';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 

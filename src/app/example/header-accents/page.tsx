@@ -1,9 +1,8 @@
 'use client';
 
-import HeroSection from '@/components/HeroSection';
-import Section from '@/components/ui/Section';
-import SectionHeading from '@/components/SectionHeading';
-import HeaderAccent from '@/components/ui/HeaderAccent';
+import { HeroSection, SectionHeading } from '@/components/feature';
+import { Section } from '@/components/ui/containers';
+import { HeaderAccent } from '@/components/ui/typography';
 import { designSystem } from '@/config/theme';
 
 /**

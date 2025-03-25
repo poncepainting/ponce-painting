@@ -1,25 +1,29 @@
+import type { Metadata } from 'next';
+import { siteConfig } from '@/config/site';
+import { Section } from '@/components/ui/containers';
+import { Button } from '@/components/ui/buttons';
+import { InteractiveButton } from '@/components/ui/buttons';
+import { PageSEO } from '@/components/seo';
+import {
+  ServiceCarousel,
+  TestimonialCarousel,
+  HomeFAQSection,
+  HeroSection,
+  SectionHeading,
+} from '@/components/feature';
+import { HeaderAccent } from '@/components/ui/typography';
+import { AnimationWrapper } from '@/components/ui/animations';
+import { HoverCard } from '@/components/ui/cards';
+import { OptimizedImage } from '@/components/common';
+import { imageSizes, imageQuality } from '@/config/images';
 import { Icon } from '@/config/icons';
-import { imageSizes, imageQuality, placeholderImages } from '@/config/images';
-import { siteConfig, ctaConfig } from '@/config/site';
-import Section from '@/components/ui/Section';
-import Button from '@/components/ui/Button';
-import InteractiveButton from '@/components/ui/InteractiveButton';
-import PageSEO from '@/components/PageSEO';
-import ServiceCarousel from '@/components/ServiceCarousel';
-import TestimonialCarousel from '@/components/TestimonialCarousel';
-import SectionHeading from '@/components/SectionHeading';
-import HeaderAccent from '@/components/ui/HeaderAccent';
-import HomeFAQSection from '@/components/HomeFAQSection';
-import HeroSection from '@/components/HeroSection';
-import AnimationWrapper from '@/components/ui/AnimationWrapper';
-import HoverCard from '@/components/ui/HoverCard';
-import OptimizedImage from '@/components/ui/OptimizedImage';
+import { ctaConfig } from '@/config/site';
 import { Suspense } from 'react';
 import React from 'react';
 
 // Lazy load components that are not needed for initial render or below the fold
 const LazyServiceCarousel = () => {
-  const ServiceCarouselComponent = React.lazy(() => import('@/components/ServiceCarousel'));
+  const ServiceCarouselComponent = React.lazy(() => import('@/components/feature/ServiceCarousel'));
   return (
     <Suspense fallback={<div className="w-full h-64 bg-gray-100 animate-pulse rounded-lg"></div>}>
       <ServiceCarouselComponent />
@@ -28,7 +32,9 @@ const LazyServiceCarousel = () => {
 };
 
 const LazyTestimonialCarousel = () => {
-  const TestimonialCarouselComponent = React.lazy(() => import('@/components/TestimonialCarousel'));
+  const TestimonialCarouselComponent = React.lazy(
+    () => import('@/components/feature/TestimonialCarousel')
+  );
   return (
     <Suspense fallback={<div className="w-full h-64 bg-gray-100 animate-pulse rounded-lg"></div>}>
       <TestimonialCarouselComponent autoplay={true} />

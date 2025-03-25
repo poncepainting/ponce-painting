@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
-import Text from '@/components/ui/Text';
-import Container from '@/components/ui/Container';
+import { Text } from '@/components/ui/typography';
+import { Container } from '@/components/ui/containers';
 import { themeConfig } from '@/config/theme';
-import Section from '@/components/ui/Section';
+import { Section } from '@/components/ui/containers';
 import { getCssColorVariable } from '@/utils/themeUtils';
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/buttons';
 
 export const metadata: Metadata = {
   title: 'Theme Demo',

@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import { faqItems, faqCategories } from '@/config/faq';
-import FAQSection from '@/components/FAQSection';
-import Section from '@/components/ui/Section';
-import SectionHeading from '@/components/SectionHeading';
-import AnimationWrapper from '@/components/ui/AnimationWrapper';
-import PageSEO from '@/components/PageSEO';
-import Container from '@/components/ui/Container';
-import Button from '@/components/ui/Button';
-import SchemaMarkup from '@/components/SchemaMarkup';
+import { FAQSection } from '@/components/feature';
+import { Section } from '@/components/ui/containers';
+import { SectionHeading } from '@/components/feature';
+import { AnimationWrapper } from '@/components/ui/animations';
+import { PageSEO, SchemaMarkup } from '@/components/seo';
+import { Container } from '@/components/ui/containers';
+import { Button } from '@/components/ui/buttons';
 
 export const metadata: Metadata = {
   title: 'Painting FAQs | Common Questions About Professional Painting | Ponce Painting',

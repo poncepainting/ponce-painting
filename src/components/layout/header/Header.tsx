@@ -3,15 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { cn } from '@/utils';
+import { siteConfig } from '@/config/site';
+import { navigationConfig } from '@/config/navigation';
 import { OptimizedImage } from '@/components/common';
 import { Container } from '@/components/ui/containers';
 import { Button } from '@/components/ui/buttons';
-import { navigationConfig, siteConfig } from '@/config/site';
-import { imageSizes } from '@/config/images';
-import { themeConfig } from '@/config/theme';
 import { Icon } from '@/components/icons';
-import { useWindowEvents } from '@/hooks';
-import { cn } from '@/utils';
 
 // Header component with responsive mobile menu
 const Header = () => {

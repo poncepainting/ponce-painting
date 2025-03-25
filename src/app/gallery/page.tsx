@@ -1,15 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
-import Section from '@/components/ui/Section';
+import { imageSizes, imageQuality } from '@/config/images';
+import { Icon } from '@/config/icons';
+import { Section } from '@/components/ui/containers';
 import { generatePageSchema } from '@/config/schema';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import SEO from '@/components/SEO';
-import SectionHeading from '@/components/SectionHeading';
-import OptimizedImage from '@/components/ui/OptimizedImage';
-import Button from '@/components/ui/Button';
-import AnimationWrapper from '@/components/ui/AnimationWrapper';
+import { SchemaMarkup, SEO } from '@/components/seo';
+import { SectionHeading } from '@/components/feature';
+import { OptimizedImage } from '@/components/common';
+import { Button } from '@/components/ui/buttons';
+import { AnimationWrapper } from '@/components/ui/animations';
 
 // Page metadata (for SEO component only, not exported)
 const pageMetadata = {
