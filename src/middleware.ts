@@ -34,9 +34,25 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // For any other path, allow the request to continue
-  // If it's a 404, Next.js will handle it with the not-found.tsx page
-  return NextResponse.next();
+  const requestHeaders = new Headers(request.headers);
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+
+  // Add resource hint headers to improve LCP
+  if (request.nextUrl.pathname === '/') {
+    response.headers.set(
+      'Link',
+      '</images/painter-in-front-of-home.jpg>; rel=preload; as=image; fetchpriority=high, </images/ponce-painting-about-us.jpg>; rel=preload; as=image'
+    );
+  }
+
+  // Set security headers
+  // ... existing code ...
+
+  return response;
 }
 
 // Configure middleware to run on all paths except static files and API routes

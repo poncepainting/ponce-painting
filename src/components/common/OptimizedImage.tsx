@@ -10,6 +10,7 @@ interface OptimizedImageProps extends Omit<ImageProps, 'onError'> {
   showImageName?: boolean;
   useFill?: boolean;
   blurPlaceholder?: boolean;
+  isLCP?: boolean;
 }
 
 const OptimizedImage = ({
@@ -26,6 +27,7 @@ const OptimizedImage = ({
   useFill = false,
   blurPlaceholder = true,
   loading: loadingProp,
+  isLCP = false,
   ...props
 }: OptimizedImageProps) => {
   const [error, setError] = useState(false);
@@ -42,14 +44,23 @@ const OptimizedImage = ({
   const imageWidth = width || metadata?.width;
   const imageHeight = height || metadata?.height;
 
-  // Only use loading='lazy' when priority is false
-  const loading = priority ? undefined : loadingProp || 'lazy';
+  // Mark as priority and set proper loading attribute if it's an LCP image
+  const shouldPrioritize = priority || isLCP;
+  const loading = shouldPrioritize ? undefined : loadingProp || 'lazy';
 
   // Generate placeholder - only if requested and not priority loading
   const placeholderDataUrl =
-    !priority && blurPlaceholder
+    !shouldPrioritize && blurPlaceholder
       ? generatePlaceholderDataUrl(imageWidth || 700, imageHeight || 475, true)
       : undefined;
+
+  // For LCP images, use high quality
+  const imageQuality = isLCP ? 90 : quality;
+
+  // For LCP images, use optimal sizes attribute
+  const sizesAttribute = isLCP
+    ? '(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw'
+    : sizes;
 
   const handleError = () => {
     setError(true);
@@ -100,8 +111,8 @@ const OptimizedImage = ({
             fill={true}
             className="object-cover"
             priority={priority}
-            quality={quality}
-            sizes={sizes}
+            quality={imageQuality}
+            sizes={sizesAttribute}
             onError={handleError}
             loading={loading}
             placeholder={placeholderDataUrl ? 'blur' : 'empty'}
@@ -117,8 +128,8 @@ const OptimizedImage = ({
           height={imageHeight}
           className={`object-cover ${className}`}
           priority={priority}
-          quality={quality}
-          sizes={sizes}
+          quality={imageQuality}
+          sizes={sizesAttribute}
           onError={handleError}
           loading={loading}
           placeholder={placeholderDataUrl ? 'blur' : 'empty'}

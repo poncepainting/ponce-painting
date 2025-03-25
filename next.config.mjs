@@ -25,6 +25,23 @@ const nextConfig = {
   experimental: {
     webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'INP', 'TTFB'],
   },
+  // Optimize JavaScript bundle size
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Enable React strict mode for better development practices
+  reactStrictMode: true,
+  // Better code splitting and tree shaking
+  swcMinify: true,
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{member}}',
+      preventFullImport: true,
+    }
+  },
+  // Reduce polyfills where possible
+  transpilePackages: [],
+  poweredByHeader: false,
 };
 
 export default nextConfig;

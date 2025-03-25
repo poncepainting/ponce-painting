@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import Container from '@/components/ui/Container';
-import OptimizedImage from '@/components/ui/OptimizedImage';
-import Button from '@/components/ui/Button';
+import { Container } from '@/components/ui/containers';
+import { OptimizedImage } from '@/components/common';
+import { Button } from '@/components/ui/buttons';
 import { motion } from 'framer-motion';
 import { imageSizes, imageQuality } from '@/config/images';
 import QuoteForm from '@/components/forms/QuoteForm';
@@ -96,6 +96,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           useFill={true}
           quality={imageQuality.high}
           priority={true}
+          isLCP={true}
           sizes={imageSizes.hero.sizes}
           fallbackText="Update hero image"
           className="object-cover"
