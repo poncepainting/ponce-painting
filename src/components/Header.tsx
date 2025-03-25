@@ -51,14 +51,11 @@ const Header = () => {
                 alt={`${siteConfig.name} Logo`}
                 width={imageSizes.logo.width}
                 height={imageSizes.logo.height}
-                className="h-10 w-auto mr-2"
+                className="h-10 w-auto"
                 priority={true}
                 fallbackText="Ponce Painting Logo"
                 showImageName={false}
               />
-              <span className="text-lg md:text-xl font-bold hidden sm:inline-block">
-                {siteConfig.name}
-              </span>
             </Link>
           </div>
 

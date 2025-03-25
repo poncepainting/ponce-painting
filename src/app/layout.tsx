@@ -1,17 +1,10 @@
-import type { Metadata, Viewport } from 'next';
+import type { Viewport } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import BottomFloatingMenu from '@/components/BottomFloatingMenu';
-import { siteConfig } from '@/config/site';
-import { themeConfig } from '@/config/theme';
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/config/schema';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import PageTransition from '@/components/ui/PageTransition';
-import { createCssColorVariables } from '@/utils/themeUtils';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import ThemeProvider from '@/components/ThemeProvider';
+import { SiteHead, SiteLayout } from '@/components/layout';
+import { generateBaseMetadata } from '@/utils/metadataUtils';
 
 // Load Plus Jakarta Sans font with defined subsetting for optimization
 const jakartaSans = Plus_Jakarta_Sans({
@@ -34,63 +27,8 @@ export const viewport: Viewport = {
   userScalable: true,
 };
 
-// Generate theme CSS variables
-const themeCssVariables = createCssColorVariables();
-
-// Define base metadata for all pages
-export const metadata: Metadata = {
-  title: {
-    template: `%s | ${siteConfig.name}`,
-    default:
-      typeof siteConfig.defaultMetadata.title === 'string'
-        ? siteConfig.defaultMetadata.title
-        : `${siteConfig.name} - Professional Painting Services`,
-  },
-  description: siteConfig.defaultMetadata.description,
-  keywords: siteConfig.defaultMetadata.keywords,
-  manifest: '/manifest.json',
-  metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    siteName: siteConfig.name,
-    title: siteConfig.name,
-    description: siteConfig.defaultMetadata.description,
-    images: [
-      {
-        url: siteConfig.defaultMetadata.openGraph.images[0].url,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.name,
-    description: siteConfig.defaultMetadata.description,
-    images: [siteConfig.defaultMetadata.openGraph.images[0].url],
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/images/ponce-painting-logo-blue.png', type: 'image/png' },
-    ],
-    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-};
+// Use the metadata utility to generate base metadata
+export const metadata = generateBaseMetadata();
 
 export default function RootLayout({
   children,
@@ -102,26 +40,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
-        {/* Resource hints for performance optimization */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <SchemaMarkup schemas={baseSchemas} />
-        <style dangerouslySetInnerHTML={{ __html: themeCssVariables }} />
-      </head>
-      <body className={`${jakartaSans.variable} antialiased bg-white font-sans`}>
-        <Header />
-        <div className="pt-16 md:pt-20 bg-white min-h-screen">
-          <PageTransition>{children}</PageTransition>
-        </div>
-        <Footer />
-        <BottomFloatingMenu />
-        <div className="h-12 md:h-0" aria-hidden="true"></div>
-        <Analytics />
-        <SpeedInsights />
-      </body>
+      <SiteHead schemas={baseSchemas} />
+      <ThemeProvider>
+        <SiteLayout fontClass={jakartaSans.variable}>{children}</SiteLayout>
+      </ThemeProvider>
     </html>
   );
 }
