@@ -7,9 +7,9 @@ import { imageQuality } from '@/config/images';
 const AboutStory = () => {
   return (
     <Section bgColor="light.white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <AnimationWrapper type="slide-right" delay={0.2}>
-          <div className="text-center lg:text-left">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-stretch">
+        <AnimationWrapper type="slide-right" delay={0.2} className="h-full">
+          <div className="text-center lg:text-left h-full flex flex-col">
             <SectionHeading
               title="Our Story"
               subtitle="Bringing color and quality to Lake Charles since 2010"
@@ -46,14 +46,14 @@ const AboutStory = () => {
           </div>
         </AnimationWrapper>
 
-        <AnimationWrapper type="slide-up" delay={0.2}>
-          <div className="overflow-hidden rounded-xl shadow-lg">
+        <AnimationWrapper type="slide-up" delay={0.2} className="h-full">
+          <div className="overflow-hidden rounded-xl shadow-lg h-full">
             <OptimizedImage
               src="/images/ponce-painting-about-us.jpg"
               alt="Ponce Painting professionals transforming Lake Charles homes and businesses with expert painting services"
               width={600}
               height={400}
-              className="w-full h-auto"
+              className="w-full h-full object-cover"
               quality={imageQuality.high}
             />
           </div>
@@ -61,8 +61,8 @@ const AboutStory = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-        <AnimationWrapper type="fade" delay={0.4}>
-          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
+        <AnimationWrapper type="fade" delay={0.4} className="h-full">
+          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 h-full">
             <h3 className="text-xl font-bold mb-4 text-primary-800">Our Mission</h3>
             <p className="text-gray-600">
               To elevate Lake Charles homes and businesses through expert painting services that
@@ -73,8 +73,8 @@ const AboutStory = () => {
           </div>
         </AnimationWrapper>
 
-        <AnimationWrapper type="fade" delay={0.6}>
-          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
+        <AnimationWrapper type="fade" delay={0.6} className="h-full">
+          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 h-full">
             <h3 className="text-xl font-bold mb-4 text-primary-800">Our Vision</h3>
             <p className="text-gray-600">
               To be recognized as the most trusted and respected painting contractor in Southwest
