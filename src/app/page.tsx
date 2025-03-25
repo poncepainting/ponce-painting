@@ -62,7 +62,7 @@ export default function Home() {
       <HeroSection
         title="Bring Your Vision to Life with Expert Painting Services"
         subtitle="Lake Charles' trusted painting professionals delivering flawless residential and commercial results since 2010"
-        imageUrl="/images/Painter in front of home with thumbs up.jpg"
+        imageUrl="/images/painter-in-front-of-home.jpg"
         imageAlt="Professional painter giving thumbs up in front of a freshly painted home"
         primaryCTA={{ text: 'Get a Free Quote', href: '/contact' }}
         secondaryCTA={{ text: 'Explore Our Services', href: '/services' }}
@@ -78,14 +78,14 @@ export default function Home() {
           <AnimationWrapper type="slide-up" className="order-2 md:order-1 mb-6 md:mb-0">
             <div className="relative w-full h-[250px] sm:h-[300px] md:h-full aspect-4/3 rounded-lg overflow-hidden shadow-md">
               <OptimizedImage
-                src={placeholderImages.landscape}
+                src="/images/ponce-painting-about-us.jpg"
                 alt="Ponce Painting team working on a residential project in Lake Charles"
                 width={imageSizes.medium.width}
                 height={imageSizes.medium.height}
                 className="object-cover"
                 useFill={true}
                 priority={false}
-                quality={imageQuality.medium}
+                quality={imageQuality.high}
                 sizes={imageSizes.medium.sizes}
               />
             </div>
