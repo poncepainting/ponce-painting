@@ -17,7 +17,7 @@
     "lint:fix": "next lint --fix",
     "validate": "npm run lint && npm run format:check",
     "prepare": "husky",
-    "check-links": "ts-node src/utils/link-checker.ts"
+    "check-links": "ts-node src/scripts/link-checker.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

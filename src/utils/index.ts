@@ -15,6 +15,6 @@ export * from './dynamicImports';
 // emailService is now moved to server-only code
 export * from './formSubmission';
 export * from './imageUtils';
-export * from './link-checker';
+// link-checker is now moved to scripts directory
 export * from './metadataUtils';
 export * from './themeUtils';

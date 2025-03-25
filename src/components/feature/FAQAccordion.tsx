@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { cn } from '@/utils';
+import { cn } from '@/utils/cn';
 import { FAQItem } from '@/types/faq';
 
 interface FAQAccordionProps {

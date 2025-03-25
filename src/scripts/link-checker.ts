@@ -244,7 +244,5 @@ export async function runLinkChecker(): Promise<void> {
   }
 }
 
-// Allow running directly
-if (require.main === module) {
-  runLinkChecker();
-}
+// Run directly
+runLinkChecker();
