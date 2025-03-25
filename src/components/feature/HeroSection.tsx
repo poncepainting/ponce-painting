@@ -83,8 +83,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
-      className={`hero-section-updated relative flex items-center justify-center bg-dark-primary pt-0 md:pt-16 lg:pt-24 ${
-        showQuoteForm ? 'min-h-screen pb-0 md:py-20' : heightClasses[height]
+      className={`relative flex items-center justify-center bg-dark-primary pt-6 md:pt-16 lg:pt-24 ${
+        showQuoteForm ? 'min-h-screen pb-10 md:py-20' : heightClasses[height]
       }`}
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -106,7 +106,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute inset-0 bg-primary-600/50 mix-blend-multiply z-10"></div>
       <div className="absolute inset-0 bg-blue-900/30 mix-blend-darken z-10"></div>
       <Container className={`z-20 ${alignmentClasses[textAlignment]}`}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-5 lg:gap-8 items-center">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -114,7 +114,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             className={showQuoteForm ? '' : 'lg:col-span-2'}
           >
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 text-white"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white"
               variants={itemVariants}
             >
               {title}
@@ -122,7 +122,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
             {subtitle && (
               <motion.p
-                className="text-xl md:text-2xl mb-2 md:mb-7 max-w-2xl mx-auto text-white"
+                className="text-xl md:text-2xl mb-6 md:mb-7 max-w-2xl mx-auto text-white"
                 variants={itemVariants}
               >
                 {subtitle}
@@ -154,7 +154,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="mt-0 lg:mt-0 mb-0 lg:mb-0"
+              className="mt-1.5 sm:mt-3 lg:mt-0 mb-5 sm:mb-6 lg:mb-0"
             >
               <QuoteForm />
             </motion.div>
