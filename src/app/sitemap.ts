@@ -1,11 +1,10 @@
 import { MetadataRoute } from 'next';
-import { siteConfig } from '@/config/site';
 
 // Get the base URL from environment or default to local
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ponce-painting.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Add all static routes with their priorities and change frequencies
+  // Only include routes that should be indexed by search engines
   const routes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
@@ -43,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    // Note: Legal pages are included with low priority
     {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
@@ -57,29 +57,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Add dynamic routes for services if available in siteConfig
-  if (siteConfig.services) {
-    const serviceRoutes = siteConfig.services.map(service => ({
-      url: `${baseUrl}/services/${service.id}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    }));
-
-    routes.push(...serviceRoutes);
-  }
-
-  // Add service area routes if available
-  if (siteConfig.serviceAreas) {
-    const areaRoutes = siteConfig.serviceAreas.map(area => ({
-      url: `${baseUrl}/service-areas/${area.toLowerCase().replace(/\s+/g, '-')}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    }));
-
-    routes.push(...areaRoutes);
-  }
+  // Excluded pages from sitemap:
+  // - /thank-you (post-conversion page)
+  // - /theme-demo (development page)
+  // - /example (development page)
+  // - /button-examples (development page)
+  // - /cookies (utility page)
+  // - /accessibility (utility page may be included if important for your audience)
+  // - /disclaimer (utility page)
 
   return routes;
 }
