@@ -1,5 +1,5 @@
 import type { Viewport } from 'next';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Plus_Jakarta_Sans, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/config/schema';
 import { ThemeProvider } from '@/components/theme';
@@ -13,7 +13,7 @@ const jakartaSans = Plus_Jakarta_Sans({
   display: 'swap',
   preload: true,
   weight: ['400', '500', '600', '700', '800'],
-  adjustFontFallback: true,
+  adjustFontFallback: false,
 });
 
 // Define viewport settings
@@ -39,10 +39,10 @@ export default function RootLayout({
   const baseSchemas = [generateWebsiteSchema(), generateOrganizationSchema()];
 
   return (
-    <html lang="en">
+    <html lang="en" className={jakartaSans.variable}>
       <SiteHead schemas={baseSchemas} />
       <ThemeProvider>
-        <SiteLayout fontClass={jakartaSans.variable}>{children}</SiteLayout>
+        <SiteLayout>{children}</SiteLayout>
       </ThemeProvider>
     </html>
   );

@@ -8,16 +8,15 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 interface SiteLayoutProps {
   children: React.ReactNode;
-  fontClass: string;
 }
 
 /**
  * SiteLayout component that handles the main site structure
  * This provides better organization of the overall layout structure
  */
-const SiteLayout: React.FC<SiteLayoutProps> = ({ children, fontClass }) => {
+const SiteLayout: React.FC<SiteLayoutProps> = ({ children }) => {
   return (
-    <body className={`antialiased bg-white font-sans ${fontClass}`}>
+    <body className="antialiased bg-white font-sans">
       <Header />
       <main className="pt-16 md:pt-20 bg-white min-h-screen">
         <PageTransition>{children}</PageTransition>
