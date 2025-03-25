@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Slider from 'react-slick';
 import { themeConfig } from '@/config/theme';
-import { generateCarouselStyles, CustomPaging } from '@/utils';
+import { generateCarouselStyles, CustomPaging } from '@/utils/carouselStyles';
 
 // Import slick required CSS
 import 'slick-carousel/slick/slick.css';

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { successResponse, badRequestResponse, errorResponse } from '@/utils';
+import { successResponse, badRequestResponse, errorResponse } from '@/utils/api';
 
 interface BrokenLinkData {
   brokenUrl: string;

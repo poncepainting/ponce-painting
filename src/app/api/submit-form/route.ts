@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { sendFormSubmissionEmail } from '@/utils/emailService';
+import { sendFormSubmissionEmail } from '@/app/api/email-service';
 import { QuoteFormData } from '@/types/forms';
-import { successResponse, badRequestResponse, errorResponse } from '@/utils';
+import { badRequestResponse, errorResponse, successResponse } from '@/utils/api';
 
 export async function POST(request: NextRequest) {
   try {

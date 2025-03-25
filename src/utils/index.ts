@@ -12,7 +12,7 @@ export * from './carouselStyles';
 export * from './cn';
 export * from './colorUtils';
 export * from './dynamicImports';
-export * from './emailService';
+// emailService is now moved to server-only code
 export * from './formSubmission';
 export * from './imageUtils';
 export * from './link-checker';
