@@ -81,7 +81,7 @@ export default {
   transform: async (config, path) => {
     // Get the base path without query parameters
     const basePath = path.split('?')[0];
-    
+
     // Determine the page type and its configuration
     let pageType = 'default';
     if (basePath === '/') pageType = 'home';
@@ -99,7 +99,7 @@ export default {
       lastmod: new Date().toISOString(),
     };
   },
-  additionalPaths: async (config) => {
+  additionalPaths: async config => {
     return loadDynamicRoutes();
   },
 };
