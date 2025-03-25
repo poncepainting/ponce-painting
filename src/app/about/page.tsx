@@ -8,10 +8,13 @@ import AnimationWrapper from '@/components/ui/AnimationWrapper';
 import HoverCard from '@/components/ui/HoverCard';
 import { Icon } from '@/config/icons';
 import Button from '@/components/ui/Button';
+import OptimizedImage from '@/components/ui/OptimizedImage';
+import { imageSizes, imageQuality } from '@/config/images';
 
 export const metadata = {
   title: `About Us | ${siteConfig.name}`,
-  description: 'Learn more about our business and our story.',
+  description:
+    "Learn about Ponce Painting - Lake Charles' premier professional painting company serving residential and commercial clients since 2010.",
 };
 
 export default function AboutPage() {
@@ -24,19 +27,19 @@ export default function AboutPage() {
       title: 'Excellence',
       description:
         'We strive for excellence in everything we do, setting high standards and consistently exceeding expectations.',
-      icon: 'check-circle',
+      icon: 'star',
     },
     {
       title: 'Integrity',
       description:
         'We conduct our business with honesty, transparency, and ethical practices that build trust with our customers.',
-      icon: 'users',
+      icon: 'check-circle',
     },
     {
-      title: 'Innovation',
+      title: 'Customer Focus',
       description:
-        'We continuously seek new ideas and approaches to improve our services and deliver better solutions.',
-      icon: 'plus',
+        "We prioritize our customers' needs and satisfaction, ensuring a positive experience from start to finish.",
+      icon: 'users',
     },
   ];
 
@@ -46,7 +49,7 @@ export default function AboutPage() {
   const seoDescription =
     typeof metadata.description === 'string'
       ? metadata.description
-      : 'Learn about our company, our mission, and our team.';
+      : "Learn about Ponce Painting - Lake Charles' premier professional painting company serving residential and commercial clients since 2010.";
 
   return (
     <main>
@@ -56,6 +59,7 @@ export default function AboutPage() {
         description={seoDescription}
         canonical="/about"
         schemaType="about"
+        ogImage="/images/ponce-painting-about-us.jpg"
       />
 
       {/* Schema markup specific to about page */}
@@ -93,35 +97,50 @@ export default function AboutPage() {
               />
 
               <p className="text-gray-600 mb-4 text-center lg:text-left">
-                This is a placeholder for your About page. Customize this page with your business's
-                story, mission, vision, and team information.
+                Founded in 2010, Ponce Painting has established itself as Lake Charles' premier
+                professional painting company, serving both residential and commercial clients
+                throughout the region.
               </p>
 
               <p className="text-gray-600 mb-4 text-center lg:text-left">
-                Add your business's story here. Talk about how you started, your journey, and what
-                makes your business unique. Share the challenges you've overcome and the milestones
-                you've achieved.
+                Our journey began with a simple mission: to provide exceptional painting services
+                that transform spaces and exceed customer expectations. Over the years, we've built
+                our reputation on quality craftsmanship, attention to detail, and professional
+                service.
               </p>
 
               <p className="text-gray-600 text-center lg:text-left">
-                Highlight your expertise, experience, and what sets you apart from competitors. Tell
-                your story in a way that connects with your audience and builds trust.
+                Today, our team of skilled professionals continues to deliver outstanding results
+                for homeowners and businesses across Lake Charles and surrounding areas. We take
+                pride in our work and are committed to making every project a success.
               </p>
             </div>
           </AnimationWrapper>
 
           <AnimationWrapper type="slide-up" delay={0.2}>
-            <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 h-full">
+            <div className="overflow-hidden rounded-xl shadow-lg">
+              <OptimizedImage
+                src="/images/ponce-painting-about-us.jpg"
+                alt="Ponce Painting professionals at work - Professional painting team serving Lake Charles"
+                width={600}
+                height={400}
+                className="w-full h-auto"
+                quality={imageQuality.high}
+              />
+            </div>
+
+            <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 mt-8">
               <h3 className="text-xl font-bold mb-4 text-primary-800">Our Mission</h3>
               <p className="text-gray-600 mb-6">
-                Describe your mission statement and core values here. What drives your business and
-                what principles guide your operations?
+                To deliver exceptional painting services that enhance the beauty, value, and
+                protection of our clients' properties through skilled craftsmanship and superior
+                customer service.
               </p>
 
               <h3 className="text-xl font-bold mb-4 text-primary-800">Our Vision</h3>
               <p className="text-gray-600">
-                Share your vision for the future. Where do you see your business going and what
-                impact do you hope to make in your industry and community?
+                To be the most trusted painting company in Lake Charles, known for our commitment to
+                quality, integrity, and customer satisfaction in every project we undertake.
               </p>
             </div>
           </AnimationWrapper>
@@ -146,7 +165,7 @@ export default function AboutPage() {
               <HoverCard className="h-full">
                 <div className="flex flex-col items-center p-6 text-center h-full">
                   <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
-                    <Icon name="check-circle" size={32} className="text-primary-600" />
+                    <Icon name={value.icon} size={32} className="text-primary-600" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-primary-800">{value.title}</h3>
                   <p className="text-gray-600">{value.description}</p>

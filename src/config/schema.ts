@@ -167,7 +167,7 @@ export const generateServicesSchema = () => {
 
 /**
  * Generate the complete schema object for a page
- * @param type Type of page to generate schema for ('home', 'about', 'service', etc.)
+ * @param type Type of page to generate schema for ('home', 'about', 'services', 'contact', 'service', 'gallery')
  * @param additionalData Any additional data needed for the schema
  */
 export const generatePageSchema = (
@@ -179,6 +179,31 @@ export const generatePageSchema = (
   switch (type) {
     case 'home':
       return [...baseSchemas, generateLocalBusinessSchema()];
+    case 'about':
+      return [
+        ...baseSchemas,
+        {
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: 'About ' + siteConfig.name,
+          description:
+            "Learn about Ponce Painting - Lake Charles' premier professional painting company serving residential and commercial clients since 2010.",
+          isPartOf: {
+            '@type': 'WebSite',
+            name: siteConfig.name,
+            url: siteConfig.url,
+          },
+          url: `${siteConfig.url}/about`,
+          primaryImageOfPage: {
+            '@type': 'ImageObject',
+            contentUrl: `${siteConfig.url}/images/ponce-painting-about-us.jpg`,
+            name: 'Ponce Painting professionals at work',
+            description: 'Professional painting team serving Lake Charles since 2010',
+            width: 600,
+            height: 400,
+          },
+        },
+      ];
     case 'services':
       return [...baseSchemas, ...generateServicesSchema()];
     case 'gallery':
