@@ -153,7 +153,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="mt-2.5 sm:mt-3 lg:mt-0 mb-5 sm:mb-6 lg:mb-0"
+              className="mt-1.5 sm:mt-3 lg:mt-0 mb-5 sm:mb-6 lg:mb-0"
             >
               <QuoteForm />
             </motion.div>
