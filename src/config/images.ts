@@ -61,7 +61,7 @@ export const placeholderImages = {
   person: '/images/placeholders/person-placeholder.svg',
   product: '/images/placeholders/product-placeholder.svg',
   landscape: '/images/placeholders/landscape-placeholder.svg',
-  logo: '/images/logo.svg',
+  logo: '/images/Ponce-Painting-Logo-Blue.png',
   hero: '/images/hero/hero-placeholder.jpg',
 };
 

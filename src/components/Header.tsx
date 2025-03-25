@@ -47,13 +47,13 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <OptimizedImage
-                src="/images/logo.svg"
+                src="/images/Ponce-Painting-Logo-Blue.png"
                 alt={`${siteConfig.name} Logo`}
                 width={imageSizes.logo.width}
                 height={imageSizes.logo.height}
-                className="h-8 w-auto mr-2"
+                className="h-10 w-auto mr-2"
                 priority={true}
-                fallbackText="Logo needs updating"
+                fallbackText="Ponce Painting Logo"
                 showImageName={false}
               />
               <span className="text-lg md:text-xl font-bold hidden sm:inline-block">
