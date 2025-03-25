@@ -16,58 +16,65 @@ import { AnimationWrapper } from '@/components/ui/animations';
 
 // Page metadata (for SEO component only, not exported)
 const pageMetadata = {
-  title: `Gallery | ${siteConfig.name}`,
-  description: 'See our portfolio and previous work.',
+  title: `Painting Project Gallery | See Our Work in Lake Charles & Southwest Louisiana | ${siteConfig.name}`,
+  description:
+    'Browse our gallery of completed residential and commercial painting projects in Lake Charles and Southwest Louisiana. See our premium finishes, expert craftsmanship, and attention to detail that have made Ponce Painting the trusted choice since 2010.',
 };
 
 // Sample gallery items - in a real implementation, this would come from a CMS or data source
 const galleryItems = [
   {
     id: 'gallery1',
-    title: 'Project One',
-    description: 'Description of project one showcasing our work.',
-    category: 'commercial',
-    imageUrl: '/images/placeholders/landscape-placeholder.svg',
-  },
-  {
-    id: 'gallery2',
-    title: 'Project Two',
-    description: 'Description of project two showcasing our work.',
+    title: 'Lake Charles Residential Exterior',
+    description:
+      'Complete exterior transformation featuring premium weather-resistant paints and meticulous trim detail work.',
     category: 'residential',
     imageUrl: '/images/placeholders/landscape-placeholder.svg',
   },
   {
+    id: 'gallery2',
+    title: 'Modern Office Interior',
+    description:
+      'Professional commercial painting with low-VOC paints, completed during off-hours to minimize business disruption.',
+    category: 'commercial',
+    imageUrl: '/images/placeholders/landscape-placeholder.svg',
+  },
+  {
     id: 'gallery3',
-    title: 'Project Three',
-    description: 'Description of project three showcasing our work.',
+    title: 'Local Restaurant Renovation',
+    description:
+      'Custom color scheme and durable finishes designed to withstand high-traffic commercial environments.',
     category: 'commercial',
     imageUrl: '/images/placeholders/landscape-placeholder.svg',
   },
   {
     id: 'gallery4',
-    title: 'Project Four',
-    description: 'Description of project four showcasing our work.',
+    title: 'Craftsman Home Refresh',
+    description:
+      'Historic home revitalization with period-appropriate colors and specialized techniques to preserve architectural details.',
     category: 'residential',
     imageUrl: '/images/placeholders/landscape-placeholder.svg',
   },
   {
     id: 'gallery5',
-    title: 'Project Five',
-    description: 'Description of project five showcasing our work.',
-    category: 'commercial',
+    title: 'Venetian Plaster Accent Wall',
+    description:
+      'Luxury textured finish creating a stunning focal point in this Lake Charles dining room.',
+    category: 'specialty',
     imageUrl: '/images/placeholders/landscape-placeholder.svg',
   },
   {
     id: 'gallery6',
-    title: 'Project Six',
-    description: 'Description of project six showcasing our work.',
-    category: 'residential',
+    title: 'Cabinet Refinishing Project',
+    description:
+      'Kitchen transformation through professional cabinet refinishing, saving thousands compared to replacement.',
+    category: 'specialty',
     imageUrl: '/images/placeholders/landscape-placeholder.svg',
   },
 ];
 
 // Gallery categories for filtering
-const categories = ['all', 'commercial', 'residential'];
+const categories = ['all', 'residential', 'commercial', 'specialty'];
 
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -103,10 +110,10 @@ export default function GalleryPage() {
 
       <Section name="gallery-hero" className="bg-primary-50">
         <SectionHeading
-          title="Our Portfolio"
-          subtitle="Browse through our projects and see examples of our work."
+          title="Our Portfolio of Premium Painting Projects"
+          subtitle="Explore our completed projects across Lake Charles and Southwest Louisiana, showcasing our commitment to quality, precision, and lasting results."
           useSubheading={true}
-          subheadingText="GALLERY"
+          subheadingText="PROJECT GALLERY"
           accentColor="primary.600"
         />
       </Section>
@@ -162,13 +169,20 @@ export default function GalleryPage() {
         {/* Empty state */}
         {filteredItems.length === 0 && (
           <div className="text-center py-12">
-            <h3 className="text-xl font-semibold text-gray-700 mb-2">No projects found</h3>
-            <p className="text-gray-500 mb-6">
-              There are no projects matching your selected filter.
+            <h3 className="text-xl font-semibold text-gray-700 mb-2">No Matching Projects Found</h3>
+            <p className="text-gray-500 mb-6 max-w-xl mx-auto">
+              We don't currently have projects matching this filter in our online gallery. However,
+              our Lake Charles painting team has extensive experience with all types of painting
+              projects. Contact us to discuss your specific needs or view our complete portfolio.
             </p>
-            <Button onClick={() => setSelectedCategory('all')} variant="secondary">
-              View All Projects
-            </Button>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button onClick={() => setSelectedCategory('all')} variant="secondary">
+                View All Projects
+              </Button>
+              <Button href="/contact" variant="primary">
+                Request a Free Estimate
+              </Button>
+            </div>
           </div>
         )}
       </Section>
@@ -177,11 +191,11 @@ export default function GalleryPage() {
       <Section name="gallery-cta" className="bg-primary-800 text-white">
         <AnimationWrapper type="slide-up">
           <SectionHeading
-            title="Ready to Start Your Project?"
-            subtitle="Contact us today to discuss your needs and how we can help you achieve your goals."
+            title="Love What You See? Let's Transform Your Space"
+            subtitle="Whether you're dreaming of refreshing your Lake Charles home or updating your commercial property, our expert team is ready to bring your vision to life with the same quality and attention to detail shown in our gallery."
             accentColor="primary.200"
             useSubheading={true}
-            subheadingText="GET STARTED"
+            subheadingText="GET YOUR FREE QUOTE"
             onDarkBackground={true}
           />
         </AnimationWrapper>
@@ -193,7 +207,7 @@ export default function GalleryPage() {
             size="lg"
             className="bg-white text-primary-600 border-white hover:bg-gray-50"
           >
-            Contact Us
+            Contact Us for a Free Estimate
           </Button>
         </AnimationWrapper>
       </Section>
@@ -235,7 +249,7 @@ export default function GalleryPage() {
                   <div className="relative h-64 md:h-80">
                     <OptimizedImage
                       src={item.imageUrl}
-                      alt={item.title}
+                      alt={`Ponce Painting project: ${item.title} - Professional painting services in Lake Charles, LA`}
                       fill
                       useFill
                       className="rounded-lg"
@@ -248,15 +262,74 @@ export default function GalleryPage() {
                   <p className="mt-4 text-gray-600">{item.description}</p>
                   <div className="mt-6">
                     <h3 className="text-lg font-semibold">Project Details</h3>
-                    <p className="mt-2 text-gray-600">
-                      This is a placeholder for additional project details. In a real
-                      implementation, you would include information like the project scope,
-                      completion date, client testimonial, and other relevant details.
-                    </p>
+                    <ul className="mt-2 space-y-2">
+                      {item.category === 'residential' && (
+                        <>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Premium paints with 15+ year durability</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>
+                              Thorough preparation including cleaning, sanding, and priming
+                            </span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Meticulous edge work and trim detailing</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Completed on schedule with minimal disruption</span>
+                          </li>
+                        </>
+                      )}
+                      {item.category === 'commercial' && (
+                        <>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Commercial-grade, high-traffic durable finishes</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Scheduled around business hours to prevent disruption</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Adherence to safety protocols and commercial regulations</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Low-VOC options for improved indoor air quality</span>
+                          </li>
+                        </>
+                      )}
+                      {item.category === 'specialty' && (
+                        <>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Custom specialized finishes using premium materials</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Expert application of advanced painting techniques</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Personalized design consultation to match your vision</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-primary-600 mr-2">✓</span>
+                            <span>Unique, one-of-a-kind results that transform spaces</span>
+                          </li>
+                        </>
+                      )}
+                    </ul>
                   </div>
-                  <div className="mt-6 pt-6 border-t border-gray-200">
-                    <Button href="/contact" variant="primary" className="w-full">
-                      Discuss a Similar Project
+                  <div className="mt-6 flex justify-center">
+                    <Button href="/contact" variant="primary" className="w-full md:w-auto">
+                      Get a Free Quote for Your Project
                     </Button>
                   </div>
                 </div>

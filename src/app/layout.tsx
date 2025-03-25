@@ -1,5 +1,5 @@
 import type { Viewport } from 'next';
-import { Plus_Jakarta_Sans, Geist_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/config/schema';
 import { ThemeProvider } from '@/components/theme';

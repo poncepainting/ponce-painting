@@ -1,5 +1,6 @@
 import React from 'react';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
+import Head from 'next/head';
 
 interface SiteHeadProps {
   schemas: Record<string, unknown>[];
@@ -11,10 +12,10 @@ interface SiteHeadProps {
  */
 const SiteHead: React.FC<SiteHeadProps> = ({ schemas }) => {
   return (
-    <head>
+    <Head>
       {/* Add schema markup */}
       <SchemaMarkup schemas={schemas} />
-    </head>
+    </Head>
   );
 };
 
