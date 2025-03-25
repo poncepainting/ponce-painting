@@ -61,10 +61,10 @@ const BottomFloatingMenu = ({
 
         <button
           onClick={handleScrollToTop}
-          className="flex items-center justify-center text-primary-600 py-4 px-8"
+          className="flex items-center justify-center text-primary-600 py-4 px-8 hover:bg-gray-50"
           aria-label="Scroll to top"
         >
-          <Icon name="chevron-up" size={20} />
+          <Icon name="chevron-up" size={24} />
         </button>
       </div>
     </div>

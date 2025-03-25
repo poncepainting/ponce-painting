@@ -13,6 +13,11 @@ import MenuIcon from './MenuIcon';
 import XIcon from './XIcon';
 import HomeIcon from './HomeIcon';
 import StarIcon from './StarIcon';
+import ChevronUpIcon from './ChevronUpIcon';
+import ChevronDownIcon from './ChevronDownIcon';
+import ChevronLeftIcon from './ChevronLeftIcon';
+import ChevronRightIcon from './ChevronRightIcon';
+import MailIcon from './MailIcon';
 
 // Icon mapping for easy reference by name
 const iconComponents = {
@@ -22,6 +27,11 @@ const iconComponents = {
   x: XIcon,
   home: HomeIcon,
   star: StarIcon,
+  'chevron-up': ChevronUpIcon,
+  'chevron-down': ChevronDownIcon,
+  'chevron-left': ChevronLeftIcon,
+  'chevron-right': ChevronRightIcon,
+  mail: MailIcon,
   // Add other icons here as they are implemented
 };
 

@@ -41,7 +41,7 @@ export default function ContactPage() {
       <SchemaMarkup schemas={contactSchemas} />
 
       {/* Contact Hero Section */}
-      <Section className="bg-primary-50 py-20">
+      <Section className="bg-primary-50 pt-24 md:pt-28 pb-16 md:pb-20">
         <AnimationWrapper type="fade">
           <SectionHeading
             title="Contact Us"
@@ -55,12 +55,12 @@ export default function ContactPage() {
       </Section>
 
       {/* Contact Information and Form */}
-      <Section name="contact-details" bgColor="light.white" className="py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <Section name="contact-details" bgColor="light.white" className="py-16 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Information */}
           <AnimationWrapper type="slide-up">
             <HoverCard className="h-full">
-              <div className="p-8 h-full">
+              <div className="p-6 pt-8 md:p-8 h-full">
                 <h2 className="text-2xl font-bold mb-6 text-primary-800">Get In Touch</h2>
 
                 <div className="space-y-6">
@@ -157,7 +157,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <AnimationWrapper type="slide-up" delay={0.2}>
             <div
-              className={`bg-white border border-gray-200 p-8 ${designSystem.borderRadius.form}`}
+              className={`bg-white border border-gray-200 p-6 pt-8 md:p-8 ${designSystem.borderRadius.form}`}
             >
               <h2 className="text-2xl font-bold mb-6 text-primary-800">Send Us a Message</h2>
               <ContactForm />

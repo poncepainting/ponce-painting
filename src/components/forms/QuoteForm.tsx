@@ -140,7 +140,7 @@ const QuoteForm = () => {
         />
       </div>
 
-      <div className="p-6">
+      <div className="px-6 pb-6 pt-4">
         {/* Form title - changes based on step */}
         <div className="mb-4">
           <h3 className="text-lg font-semibold text-gray-900">
