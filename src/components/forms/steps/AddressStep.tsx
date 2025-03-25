@@ -1,6 +1,6 @@
 import { FormStepProps } from '@/types/forms';
 import FormField from '@/components/forms/FormField';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/buttons/Button';
 import { Icon } from '@/config/icons';
 
 const AddressStep = ({ formData, handleChange }: FormStepProps) => {

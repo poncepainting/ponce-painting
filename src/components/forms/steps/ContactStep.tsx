@@ -1,6 +1,6 @@
 import { FormStepProps } from '@/types/forms';
 import FormField from '@/components/forms/FormField';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/buttons/Button';
 
 const ContactStep = ({ formData, handleChange, handleBack }: FormStepProps) => {
   return (

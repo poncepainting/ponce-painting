@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import FormField from '@/components/forms/FormField';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/buttons/Button';
 import { submitForm } from '@/utils/formSubmission';
 import { QuoteFormData } from '@/types/forms';
 

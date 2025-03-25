@@ -1,7 +1,7 @@
 import { FormStepProps } from '@/types/forms';
 import FormField from '@/components/forms/FormField';
 import SelectField from '@/components/forms/SelectField';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/buttons/Button';
 import { Icon } from '@/config/icons';
 import { servicesConfig } from '@/config/content';
 
