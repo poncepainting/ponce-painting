@@ -146,6 +146,27 @@ export const imageMetadata: Record<string, ImageMetadata> = {
     width: 1600,
     height: 1200,
   },
+
+  // Premium finishes image metadata
+  'premium-finishes': {
+    src: '/images/premium-finishes.jpg',
+    alt: 'Specialty premium finishes and decorative painting techniques by Ponce Painting in Lake Charles, LA',
+    description:
+      'Artistic specialty finishes and decorative painting services that add elegance and character to interior spaces.',
+    keywords: [
+      'specialty finishes',
+      'decorative painting',
+      'faux finishes',
+      'textured wall finishes',
+      'premium wall treatments',
+      'venetian plaster',
+      'accent walls',
+      'custom paint finishes',
+      'Lake Charles decorative painting',
+    ],
+    width: 1600,
+    height: 1200,
+  },
 };
 
 // Helper function to get image metadata by key

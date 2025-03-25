@@ -69,7 +69,7 @@ export const servicesConfig = [
     description:
       'Elevate your space with custom decorative finishes that add character, texture, and unmatched visual interest to any room.',
     icon: 'palette',
-    imageUrl: '/images/services/specialty-finishes.jpg',
+    imageUrl: '/images/premium-finishes.jpg',
     features: [
       'Venetian Plaster & Textured Finishes',
       'Faux Finishing Techniques',
