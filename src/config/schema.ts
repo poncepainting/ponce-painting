@@ -15,7 +15,7 @@ export const generateOrganizationSchema = () => {
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/Ponce-Painting-Logo-Blue.png`,
+    logo: `${siteConfig.url}/images/ponce-painting-logo-blue.png`,
     email: siteConfig.contact.email,
     telephone: siteConfig.contact.phone,
     address: {

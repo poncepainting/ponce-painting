@@ -47,7 +47,7 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <OptimizedImage
-                src="/images/Ponce-Painting-Logo-Blue.png"
+                src="/images/ponce-painting-logo-blue.png"
                 alt={`${siteConfig.name} Logo`}
                 width={imageSizes.logo.width}
                 height={imageSizes.logo.height}

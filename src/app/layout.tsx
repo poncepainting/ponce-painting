@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/images/Ponce-Painting-Logo-Blue.png', type: 'image/png' },
+      { url: '/images/ponce-painting-logo-blue.png', type: 'image/png' },
     ],
     apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
   },
