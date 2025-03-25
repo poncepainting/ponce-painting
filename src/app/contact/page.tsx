@@ -2,12 +2,14 @@ import { Icon } from '@/config/icons';
 import { siteConfig } from '@/config/site';
 import { Section } from '@/components/ui/containers';
 import { generatePageSchema } from '@/config/schema';
-import { PageSEO, SchemaMarkup } from '@/components/seo';
+import PageSEO from '@/components/seo/PageSEO';
+import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { designSystem } from '@/config/theme';
 import { SectionHeading } from '@/components/feature';
 import { AnimationWrapper } from '@/components/ui/animations';
 import { HoverCard } from '@/components/ui/cards';
 import ContactForm from '@/components/forms/ContactForm';
+import { IconName } from '@/config/icons';
 
 export const metadata = {
   title: `Contact Our Lake Charles Painting Experts | Free Quotes | ${siteConfig.name}`,
@@ -143,7 +145,7 @@ export default function ContactPage() {
                             className="text-gray-500 hover:text-primary-600 transition-colors"
                             aria-label={`${platform} profile`}
                           >
-                            <Icon name={platform as any} size={24} />
+                            <Icon name={platform as IconName} size={24} />
                           </a>
                         ))}
                       </div>

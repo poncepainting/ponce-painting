@@ -4,3 +4,4 @@ import SchemaMarkup from './SchemaMarkup';
 import HeadContent from './HeadContent';
 
 export { SEO, PageSEO, SchemaMarkup, HeadContent };
+export default SEO;

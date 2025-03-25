@@ -2,7 +2,8 @@
 export * from './common';
 export * from './feature';
 export * from './ui';
-export * from './seo';
+// Export SEO components directly to avoid case sensitivity issues
+export { SEO, PageSEO, SchemaMarkup, HeadContent } from './seo/index';
 export * from './layout';
 export * from './theme';
 export * from './icons';

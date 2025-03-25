@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Header from './header/Header';
 import Footer from './footer/Footer';
+import Head from 'next/head';
 
 interface SiteLayoutProps {
   children: ReactNode;
@@ -23,7 +24,7 @@ interface SiteHeadProps {
 
 export const SiteHead = ({ schemas }: SiteHeadProps) => {
   return (
-    <head>
+    <Head>
       {schemas.map((schema, index) => (
         <script
           key={`schema-${index}`}
@@ -33,6 +34,6 @@ export const SiteHead = ({ schemas }: SiteHeadProps) => {
           }}
         />
       ))}
-    </head>
+    </Head>
   );
 };

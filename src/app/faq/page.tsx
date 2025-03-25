@@ -4,7 +4,8 @@ import { FAQSection } from '@/components/feature';
 import { Section } from '@/components/ui/containers';
 import { SectionHeading } from '@/components/feature';
 import { AnimationWrapper } from '@/components/ui/animations';
-import { PageSEO, SchemaMarkup } from '@/components/seo';
+import PageSEO from '@/components/seo/PageSEO';
+import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { Container } from '@/components/ui/containers';
 import { Button } from '@/components/ui/buttons';
 

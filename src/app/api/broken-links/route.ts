@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import fs from 'fs';
 import path from 'path';

@@ -1,6 +1,7 @@
 import React from 'react';
-import { SchemaMarkup } from '@/components/seo';
+import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { useRouter } from 'next/navigation';
+import Head from 'next/head';
 
 interface SiteHeadProps {
   schemas: Record<string, unknown>[];
@@ -11,13 +12,22 @@ interface SiteHeadProps {
  * This provides better organization of the head structure
  */
 const SiteHead: React.FC<SiteHeadProps> = ({ schemas }) => {
-  const router = useRouter();
+  const _router = useRouter();
 
   return (
-    <head>
+    <Head>
       {/* Resource hints for performance optimization */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+        media="print"
+        onLoad={() => {
+          const element = document.querySelector('link[href*="fonts.googleapis.com"]');
+          if (element) (element as HTMLLinkElement).media = 'all';
+        }}
+      />
       <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
       <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
@@ -39,7 +49,7 @@ const SiteHead: React.FC<SiteHeadProps> = ({ schemas }) => {
       />
 
       <SchemaMarkup schemas={schemas} />
-    </head>
+    </Head>
   );
 };
 

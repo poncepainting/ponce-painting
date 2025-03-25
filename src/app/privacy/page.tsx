@@ -4,7 +4,7 @@ import { Container } from '@/components/ui/containers';
 import { Section } from '@/components/ui/containers';
 import { SectionHeading } from '@/components/feature';
 import { AnimationWrapper } from '@/components/ui/animations';
-import { PageSEO } from '@/components/seo';
+import PageSEO from '@/components/seo/PageSEO';
 
 export const metadata: Metadata = {
   title: `Privacy Policy | ${siteConfig.name}`,

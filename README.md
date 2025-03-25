@@ -13,6 +13,7 @@ A modern, responsive Next.js template designed specifically for local business w
 7. [SEO Controls](#seo-controls)
 8. [JavaScript Optimization](#javascript-optimization)
 9. [Deployment](#deployment)
+10. [Sitemap and Robots.txt](#sitemap-and-robots.txt)
 
 ## Features
 
@@ -236,6 +237,28 @@ vercel
 ### Other Hosting
 
 Follow standard Next.js deployment procedures for your chosen host.
+
+## Sitemap and Robots.txt
+
+This project uses Next.js App Router's built-in sitemap and robots.txt generation:
+
+- `/src/app/sitemap.ts` - Generates the sitemap.xml file
+- `/src/app/robots.ts` - Generates the robots.txt file
+
+These files are automatically converted to `/sitemap.xml` and `/robots.txt` at build time and are accessible at the root of your domain.
+
+The sitemap includes:
+
+- All static routes with appropriate priorities
+- Dynamic service routes from siteConfig
+- Service area routes from siteConfig
+
+You can modify these files to add additional routes or change priorities as needed.
+
+For more information, see:
+
+- [Next.js Sitemap Documentation](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap)
+- [Next.js Robots.txt Documentation](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots)
 
 ## License
 

@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { sendFormSubmissionEmail } from '@/app/api/email-service';
 import { QuoteFormData } from '@/types/forms';

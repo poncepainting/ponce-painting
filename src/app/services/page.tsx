@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Section } from '@/components/ui/containers';
 import { generateServicesSchema } from '@/config/schema';
-import { PageSEO, SchemaMarkup } from '@/components/seo';
+import PageSEO from '@/components/seo/PageSEO';
+import SchemaMarkup from '@/components/seo/SchemaMarkup';
 import { SectionHeading } from '@/components/feature';
 import { AnimationWrapper } from '@/components/ui/animations';
 import { Button } from '@/components/ui/buttons';

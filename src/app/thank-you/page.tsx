@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site';
 import { Section } from '@/components/ui/containers';
 import { Button } from '@/components/ui/buttons';
 import { AnimationWrapper } from '@/components/ui/animations';
-import { SEO } from '@/components/seo';
+import SEO from '@/components/seo/SEO';
 
 export const metadata = {
   title: `Thank You | ${siteConfig.name}`,
