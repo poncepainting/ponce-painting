@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site';
 import { Section } from '@/components/ui/containers';
 import { Button } from '@/components/ui/buttons';
 import { InteractiveButton } from '@/components/ui/buttons';
-import { PageSEO } from '@/components/seo';
+import PageSEO from '@/components/seo/PageSEO';
 import {
   ServiceCarousel,
   TestimonialCarousel,
@@ -23,7 +23,9 @@ import React from 'react';
 
 // Lazy load components that are not needed for initial render or below the fold
 const LazyServiceCarousel = () => {
-  const ServiceCarouselComponent = React.lazy(() => import('@/components/feature/ServiceCarousel'));
+  const ServiceCarouselComponent = React.lazy(
+    () => import('@/components/carousel/ServiceCarousel')
+  );
   return (
     <Suspense fallback={<div className="w-full h-64 bg-gray-100 animate-pulse rounded-lg"></div>}>
       <ServiceCarouselComponent />
@@ -33,7 +35,7 @@ const LazyServiceCarousel = () => {
 
 const LazyTestimonialCarousel = () => {
   const TestimonialCarouselComponent = React.lazy(
-    () => import('@/components/feature/TestimonialCarousel')
+    () => import('@/components/carousel/TestimonialCarousel')
   );
   return (
     <Suspense fallback={<div className="w-full h-64 bg-gray-100 animate-pulse rounded-lg"></div>}>

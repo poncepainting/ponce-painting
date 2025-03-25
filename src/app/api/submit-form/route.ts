@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { sendFormSubmissionEmail } from '@/utils/emailService';
 import { QuoteFormData } from '@/types/forms';
+import { successResponse, badRequestResponse, errorResponse } from '@/utils';
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,7 +11,7 @@ export async function POST(request: NextRequest) {
 
     // Simple validation
     if (!formData.email || !formData.name) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      return badRequestResponse('Missing required fields');
     }
 
     // Send email notification
@@ -25,12 +26,9 @@ export async function POST(request: NextRequest) {
     // Here you could also store the submission in a database if needed
 
     // Return a success response
-    return NextResponse.json({
-      success: true,
-      message: 'Form submitted successfully',
-    });
+    return successResponse(null, 'Form submitted successfully');
   } catch (error) {
     console.error('Error processing form submission:', error);
-    return NextResponse.json({ error: 'Failed to process submission' }, { status: 500 });
+    return errorResponse('Failed to process submission');
   }
 }

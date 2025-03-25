@@ -7,6 +7,7 @@
 
 // Re-export all utilities
 export * from './animationUtils';
+export * from './api';
 export * from './carouselStyles';
 export * from './cn';
 export * from './colorUtils';

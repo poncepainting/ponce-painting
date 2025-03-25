@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { successResponse, badRequestResponse, errorResponse } from '@/utils';
 
 interface BrokenLinkData {
   brokenUrl: string;
@@ -14,13 +16,13 @@ interface BrokenLinkData {
  * Records data to a JSON file in development
  * In production, this would connect to a database
  */
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const data: BrokenLinkData = await request.json();
 
     // Validate required fields with safe fallbacks
     if (!data.brokenUrl) {
-      data.brokenUrl = 'unknown-url';
+      return badRequestResponse('Missing required fields');
     }
 
     // Add defaults for missing fields
@@ -36,11 +38,11 @@ export async function POST(request: Request) {
       console.error('Error while logging broken link:', loggingError);
     }
 
-    return NextResponse.json({ success: true });
+    // Return a success response
+    return successResponse(null, 'Broken link logged successfully');
   } catch (error) {
     console.error('Error processing broken link request:', error);
-    // Always return a 200 status to prevent navigation issues
-    return NextResponse.json({ success: false, error: 'Failed to process request' });
+    return errorResponse('Failed to process request');
   }
 }
 

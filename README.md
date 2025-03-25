@@ -1,103 +1,99 @@
 # Local Business Website Template
 
-A modern, responsive Next.js template designed specifically for local business websites. This template provides everything you need to quickly set up a professional website for a small business, service provider, or local establishment.
+A modern, responsive Next.js template designed specifically for local business websites. This template provides everything you need to quickly set up a professional website for a small business or local establishment.
+
+## Table of Contents
+
+1. [Features](#features)
+2. [Getting Started](#getting-started)
+3. [Project Structure](#project-structure)
+4. [Customization](#customization)
+5. [Core Components](#core-components)
+6. [Form Handling](#form-handling)
+7. [SEO Controls](#seo-controls)
+8. [JavaScript Optimization](#javascript-optimization)
+9. [Deployment](#deployment)
 
 ## Features
 
-- **Modern Stack**: Built with Next.js 15, TypeScript, and Tailwind CSS
-- **Mobile-First Design**: Fully responsive with an animated mobile menu
-- **Centralized Configuration**: Easy customization through config files
-- **Optimized Images**: Built-in image optimization and fallback placeholders
+- **Modern Stack**: Next.js 15, TypeScript, and Tailwind CSS
+- **Mobile-First Design**: Fully responsive with animated mobile menu
+- **Performance Focused**: Optimized for speed and Core Web Vitals
+- **SEO Ready**: Comprehensive metadata and semantic structure
+- **Configurable Forms**: Multiple form handling options
 - **Component Library**: Reusable UI components for consistent design
-- **Smooth Animations**: Integrated Framer Motion for polished interactions
-- **Performance Focused**: Optimized for speed and best practices
-- **SEO Ready**: Proper metadata and semantic HTML structure
+- **Accessibility**: Built with a11y best practices
 
 ## Getting Started
 
-First, clone this repository and install dependencies:
-
 ```bash
+# Clone repository
 git clone https://github.com/yourusername/local-business-template.git my-business-site
 cd my-business-site
+
+# Install dependencies
 npm install
-```
 
-Then, run the development server:
-
-```bash
+# Run development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Customization
-
-### 1. Business Information
-
-All business information is centralized in `src/config/site.ts`. Update this file to include your:
-
-- Business name and description
-- Contact information
-- Services offered
-- Customer testimonials
-- Key business features
-
-### 2. Theme & Design
-
-Customize the look and feel by editing:
-
-- `src/config/theme.ts` - Colors, sizes, and design tokens
-- `tailwind.config.js` - Extend Tailwind's default theme
-- `src/app/globals.css` - Global styles and custom CSS
-
-### 3. Site Layout
-
-The core layout components can be customized:
-
-- `src/app/layout.tsx` - Main layout wrapper
-- `src/components/Header.tsx` - Site navigation header
-- `src/components/Footer.tsx` - Site footer
-
-### 4. Images
-
-Replace placeholder images in the `public/images/` directory:
-
-- `/public/images/logo.svg` - Business logo
-- `/public/images/hero/` - Hero section images
-- `/public/images/services/` - Service images
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
 ```
 /public
   /images             # Static images
-    /hero
-    /placeholders     # Fallback images
-    /services
-    logo.svg
 /src
   /app                # App router pages
-    /[page routes]
-    layout.tsx        # Root layout
-    globals.css       # Global styles
-    page.tsx          # Homepage
   /components         # React components
     /ui               # Reusable UI components
-    Header.tsx
-    Footer.tsx
   /config             # Configuration files
-    /icons.tsx        # Icon components
-    /images.ts        # Image settings
-    /site.ts          # Business information
-    /theme.ts         # Design tokens
+  /hooks              # Custom React hooks
+  /lib                # Core functionality
+  /types              # TypeScript definitions
+/docs                 # Additional documentation
 ```
 
-## Key Components
+## Customization
+
+### Business Information
+
+Edit `src/config/site.ts` to update:
+
+- Business name, description, and contact info
+- Services offered
+- Testimonials
+- Key business features
+
+### Design & Theme
+
+Modify the look and feel by editing:
+
+- `src/config/theme.ts` - Design tokens
+- `tailwind.config.js` - Tailwind settings
+- `src/app/globals.css` - Global styles
+
+### Layout Components
+
+Customize core layout components:
+
+- `src/app/layout.tsx` - Main layout
+- `src/components/Header.tsx` - Navigation
+- `src/components/Footer.tsx` - Footer
+
+### Images
+
+Replace placeholder images in `public/images/`:
+
+- `logo.svg` - Business logo
+- `hero/` - Hero images
+- `services/` - Service images
+
+## Core Components
 
 ### Container
-
-Use the `Container` component to maintain consistent width and padding:
 
 ```tsx
 import Container from "@/components/ui/Container";
@@ -106,68 +102,61 @@ import Container from "@/components/ui/Container";
   Your content here
 </Container>
 
-// With additional classes
+// With custom styling
 <Container className="py-12 bg-gray-100">
-  Content with custom padding and background
+  Content with custom styles
 </Container>
 ```
 
 ### OptimizedImage
 
-Use the `OptimizedImage` component for optimized, responsive images with fallbacks:
-
 ```tsx
 import OptimizedImage from '@/components/ui/OptimizedImage';
-import { imageSizes, imageQuality } from '@/config/images';
 
 <OptimizedImage
   src="/images/example.jpg"
-  alt="Description of image"
+  alt="Description"
   width={400}
   height={300}
-  className="your-custom-classes"
-  fallbackText="Custom fallback message"
+  className="rounded"
+  fallbackText="Alternative text"
 />;
 ```
 
-## Future Improvements
+## Form Handling
 
-This template is designed to be extended with features such as:
+The template includes three form handling options:
 
-- Blog functionality
-- E-commerce integration
-- Contact forms
-- Appointment scheduling
-- Map integration
-- Analytics tracking
+1. **Formspree** (Default)
 
-## Learn More
+   - No server configuration required
+   - Works on any hosting
+   - Configure in `.env.local`:
+     ```
+     NEXT_PUBLIC_FORM_HANDLER=formspree
+     NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id
+     ```
 
-To learn more about the technologies used in this template:
+2. **Next.js API Route**
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [Framer Motion](https://www.framer.com/motion/)
-- [TypeScript](https://www.typescriptlang.org/docs/)
+   - Optimized for Vercel deployments
+   - Sends email via SMTP
+   - Configure in `.env.local` with SMTP details
 
-## License
+3. **EmailJS**
+   - Client-side solution
+   - No server configuration needed
+   - Configure with EmailJS credentials
 
-This template is MIT licensed. Feel free to use it for personal or commercial projects.
+For detailed configuration, see [docs/FORM_HANDLING.md](docs/FORM_HANDLING.md)
 
-# SEO Control
+## SEO Controls
 
-The website includes comprehensive SEO controls for indexing and crawling directives.
-
-## SEO Components
-
-### Using the SEO Component
-
-The `<SEO />` component provides control over meta tags, titles, descriptions, and robots directives:
+### SEO Component
 
 ```tsx
 import SEO from '@/components/SEO';
 
-// In your page component:
 <SEO
   title="Service Page"
   description="Professional services in your area"
@@ -177,27 +166,11 @@ import SEO from '@/components/SEO';
 />;
 ```
 
-Properties accepted by the SEO component:
-
-| Property           | Type    | Description                                       |
-| ------------------ | ------- | ------------------------------------------------- |
-| title              | string  | Page title (will be appended with site name)      |
-| description        | string  | Page description                                  |
-| canonical          | string  | Canonical URL                                     |
-| noIndex            | boolean | Should search engines index this page?            |
-| noFollow           | boolean | Should search engines follow links on this page?  |
-| ogImage            | string  | Open Graph image URL                              |
-| pageType           | string  | Open Graph page type ('website', 'article', etc.) |
-| additionalMetaTags | array   | Additional meta tags to include                   |
-
-### Using the PageWrapper Component
-
-For even easier implementation, use the `<PageWrapper />` component which automatically detects if a page should be excluded from indexing based on its path:
+### PageWrapper Component
 
 ```tsx
 import PageWrapper from '@/components/PageWrapper';
 
-// In your page component:
 export default function MyPage() {
   return (
     <PageWrapper
@@ -212,58 +185,58 @@ export default function MyPage() {
 }
 ```
 
-## Automatic noindex for Sensitive Pages
+### Automatic noindex
 
-The following page types are automatically set to noindex, nofollow:
+The following pages are automatically set to noindex:
 
-- Authentication pages (/login, /signup, etc.)
-- Thank you and confirmation pages
-- Admin and dashboard pages
-- Preview pages
-- API endpoints
+- Authentication pages
+- Thank you/confirmation pages
+- Admin/dashboard pages
 - Error pages
 
-You can customize this list in `src/config/seo.ts`.
+See `src/config/seo.ts` to customize.
 
-## Sitemap Generation
+## JavaScript Optimization
 
-The sitemap automatically excludes pages that are set to noindex, so you don't need to maintain a separate list of excluded pages.
+This template includes several JavaScript optimizations:
 
-To manually control which pages appear in the sitemap, you can:
+1. **Dynamic Imports**
 
-1. Configure paths in `src/config/seo.ts`
-2. Override on individual pages using the `noIndex` prop on the SEO component
+   ```tsx
+   import { clientOnly } from '@/utils';
+   const HeavyComponent = clientOnly(() => import('@/components/HeavyComponent'));
+   ```
 
-# Deployment test
+2. **Code Splitting**
 
-## Codebase Organization
+   - Route-based and component-level splitting
+   - Lazy loading for below-the-fold content
 
-The codebase is organized in a structured way to make it easy to navigate and extend:
+3. **Third-Party Scripts**
 
-### `/src` Directory
+   ```tsx
+   import Script from 'next/script';
 
-- `/app` - Next.js pages using the App Router pattern
-- `/components` - UI components organized by function (see detailed breakdown below)
-- `/config` - Configuration files for various site aspects
-- `/hooks` - Custom React hooks
-- `/lib` - Core functionality and utilities
-- `/types` - TypeScript type definitions
-- `/utils` - Utility functions
+   <Script src="https://example.com/script.js" strategy="lazyOnload" />;
+   ```
 
-### Component Organization
+For more details, see [docs/javascript-optimization.md](docs/javascript-optimization.md)
 
-Components are organized into logical categories:
+## Deployment
 
-- `/common` - Reusable utility components (Breadcrumb, Carousel, etc.)
-- `/feature` - Feature-specific components (HeroSection, FAQSection, etc.)
-- `/layout` - Layout components (header, footer, etc.)
-- `/seo` - SEO-related components
-- `/theme` - Theme-related components
-- `/ui` - UI components organized by type:
-  - `/buttons` - Button components
-  - `/containers` - Container components
-  - `/typography` - Text and heading components
-  - `/cards` - Card components
-  - `/animations` - Animation components
+This template is optimized for deployment on Vercel, but works with any hosting service that supports Next.js.
 
-For more details, see the [src/README.md](src/README.md) file.
+### Vercel Deployment
+
+```bash
+npm run build
+vercel
+```
+
+### Other Hosting
+
+Follow standard Next.js deployment procedures for your chosen host.
+
+## License
+
+MIT License - Feel free to use for personal or commercial projects.

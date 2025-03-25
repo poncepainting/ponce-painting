@@ -1,9 +1,9 @@
 'use client';
 
 import { FC } from 'react';
-import Carousel from './ui/Carousel';
-import OptimizedImage from './ui/OptimizedImage';
-import StarRating from './ui/StarRating';
+import Carousel from '@/components/common/Carousel';
+import OptimizedImage from '@/components/common/OptimizedImage';
+import StarRating from '@/components/common/StarRating';
 import { siteConfig } from '@/config/site';
 import { Icon } from '@/components/icons';
 
@@ -43,7 +43,7 @@ const TestimonialCarousel: FC<TestimonialCarouselProps> = ({
                 </div>
               </div>
               <div>
-                <h4 className="font-bold text-primary-800">{testimonial.name}</h4>
+                <h3 className="font-bold text-primary-800">{testimonial.name}</h3>
                 <p className="text-gray-500 text-sm">{testimonial.role}</p>
               </div>
             </div>
