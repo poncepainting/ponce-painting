@@ -17,7 +17,7 @@ interface SiteLayoutProps {
  */
 const SiteLayout: React.FC<SiteLayoutProps> = ({ children, fontClass }) => {
   return (
-    <body className={`${fontClass} antialiased bg-white font-sans`}>
+    <body className={`antialiased bg-white font-sans ${fontClass}`}>
       <Header />
       <main className="pt-16 md:pt-20 bg-white min-h-screen">
         <PageTransition>{children}</PageTransition>

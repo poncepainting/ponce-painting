@@ -15,7 +15,7 @@ import { HeaderAccent } from '@/components/ui/typography';
 import { AnimationWrapper } from '@/components/ui/animations';
 import { HoverCard } from '@/components/ui/cards';
 import { OptimizedImage } from '@/components/common';
-import { imageSizes, imageQuality } from '@/config/images';
+import { imageSizes, imageQuality, preloadImages } from '@/config/images';
 import { Icon } from '@/config/icons';
 import { ctaConfig } from '@/config/site';
 import { Suspense } from 'react';
@@ -84,9 +84,9 @@ export default function Home() {
       <Section name="about-us" className="bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <AnimationWrapper type="slide-up" className="order-2 md:order-1 mb-6 md:mb-0">
-            <div className="relative w-full h-[250px] sm:h-[300px] md:h-full aspect-4/3 rounded-lg overflow-hidden shadow-md">
+            <div className="relative w-full h-[250px] sm:h-[300px] md:h-[450px] aspect-4/3 rounded-lg overflow-hidden shadow-md">
               <OptimizedImage
-                src="/images/ponce-painting-about-us.jpg"
+                src={preloadImages.aboutUsSection}
                 alt="Ponce Painting team working on a residential project in Lake Charles"
                 width={imageSizes.medium.width}
                 height={imageSizes.medium.height}

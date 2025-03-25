@@ -55,6 +55,12 @@ export const imageQuality = {
   maximum: 100,
 };
 
+// Critical images for preloading
+export const preloadImages = {
+  homepageHero: '/images/painter-in-front-of-home.jpg',
+  aboutUsSection: '/images/ponce-painting-about-us.png',
+};
+
 // Placeholder images paths
 export const placeholderImages = {
   default: '/images/placeholders/placeholder.svg',

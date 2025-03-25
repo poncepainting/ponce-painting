@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { preloadImages } from './config/images';
 
 // Define path patterns that should be excluded from 404 tracking
 const EXCLUDE_PATTERNS = [
@@ -45,7 +46,7 @@ export function middleware(request: NextRequest) {
   if (request.nextUrl.pathname === '/') {
     response.headers.set(
       'Link',
-      '</images/painter-in-front-of-home.jpg>; rel=preload; as=image; fetchpriority=high, </images/ponce-painting-about-us.jpg>; rel=preload; as=image'
+      `<${preloadImages.homepageHero}>; rel=preload; as=image; fetchpriority=high, <${preloadImages.aboutUsSection}>; rel=preload; as=image`
     );
   }
 
