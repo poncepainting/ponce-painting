@@ -212,7 +212,7 @@ export default function Home() {
         <AnimationWrapper type="slide-up">
           <SectionHeading
             title="Frequently Asked Questions"
-            subtitle="Get answers to the most common questions about our painting services, process, and what to expect when working with us."
+            subtitle="Get answers to the most common questions about our painting services in Lake Charles, our process, and what makes Ponce Painting the trusted choice for Southwest Louisiana homes and businesses."
             useSubheading={true}
             subheadingText="YOUR QUESTIONS ANSWERED"
             accentColor="primary.600"
@@ -225,7 +225,7 @@ export default function Home() {
           <HomeFAQSection
             maxItems={6}
             showCategories={true}
-            categories={['General', 'Services', 'Pricing']}
+            categories={['General', 'Residential', 'Process', 'Pricing']}
             showAllOption={true}
           />
         </AnimationWrapper>

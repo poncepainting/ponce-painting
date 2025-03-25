@@ -133,7 +133,9 @@ const HomeFAQSection = ({
           </div>
           <h3 className={`text-2xl font-bold mb-2 ${colors.contactTitle}`}>Have more questions?</h3>
           <p className={`mb-6 ${colors.contactText}`}>
-            Our team is ready to help with any additional questions you might have.
+            Our Lake Charles painting team is ready to help with any additional questions about your
+            project. You can also learn more about our company, experience, and commitment to
+            quality on our About page.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
             <Button
@@ -143,6 +145,14 @@ const HomeFAQSection = ({
               className={isDarkBackground ? 'border-white text-white hover:bg-gray-700/50' : ''}
             >
               Contact Us <Icon name="chevron-right" size={16} />
+            </Button>
+            <Button
+              href="/about"
+              variant={isDarkBackground ? 'outline' : 'secondary'}
+              size="lg"
+              className={isDarkBackground ? 'border-white text-white hover:bg-gray-700/50' : ''}
+            >
+              About Ponce Painting <Icon name="chevron-right" size={16} />
             </Button>
             <Button
               href="/faq"

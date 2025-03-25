@@ -15,32 +15,35 @@ export const faqCategories = [
   {
     id: 'residential',
     name: 'Residential Painting',
-    description: 'Common questions about our residential painting services.',
+    description: 'Common questions about our residential painting services in Lake Charles.',
   },
   {
     id: 'commercial',
     name: 'Commercial Painting',
-    description: 'Information about our commercial painting services.',
+    description:
+      'Information about our commercial painting services throughout Southwest Louisiana.',
   },
   {
     id: 'process',
     name: 'Our Process',
-    description: 'Learn about our painting process and what to expect.',
+    description:
+      'Learn about our painting process and what to expect when working with Ponce Painting.',
   },
   {
     id: 'pricing',
     name: 'Pricing & Estimates',
-    description: 'Questions about our pricing and estimate process.',
+    description: 'Questions about our free painting estimates and pricing in Lake Charles.',
   },
   {
     id: 'general',
     name: 'General',
-    description: 'General questions about our company and services.',
+    description: 'General questions about Ponce Painting services and company information.',
   },
   {
     id: 'services',
     name: 'Services',
-    description: 'Information about the services we offer.',
+    description:
+      'Information about the professional painting services we offer in Lake Charles and Southwest Louisiana.',
   },
 ];
 
@@ -49,33 +52,33 @@ export const faqItems: FAQItem[] = [
   {
     id: 'general-operating-time',
     categoryId: 'general',
-    question: 'How long has your business been operating?',
+    question: 'How long has Ponce Painting been operating in Lake Charles?',
     answer:
-      'Our business has been operating for over 10 years, with a proven track record of successful projects and satisfied clients.',
+      "Ponce Painting has been serving Lake Charles and Southwest Louisiana since 2010. With over 13 years of experience, we've built a solid reputation for quality craftsmanship, reliability, and exceptional customer service throughout the region.",
     category: 'General',
   },
   {
     id: 'general-service-areas',
     categoryId: 'general',
-    question: 'What areas do you serve?',
+    question: 'What areas of Louisiana does Ponce Painting serve?',
     answer:
-      'We provide services nationwide, with a focus on major metropolitan areas. For international clients, we offer remote consulting and digital services.',
+      'Ponce Painting proudly serves Lake Charles and the surrounding communities throughout Southwest Louisiana, including Sulphur, Iowa, Moss Bluff, Vinton, and Westlake. Our local team is familiar with the unique challenges of our Gulf Coast climate and provides specialized painting solutions for homes and businesses in our region.',
     category: 'General',
   },
   {
     id: 'general-insurance',
     categoryId: 'general',
-    question: 'Are you insured and licensed?',
+    question: 'Is Ponce Painting licensed and insured?',
     answer:
-      'We are fully insured and licensed to operate in all the areas we serve. We are happy to provide verification upon request.',
+      "Yes, Ponce Painting is fully licensed, bonded, and insured in Louisiana. We maintain comprehensive liability insurance and workers' compensation coverage for all our projects. This provides complete peace of mind for our clients knowing that they're protected when we work on their properties.",
     category: 'General',
   },
   {
     id: 'general-support',
     categoryId: 'general',
-    question: 'How can I contact customer support?',
+    question: 'How can I contact Ponce Painting for a quote?',
     answer:
-      'You can reach our customer support team via email at support@example.com, by phone at (555) 123-4567, or through the contact form on our website. We aim to respond to all inquiries within 24 hours.',
+      "Contacting us is easy! You can reach our Lake Charles team by calling (337) 304-7936, emailing info@ponce-painting.com, or by filling out the contact form on our website. We aim to respond to all inquiries within 24 hours and can schedule a free on-site estimate at a time that's convenient for you.",
     category: 'General',
   },
 
@@ -83,33 +86,33 @@ export const faqItems: FAQItem[] = [
   {
     id: 'services-offered',
     categoryId: 'services',
-    question: 'What services do you offer?',
+    question: 'What painting services does Ponce Painting offer in Lake Charles?',
     answer:
-      'We offer a comprehensive range of services including web development, digital marketing, content creation, SEO optimization, and business consulting. Each service is customizable to meet your specific needs.',
+      "Ponce Painting offers a complete range of professional painting services in Lake Charles including interior painting, exterior painting, cabinet refinishing, deck staining, fence painting, concrete floor coating, color consulting, and pressure washing. We use premium paints and materials specifically selected for Louisiana's unique climate to ensure long-lasting results for your home or business.",
     category: 'Services',
   },
   {
-    id: 'services-emergency',
+    id: 'services-weather',
     categoryId: 'services',
-    question: 'Do you offer emergency services?',
+    question: "How does Ponce Painting handle Louisiana's humid climate for exterior projects?",
     answer:
-      'Yes, we provide emergency services for critical issues. For urgent matters, please contact our priority support line mentioned in your service agreement.',
+      'As local Lake Charles painting professionals, we understand the challenges of our Gulf Coast climate. For exterior painting projects, we carefully monitor weather conditions, use moisture-resistant primers, and select premium paints with mildew and UV protection specifically formulated for high-humidity environments. Our preparation process includes thorough cleaning and moisture testing to ensure proper adhesion and a long-lasting finish that stands up to Louisiana weather.',
     category: 'Services',
   },
   {
     id: 'services-customize',
     categoryId: 'services',
-    question: 'Can I customize services to my specific needs?',
+    question: 'Does Ponce Painting offer color consultation services?',
     answer:
-      'We will discuss your specific requirements during the initial consultation and tailor our services to meet your unique goals and challenges.',
+      'Yes! Our professional color consultation service helps Lake Charles homeowners and businesses select the perfect colors for their properties. Our experienced painters understand color theory, current trends, and can recommend palettes that complement your existing features and reflect your personal style. We can provide digital color renderings, sample boards, and test patches to help you visualize the final result before making your decision.',
     category: 'Services',
   },
   {
     id: 'services-difference',
     categoryId: 'services',
-    question: 'What makes your services different from competitors?',
+    question: 'What makes Ponce Painting different from other Lake Charles painting contractors?',
     answer:
-      'Our services stand out due to our experienced team, personalized approach, commitment to quality, and excellent post-project support. We focus on delivering results that align with your business objectives.',
+      "What sets Ponce Painting apart is our unwavering commitment to quality, our detailed preparation process, our use of premium paints and materials, and our exceptional customer service. As a locally-owned Lake Charles painting company since 2010, we understand the unique needs of Southwest Louisiana properties. Our team consists of highly trained, background-checked professionals who take pride in their craftsmanship. We're not satisfied until you're delighted with the results.",
     category: 'Services',
   },
 
@@ -117,33 +120,33 @@ export const faqItems: FAQItem[] = [
   {
     id: 'pricing-determination',
     categoryId: 'pricing',
-    question: 'How do you determine pricing for your services?',
+    question: 'How does Ponce Painting determine the cost of a painting project in Lake Charles?',
     answer:
-      'Our pricing is based on project scope, complexity, timeline, and required resources. We provide detailed quotes after the initial consultation, so you will know exactly what to expect.',
+      'Our Lake Charles painting estimates are based on several factors: the size of the area to be painted, surface conditions and required preparation, paint quality and number of coats needed, accessibility of the areas, and project complexity. We provide detailed, transparent quotes after our free on-site assessment, with no hidden fees or surprises. Each estimate includes labor, materials, preparation, and cleanup.',
     category: 'Pricing',
   },
   {
     id: 'pricing-discounts',
     categoryId: 'pricing',
-    question: 'Do you offer any discounts or promotions?',
+    question: 'Does Ponce Painting offer any seasonal specials or discounts?',
     answer:
-      'We occasionally offer seasonal promotions and discounts for returning clients or multiple services. Sign up for our newsletter to stay informed about special offers.',
+      'Yes, we regularly offer seasonal painting promotions for Lake Charles homeowners and businesses. We provide special discounts for seniors, military personnel, and first responders. We also offer savings for clients booking multiple services (such as interior and exterior painting) and returning customers. Contact us to learn about our current painting specials and how you can save on your next project.',
     category: 'Pricing',
   },
   {
     id: 'pricing-payment-methods',
     categoryId: 'pricing',
-    question: 'What payment methods do you accept?',
+    question: 'What payment methods does Ponce Painting accept?',
     answer:
-      'We accept all major credit cards, bank transfers, and PayPal. For larger projects, we can arrange a payment schedule that works for your budget.',
+      'Ponce Painting accepts multiple payment methods for your convenience, including major credit cards, checks, and electronic payments. For larger painting projects in Lake Charles, we offer flexible payment schedules that can be arranged to align with project milestones. We never require full payment upfront—only a reasonable deposit to secure your place on our schedule.',
     category: 'Pricing',
   },
   {
-    id: 'pricing-refund',
+    id: 'pricing-warranty',
     categoryId: 'pricing',
-    question: 'Is there a refund policy?',
+    question: 'Does Ponce Painting offer a warranty on painting services?',
     answer:
-      'Our refund policy varies depending on the service. Details are outlined in our service agreement, which you will receive before the project begins.',
+      'Absolutely! Ponce Painting stands behind our work with one of the best warranties in Lake Charles. We offer a 2-year warranty on most interior painting projects and a 5-year warranty on exterior painting projects. Our warranty covers paint peeling, blistering, excessive fading, and flaking due to improper application. This reflects our confidence in our workmanship and the premium materials we use.',
     category: 'Pricing',
   },
 
@@ -151,33 +154,33 @@ export const faqItems: FAQItem[] = [
   {
     id: 'process-new-clients',
     categoryId: 'process',
-    question: 'What is your typical process for new clients?',
+    question: "What is Ponce Painting's process for new Lake Charles clients?",
     answer:
-      'Our process begins with an initial consultation to understand your needs, followed by a proposal with scope and pricing. Once approved, we develop a project plan, execute the work with regular updates, and complete with a final review and follow-up.',
+      "Our process begins with a free consultation and detailed estimate. Once approved, we'll schedule your project and confirm color selections. On the first day, our Lake Charles painting crew will protect your belongings, prepare surfaces, and address any repairs. Throughout the painting process, our project manager will keep you updated and conduct quality checks. We finish with a thorough cleanup and final walkthrough to ensure your complete satisfaction before considering the job complete.",
     category: 'Process',
   },
   {
     id: 'process-timeline',
     categoryId: 'process',
-    question: 'How long does a typical project take?',
+    question: 'How long does a typical Ponce Painting project take in Lake Charles?',
     answer:
-      'Project timelines vary based on scope and complexity. Small projects may take a few weeks, while larger ones can extend to several months. We provide estimated timelines during the proposal phase.',
+      'Project timelines vary based on size and complexity. For Lake Charles homes, a single room interior painting typically takes 1-2 days, while a complete interior might take 3-5 days. Exterior painting of an average-sized home usually requires 3-7 days, depending on weather conditions and necessary preparation. Commercial projects vary widely, but we provide detailed timelines during the estimation process and work efficiently to minimize disruption to your home or business.',
     category: 'Process',
   },
   {
     id: 'process-preparation',
     categoryId: 'process',
-    question: 'What should I do to prepare for your service?',
+    question: 'How should I prepare my Lake Charles home before Ponce Painting arrives?',
     answer:
-      'To prepare, gather any relevant information about your goals, current challenges, brand guidelines, and examples of work you admire. This helps us understand your vision better.',
+      "To prepare for our arrival, we recommend removing small items and personal belongings from the areas to be painted. For interior projects, clearing shelves and moving smaller furniture to the center of the room is helpful. Our Lake Charles painting team will cover and protect larger furniture, floors, and fixtures. For exterior projects, clearing items away from the house perimeter and trimming back bushes provides better access. We'll discuss specific preparation steps during your consultation.",
     category: 'Process',
   },
   {
     id: 'process-support',
     categoryId: 'process',
-    question: 'Do you provide ongoing support after project completion?',
+    question: 'Does Ponce Painting provide touch-ups after project completion?',
     answer:
-      'We are always available for ongoing support after project completion. We offer various maintenance packages and can provide training for your team if needed.',
+      "Yes, we stand behind our work in Lake Charles with excellent after-service support. We conduct a detailed final walkthrough with you to identify any areas needing touch-ups, which we'll address immediately. If you notice any issues after we've completed the project, simply contact us, and we'll schedule a time to return and make it right. Our goal is your complete satisfaction with every painting project.",
     category: 'Process',
   },
 
@@ -185,90 +188,56 @@ export const faqItems: FAQItem[] = [
   {
     id: 'residential-interior',
     categoryId: 'residential',
-    question: 'What residential interior painting services do you offer?',
+    question:
+      'What residential interior painting services does Ponce Painting offer in Lake Charles?',
     answer:
-      'We offer comprehensive interior painting services including wall painting, trim work, ceilings, doors, and cabinets. Our services include color consultation, surface preparation, and thorough cleanup. We use high-quality paints and techniques to ensure a lasting finish.',
-    category: 'residential',
+      'Our Lake Charles interior painting services include walls, ceilings, trim, doors, cabinets, and more. We provide complete surface preparation including patching, sanding, and priming. Our professional painters use low-VOC, premium paints with excellent coverage, washability, and durability. We offer specialized techniques including accent walls, faux finishes, and trim enhancements. Every project includes careful protection of your furnishings and thorough cleanup upon completion.',
+    category: 'Residential',
   },
   {
     id: 'residential-exterior',
     categoryId: 'residential',
-    question: 'Do you provide exterior residential painting services?',
+    question:
+      'What exterior residential painting services does Ponce Painting provide in Lake Charles?',
     answer:
-      'Yes, we specialize in exterior residential painting including siding, trim, decks, and fences. We properly prepare surfaces, use weather-resistant paints, and ensure all work is done safely and efficiently.',
-    category: 'residential',
+      "Our exterior painting services in Lake Charles include siding, trim, doors, shutters, decks, fences, and outbuildings. We properly prepare all surfaces by pressure washing, scraping, sanding, caulking, and priming as needed. We use premium, weather-resistant paints specifically formulated for Louisiana's humid climate to resist fading, mildew, and peeling. Our exterior painting process includes thorough protection of landscaping and non-painted surfaces, plus complete cleanup upon completion.",
+    category: 'Residential',
   },
 
   // Commercial Painting FAQs
   {
     id: 'commercial-interior',
     categoryId: 'commercial',
-    question: 'What commercial interior painting services do you provide?',
+    question: 'What commercial painting services does Ponce Painting offer in Lake Charles?',
     answer:
-      'Our commercial interior painting services include office spaces, retail locations, and industrial facilities. We work around your business hours to minimize disruption and use commercial-grade paints for durability.',
-    category: 'commercial',
+      'Ponce Painting provides comprehensive commercial painting services for Lake Charles businesses including office spaces, retail stores, restaurants, medical facilities, and industrial buildings. Our commercial interior painting includes walls, ceilings, trim, doors, and specialty coatings for high-traffic areas. We use low-odor, commercial-grade paints and can schedule work during off-hours or weekends to minimize disruption to your business operations.',
+    category: 'Commercial',
   },
   {
     id: 'commercial-exterior',
     categoryId: 'commercial',
-    question: 'Can you handle large commercial exterior projects?',
+    question: 'Can Ponce Painting handle large commercial exterior projects in Lake Charles?',
     answer:
-      'Yes, we have experience with commercial exterior projects of all sizes. We use industrial-grade equipment and materials, follow safety protocols, and can work around your business schedule.',
-    category: 'commercial',
+      'Yes, Ponce Painting has the expertise, equipment, and team to handle commercial exterior painting projects of all sizes throughout Lake Charles and Southwest Louisiana. We work with shopping centers, office buildings, warehouses, churches, and multi-unit residential properties. Our commercial painting process includes thorough preparation, high-quality coatings designed for durability in our Gulf Coast climate, and strict adherence to safety protocols. We can provide detailed project timelines and work around your business schedule.',
+    category: 'Commercial',
   },
 
-  // Painting Process FAQs
-  {
-    id: 'process-project-timeline',
-    categoryId: 'process',
-    question: 'How long does a typical painting project take?',
-    answer:
-      'Project timelines vary based on size and complexity. A typical interior room might take 1-2 days, while a complete house exterior could take 3-5 days. We provide detailed timelines during our free estimate.',
-    category: 'process',
-  },
+  // Additional Process FAQs
   {
     id: 'process-prep',
     categoryId: 'process',
-    question: 'What preparation work do you do before painting?',
+    question: 'What preparation work does Ponce Painting do before painting in Lake Charles homes?',
     answer:
-      'Our preparation process includes cleaning surfaces, repairing damage, sanding, priming, and protecting surrounding areas. We also move furniture and cover floors when needed. Proper preparation ensures a lasting finish.',
-    category: 'process',
-  },
-
-  // Pricing FAQs
-  {
-    id: 'pricing-estimate',
-    categoryId: 'pricing',
-    question: 'How do you determine painting project costs?',
-    answer:
-      'We provide free, detailed estimates based on square footage, surface condition, paint quality, and project complexity. Our estimates include all materials, labor, and preparation work.',
-    category: 'pricing',
+      "Proper preparation is the foundation of a quality paint job, especially in Louisiana's climate. Our preparation includes thoroughly cleaning surfaces, removing flaking paint, filling holes and cracks, sanding rough areas, addressing water damage, caulking gaps, spot priming, and protecting non-painted surfaces. For exterior projects in Lake Charles, we typically pressure wash surfaces and treat for mildew before painting. This comprehensive preparation ensures superior adhesion and longevity of your paint job.",
+    category: 'Process',
   },
   {
-    id: 'pricing-payment',
-    categoryId: 'pricing',
-    question: 'What payment options do you accept?',
+    id: 'paint-choice',
+    categoryId: 'general',
+    question: 'What type of paint does Ponce Painting use for Lake Charles homes?',
     answer:
-      'We accept all major credit cards, checks, and cash. For larger projects, we offer payment plans and can work with your insurance company if needed.',
-    category: 'pricing',
-  },
-
-  // Process FAQs
-  {
-    id: 'process-warranty',
-    categoryId: 'process',
-    question: 'Do you offer any warranties on your work?',
-    answer:
-      'Yes, we offer a 2-year warranty on all our painting work. This covers peeling, cracking, and other paint failures due to our application. We also provide manufacturer warranties on the paint products we use.',
-    category: 'process',
-  },
-  {
-    id: 'process-schedule',
-    categoryId: 'process',
-    question: 'How do I schedule a painting project?',
-    answer:
-      "You can schedule a free estimate by calling us at 337-304-7936 or filling out our contact form. We'll visit your property, assess the work needed, and provide a detailed estimate within 24 hours.",
-    category: 'process',
+      "Ponce Painting uses premium Sherwin-Williams and Benjamin Moore paints that are specifically formulated for Southwest Louisiana's unique climate conditions. For exteriors, we select paints with excellent UV resistance, mildew resistance, and moisture protection. For interiors, we recommend paints with good washability, coverage, and low VOC content for better indoor air quality. We help clients select the right sheen for each surface based on its use, lighting conditions, and desired aesthetic.",
+    category: 'General',
   },
 ];
 
@@ -282,5 +251,5 @@ export function getFaqByCategory(category: string | 'all' = 'all'): FAQItem[] {
     return faqItems;
   }
 
-  return faqItems.filter(item => item.category === category);
+  return faqItems.filter(item => item.category.toLowerCase() === category.toLowerCase());
 }
