@@ -18,6 +18,7 @@ import ChevronDownIcon from './ChevronDownIcon';
 import ChevronLeftIcon from './ChevronLeftIcon';
 import ChevronRightIcon from './ChevronRightIcon';
 import MailIcon from './MailIcon';
+import MapPinIcon from './MapPinIcon';
 
 // Icon mapping for easy reference by name
 const iconComponents = {
@@ -32,6 +33,7 @@ const iconComponents = {
   'chevron-left': ChevronLeftIcon,
   'chevron-right': ChevronRightIcon,
   mail: MailIcon,
+  'map-pin': MapPinIcon,
   // Add other icons here as they are implemented
 };
 

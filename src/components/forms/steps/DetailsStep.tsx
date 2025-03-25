@@ -3,6 +3,7 @@ import FormField from '@/components/forms/FormField';
 import SelectField from '@/components/forms/SelectField';
 import Button from '@/components/ui/Button';
 import { Icon } from '@/config/icons';
+import { servicesConfig } from '@/config/content';
 
 const DetailsStep = ({
   formData,
@@ -10,12 +11,14 @@ const DetailsStep = ({
   handleBack,
   isSubmitting = false,
 }: FormStepProps) => {
+  // Create service options from the servicesConfig
   const serviceOptions = [
     { value: '', label: 'Select a service', disabled: true },
-    { value: 'Service 1', label: 'Service 1' },
-    { value: 'Service 2', label: 'Service 2' },
-    { value: 'Service 3', label: 'Service 3' },
-    { value: 'Other', label: 'Other' },
+    ...servicesConfig.map(service => ({
+      value: service.title,
+      label: service.title,
+    })),
+    { value: 'Other', label: 'Other Services' },
   ];
 
   return (
