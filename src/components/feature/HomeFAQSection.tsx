@@ -137,7 +137,7 @@ const HomeFAQSection = ({
             project. You can also learn more about our company, experience, and commitment to
             quality on our About page.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3">
             <Button
               href="/contact"
               variant={isDarkBackground ? 'outline' : 'primary'}
@@ -145,14 +145,6 @@ const HomeFAQSection = ({
               className={isDarkBackground ? 'border-white text-white hover:bg-gray-700/50' : ''}
             >
               Contact Us <Icon name="chevron-right" size={16} />
-            </Button>
-            <Button
-              href="/about"
-              variant={isDarkBackground ? 'outline' : 'secondary'}
-              size="lg"
-              className={isDarkBackground ? 'border-white text-white hover:bg-gray-700/50' : ''}
-            >
-              About Ponce Painting <Icon name="chevron-right" size={16} />
             </Button>
             <Button
               href="/faq"
