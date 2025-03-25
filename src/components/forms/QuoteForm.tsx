@@ -140,9 +140,9 @@ const QuoteForm = () => {
         />
       </div>
 
-      <div className="px-6 pb-6 pt-4">
+      <div className="px-2 pb-2 pt-2">
         {/* Form title - changes based on step */}
-        <div className="mb-4">
+        <div className="mb-2">
           <h2 className="text-lg font-semibold text-gray-900">
             {currentStep === 'address' && 'Get a Quick Quote'}
             {currentStep === 'contact' && 'Your Contact Info'}
