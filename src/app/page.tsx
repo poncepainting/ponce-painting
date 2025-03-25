@@ -217,7 +217,7 @@ export default function Home() {
             subheadingText="YOUR QUESTIONS ANSWERED"
             accentColor="primary.600"
             titleClass="text-primary-800"
-            subtitleClass="text-primary-600"
+            subtitleClass="text-gray-600"
           />
         </AnimationWrapper>
 

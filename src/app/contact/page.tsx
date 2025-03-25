@@ -157,7 +157,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <AnimationWrapper type="slide-up" delay={0.2}>
             <div
-              className={`bg-white border border-gray-200 p-6 pt-8 md:p-8 ${designSystem.borderRadius.form}`}
+              className={`bg-white border border-gray-200 p-6 pb-4.5 pt-8 md:p-8 ${designSystem.borderRadius.form}`}
             >
               <h2 className="text-2xl font-bold mb-6 text-primary-800">Send Us a Message</h2>
               <ContactForm />
