@@ -1,6 +1,6 @@
 'use client';
 
-import { clientOnly } from '@/utils/dynamicImports';
+import { clientOnly } from '@/utils/clientImports';
 
 const TestimonialCarousel = clientOnly(() => import('./carousel/TestimonialCarousel'));
 
