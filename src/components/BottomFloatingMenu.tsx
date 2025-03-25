@@ -49,12 +49,12 @@ const BottomFloatingMenu = ({
     <div className={baseClass}>
       <div className="flex items-center justify-between bg-white shadow-lg border-t border-gray-200">
         <a
-          href="/contact"
+          href={`tel:${siteConfig.contact.phone}`}
           className="flex items-center text-primary-600 flex-grow py-4 px-6 justify-center"
-          aria-label="Get a quote"
+          aria-label="Call for a quote"
         >
-          <Icon name="mail" size={20} className="mr-3" />
-          <span className="font-medium">Get a Quote</span>
+          <Icon name="phone" size={20} className="mr-3" />
+          <span className="font-medium">Call for a Quote</span>
         </a>
 
         <div className="h-10 w-px bg-gray-300" aria-hidden="true" />
